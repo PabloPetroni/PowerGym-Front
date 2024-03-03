@@ -1,0 +1,30 @@
+.titleagusu{
+	color: rgb(207, 207, 207);
+	background-color: #042c64;
+	text-align: center;
+	line-height: 70px;
+}
+.btnreservar {
+	color: rgb(207, 207, 207);
+	background-color: #042c64;
+	border-radius: 50px;
+	text-decoration: none;
+	padding: 10px !important;
+	cursor: pointer;
+	margin: 5px;
+}
+.acciconoagusu {
+	font-size: 100%;
+	color: rgb(207, 207, 207) !important;
+	padding: 0.5vw !important;
+}
+.tablaagusu {
+	font-size: 100% !important;
+	text-align: center;
+}
+
+.tabla{
+	width: 200px;
+	background-color: #042c64;
+	color:aliceblue
+}
