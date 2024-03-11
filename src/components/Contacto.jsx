@@ -24,6 +24,7 @@ export const Contacto = () => {
 						showConfirmButton: false,
 						timer: 3000,
 					});
+					form.current.reset();
 				},
 				(error) => {
 					console.log(error.text);
@@ -60,7 +61,6 @@ export const Contacto = () => {
 							className='inputcontactemail'
 							type='email'
 							name='user_email'
-							pattern='[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
 							required
 						/>
 						<label
@@ -73,7 +73,7 @@ export const Contacto = () => {
 							name='message'
 							required
 						/>
-						<input className='btncont' type='submit' value='Enviar' />
+						<input className='botonadm' type='submit' value='Enviar Formulario' />
 					</form>
 				</div>
 				<div>

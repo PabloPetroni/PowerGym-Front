@@ -161,20 +161,20 @@ export const ReservasUsuario = () => {
 
 			<div className='botonesadm'>
 				<Link className='botonadm' to='/panelusuarios'>
-					<i className='iconavbar bi bi-people-fill'></i>
+					<i className='iconavbar fa-solid fa-calendar-check'></i>
 					Reservar Turnos
 				</Link>
 				<Link className='botonadm' to='/reservasusuario'>
-					<i className='iconavbar bi bi-people-fill'></i>
+				<i className='iconavbar fa-solid fa-calendar-days'></i>
 					Mis Reservas
 				</Link>
 				<Link className='botonadm' to='/pagosusuarios'>
-					<i className='iconavbar bi bi-archive-fill'></i>
+					<i className='iconavbar fa-solid fa-money-bill-wave'></i>
 					Pagos
 				</Link>
 				<Link className='botonadm' to='/datosusuario'>
-					<i className='iconavbar bi bi-calendar-check'></i>
-					Mis Datos
+					<i className='iconavbar fa-solid fa-user-pen'></i>
+					Actualizar Mis Datos
 				</Link>
 			</div>
 			<hr

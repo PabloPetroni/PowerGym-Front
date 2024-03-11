@@ -10,8 +10,11 @@
 	border: 0.5vw outset rgb(143, 142, 139) !important;
 	border-radius: 15px;
 	font-size: 12px;
+	display: flex;
+	flex-direction: row;
 	font-weight: 700;
 	padding: 7px;
+	padding-right: 15px;
 	cursor: pointer;
 	text-decoration: none;
 }
@@ -165,4 +168,3 @@
 	color: #f6f5f5 !important;
 	border-color: #f6f5f5 !important;
 }
-
