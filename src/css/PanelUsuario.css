@@ -15,6 +15,14 @@
 	object-fit: cover;
 	padding-bottom: 70px;
 }
+.iconavbar {
+	font-size: 130% !important;
+	color: rgb(207, 207, 207);
+   padding-left: 15px;
+	padding-top: 0vw !important;
+	padding-bottom: 0vw !important;
+	padding-right: 10px;
+}
 .titlead {
 	margin-top: 40px;
 	margin-bottom: 20px;
@@ -41,8 +49,9 @@
 	flex-wrap: wrap;
 	align-items: center;
 	align-content: center;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	padding-top: 20px;
+	text-align: center;
 	padding-bottom: 20px;
 	border-radius: 20px;
 }
@@ -54,11 +63,12 @@
 	font-size: 16px;
 	font-weight: 700;
 	padding: 5px;
-	padding-left: 45px;
-	padding-right: 45px;
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
 	cursor: pointer;
 	margin-top: 10px;
-	margin-right: 20px;
+	
 	text-decoration: none;
 }
 .compdatepicker {
@@ -108,10 +118,10 @@
 	border-radius: 25px !important;
 	font-size: 20px !important;
 	font-weight: 700 !important;
-	padding: 7px;
+	padding: 5px;
 	margin-top: 10px;
-	padding-left: 45px;
-	padding-right: 45px;
+	padding-left: 25px;
+	padding-right: 25px;
 	cursor: pointer;
 }
 .botonbusqueda:hover {
@@ -186,8 +196,8 @@
 	font-size: 20px;
 	font-weight: 700;
 	padding: 7px;
-	padding-left: 45px;
-	padding-right: 45px;
+	padding-left: 25px;
+	padding-right: 25px;
 	cursor: pointer;
 }
 .btncancmodal:hover {

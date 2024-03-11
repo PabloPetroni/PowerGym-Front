@@ -68,15 +68,15 @@ export const PanelUsuarios = () => {
 
 				<div className='botonesadm'>
 					<Link className='botonadm' to='/panelusuarios'>
-						<i className='iconavbar bi bi-people-fill'></i>
+						<i className='iconavbar fa-solid fa-calendar-check'></i>
 						Reservar Turnos
 					</Link>
 					<Link className='botonadm' to='/reservasusuario'>
-						<i className='iconavbar bi bi-people-fill'></i>
+						<i className='iconavbar fa-solid fa-calendar-days'></i>
 						Mis Reservas
 					</Link>
 					<Link className='botonadm' to='/pagosusuarios'>
-						<i className='iconavbar bi bi-archive-fill'></i>
+						<i className='iconavbar fa-solid fa-money-bill-wave'></i>
 						Pagos
 					</Link>
 					<button
@@ -84,7 +84,7 @@ export const PanelUsuarios = () => {
 						onClick={() => {
 							navigate(`/datosusuario`);
 						}}>
-						<i className='iconavbar bi bi-calendar-check'></i>
+						<i className='iconavbar fa-solid fa-user-pen'></i>
 						Actualizar Mis Datos
 					</button>
 				</div>
@@ -139,9 +139,9 @@ export const PanelUsuarios = () => {
 							</select>
 						</Form.Group>
 
-						<Form.Group className='botonescarga' id='inputpassword'>
+						<Form.Group className='botonescarga' id='input'>
 							<button className='botonbusqueda' type='submit'>
-								<i className='iconavbar bi bi-check2-square'></i>
+								<i className='iconavbar fa-brands fa-searchengin'></i>
 								Buscar
 							</button>
 						</Form.Group>

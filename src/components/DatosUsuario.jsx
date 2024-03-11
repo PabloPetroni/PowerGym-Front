@@ -67,133 +67,121 @@ export const DatosUsuario = () => {
 		<div>
 			<Modal show={showModal} onHide={handleCancel}>
 				<Modal.Header closeButton className='modalbg'>
-					<Modal.Title className='titlemodal'>Actualizar Mis Datos</Modal.Title>
+					<Modal.Title className='titlemodal'>
+						Actualizar Mis Datos
+					</Modal.Title>
 				</Modal.Header>
 				<Modal.Body className='modalbg'>
-				<Form onSubmit={onSubmit}>
-							<div className='formedit'>
-								<Form.Group className='mb-3' id='nombreEditarUsuario'>
-									<Form.Label className='labelmodal'>Nombre</Form.Label>
-									<Form.Control
-										className='inputedit'
-										type='text'
-										id='name'
-										{...register('nombre', {
-											required: {
-												value: true,
-												message:
-													'El nombre o razon social es requerido.',
-											},
-										})}
-									/>
-								</Form.Group>
-								<Form.Group className='mb-3' id='apellidoEditarUsuario'>
-									<Form.Label className='labelmodal'>
-										Apellido
-									</Form.Label>
-									<Form.Control
-										className='inputedit'
-										type='text'
-										id='subname'
-										{...register('apellido')}
-									/>
-								</Form.Group>
-								<Form.Group className='mb-3' id='dniEditarUsuario'>
-									<Form.Label className='labelmodal'>
-										DNI/CUIT
-									</Form.Label>
-									<Form.Control
-										className='inputedit'
-										type='text'
-										id='dni'
-										{...register('dni', {
-											required: {
-												value: true,
-												message: 'El DNI/CUIT es requerido.',
-											},
-											minLength: {
-												value: 8,
-												message:
-													'El DNI/CUIT debe contenter entre 8 y 10 digitos.',
-											},
-											maxLength: {
-												value: 11,
-												message:
-													'El DNI/CUIT debe contenter entre 8 y 10 digitos.',
-											},
-										})}
-									/>
-								</Form.Group>
-								<Form.Group
-									className='mb-3'
-									id='domicilioEditarUsuario'>
-									<Form.Label className='labelmodal'>
-										Domicilio
-									</Form.Label>
-									<Form.Control
-										className='inputedit'
-										type='text'
-										id='domic'
-										{...register('domicilio', {
-											required: {
-												value: true,
-												message: 'El domicilio es requerido.',
-											},
-										})}
-									/>
-								</Form.Group>
-								<Form.Group className='mb-3' id='celularEditarUsuario'>
-									<Form.Label className='labelmodal'>
-										Celular
-									</Form.Label>
-									<Form.Control
-										className='inputedit'
-										type='text'
-										id='cel'
-										{...register('celular', {
-											required: {
-												value: true,
-												message: 'El celular es requerido.',
-											},
-											minLength: {
-												value: 10,
-												message:
-													'El celular debe contenter 10 digitos.',
-											},
-											maxLength: {
-												value: 10,
-												message:
-													'El celular debe contenter 10 digitos.',
-											},
-										})}
-									/>
-								</Form.Group>
+					<Form onSubmit={onSubmit}>
+						<div className='formedit'>
+							<Form.Group className='mb-3' id='nombreEditarUsuario'>
+								<Form.Label className='labelmodal'>Nombre</Form.Label>
+								<Form.Control
+									className='inputedit'
+									type='text'
+									id='name'
+									{...register('nombre', {
+										required: {
+											value: true,
+											message: 'El nombre es requerido.',
+										},
+									})}
+								/>
+							</Form.Group>
 
-								<Form.Group className='modalbg botonesedit'>
-									<button className='btneditusu px-2' type='submit'>
-										<i className='iconavbar bi bi-check2-square'></i>
-										Guardar cambios
-									</button>
-									<button
-										type='button'
-										className='btncancmodal'
-										onClick={handleCancel}>
-										<i className='iconavbar bi bi-x-circle-fill'></i>
-										Volver
-									</button>
-								</Form.Group>
-							</div>
-						</Form>
+							<Form.Group className='mb-3' id='apellidoEditarUsuario'>
+								<Form.Label className='labelmodal'>Apellido</Form.Label>
+								<Form.Control
+									className='inputedit'
+									type='text'
+									id='subname'
+									{...register('apellido')}
+								/>
+							</Form.Group>
+
+							<Form.Group className='mb-3' id='dniEditarUsuario'>
+								<Form.Label className='labelmodal'>DNI</Form.Label>
+								<Form.Control
+									className='inputedit'
+									type='text'
+									id='dni'
+									{...register('dni', {
+										required: {
+											value: true,
+											message: 'El DNI/CUIT es requerido.',
+										},
+										minLength: {
+											value: 7,
+											message:
+												'El DNI debe contenter entre 7 y 8 digitos.',
+										},
+										maxLength: {
+											value: 8,
+											message:
+												'El DNI debe contenter entre 7 y 8 digitos.',
+										},
+									})}
+								/>
+							</Form.Group>
+
+							<Form.Group className='mb-3' id='domicilioEditarUsuario'>
+								<Form.Label className='labelmodal'>
+									Domicilio
+								</Form.Label>
+								<Form.Control
+									className='inputedit'
+									type='text'
+									id='domic'
+									{...register('domicilio', {
+										required: {
+											value: true,
+											message: 'El domicilio es requerido.',
+										},
+									})}
+								/>
+							</Form.Group>
+
+							<Form.Group className='mb-3' id='celularEditarUsuario'>
+								<Form.Label className='labelmodal'>Celular</Form.Label>
+								<Form.Control
+									className='inputedit'
+									type='text'
+									id='cel'
+									{...register('celular', {
+										required: {
+											value: true,
+											message: 'El celular es requerido.',
+										},
+										minLength: {
+											value: 10,
+											message:
+												'El celular debe contenter 10 digitos.',
+										},
+										maxLength: {
+											value: 10,
+											message:
+												'El celular debe contenter 10 digitos.',
+										},
+									})}
+								/>
+							</Form.Group>
+
+							<Form.Group className='modalbg botonesedit'>
+								<button className='btneditusu px-2' type='submit'>
+									<i className='iconavbar fa-solid fa-floppy-disk'></i>
+									Guardar cambios
+								</button>
+								<button
+									type='button'
+									className='btncancmodal'
+									onClick={handleCancel}>
+									<i className='iconavbar fa-solid fa-circle-xmark'></i>
+									Volver
+								</button>
+							</Form.Group>
+						</div>
+					</Form>
 				</Modal.Body>
-				{/* <Modal.Footer className='modalbg'>
-					<button
-						className='btneditgestion px-2'
-						onClick={() => {
-							handleCancel();
-						}}>
-						Volver
-					</button>
-				</Modal.Footer> */}
 			</Modal>
 		</div>
 	);
