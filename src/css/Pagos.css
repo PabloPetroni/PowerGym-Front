@@ -10,6 +10,11 @@
 	padding-right: 45px;
 	cursor: pointer;
 }
+.botoneditgestion:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
+}
 .botonmp {
 	background-color: rgb(12, 199, 251);
 	border: 0.2vw outset rgb(4, 45, 89) !important;

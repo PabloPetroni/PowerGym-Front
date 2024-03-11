@@ -85,7 +85,7 @@ export const PanelUsuarios = () => {
 							navigate(`/datosusuario`);
 						}}>
 						<i className='iconavbar bi bi-calendar-check'></i>
-						Mis Datos
+						Actualizar Mis Datos
 					</button>
 				</div>
 

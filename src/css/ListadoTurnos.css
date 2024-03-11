@@ -13,6 +13,12 @@
 	font-weight: 700;
 	padding: 7px;
 	cursor: pointer;
+	text-decoration: none;
+}
+.btnreservar:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
 }
 .acciconoagusu {
 	font-size: 100%;
@@ -159,3 +165,4 @@
 	color: #f6f5f5 !important;
 	border-color: #f6f5f5 !important;
 }
+

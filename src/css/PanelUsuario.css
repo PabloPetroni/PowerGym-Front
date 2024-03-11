@@ -71,7 +71,7 @@
 	color: #f8f4f4 !important;
 }
 .botonadm:hover {
-	opacity: 0.9;
+	opacity: 0.6;
 	color: white;
 	background-color: transparent;
 }
@@ -114,10 +114,16 @@
 	padding-right: 45px;
 	cursor: pointer;
 }
+.botonbusqueda:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
+}
 .modalbg {
 	background-color: rgb(143, 142, 139) !important;
 }
 .titlemodal {
+	margin-top: 20px !important;
 	color: #ffad12 !important;
 	font-weight: 800 !important;
 	text-decoration: underline;
@@ -125,22 +131,67 @@
 .labelmodal {
 	color: #fbfaf8;
 	font-weight: 600;
-	font-family:  Roboto,
-		;
+	font-family: Roboto;
 }
-.modaldatosbg{
-	background-color: rgb(5, 5, 5)!important;
+.btn-close {
+	margin-top: 20px !important;
+	background-color: #f0eeeb !important;
+}
+.modaldatosbg {
+	background-color: rgb(5, 5, 5) !important;
 }
 
-.subtitlemodal{
-text-align: center!important;
-font-size: 24px;
-font-weight: 700;
-color: #ff3333;
-text-decoration: underline;
-text-shadow: 4px 4px 2px rgba(1,1,1,0.6);
-margin-bottom: 50px;
+.subtitlemodal {
+	text-align: center !important;
+	font-size: 24px;
+	font-weight: 700;
+	color: #ff3333;
+	text-decoration: underline;
+	text-shadow: 4px 4px 2px rgba(1, 1, 1, 0.6);
+	margin-bottom: 50px;
 }
-.modal-header .btn-close{
-	color:#f8f4f4!important
+.modal-header .btn-close {
+	color: #f8f4f4 !important;
+}
+.botonesedit {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	justify-content: space-around;
+	width: 100%;
+}
+.btneditusu {
+	color: #f1efef;
+	background: linear-gradient(rgb(33, 83, 4), rgb(23, 59, 3));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 15px;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 7px;
+	padding-left: 45px;
+	padding-right: 45px;
+	cursor: pointer;
+}
+.btneditusu:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
+}
+.btncancmodal {
+	color: #f1efef;
+	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 15px;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 7px;
+	padding-left: 45px;
+	padding-right: 45px;
+	cursor: pointer;
+}
+.btncancmodal:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
 }
