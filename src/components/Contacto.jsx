@@ -101,7 +101,6 @@ export const Contacto = () => {
 						<label
 							className='labelcontact'
 							placeholder='Ingrese su mensaje..'>
-								
 							Mensaje
 						</label>
 						<textarea
