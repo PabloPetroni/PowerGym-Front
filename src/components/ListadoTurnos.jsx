@@ -16,7 +16,6 @@ import { Box } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MRT_Localization_ES } from 'material-react-table/locales/es';
-import { Button } from 'react-bootstrap';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es-mx';
 dayjs().format();
@@ -205,7 +204,7 @@ export const ListadoTurnos = ({ fechaSeleccionada }) => {
 								row.original.disponibilidad,
 								user
 							)
-						}>
+						}><i className="iconavbar fa-solid fa-calendar-check"></i>
 						Reservar
 					</button>
 				)}

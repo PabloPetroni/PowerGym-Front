@@ -245,7 +245,7 @@ export const Home = () => {
 					</div>
 				</div>
 				<div className='divbtninscrip'>
-					<button className='btninscrip'>Inscribite Ahora!</button>
+					<button className='btninscrip'><i className="iconavbar fa-solid fa-id-card"></i>Inscribite Ahora!</button>
 				</div>
 			</div>
 
@@ -507,7 +507,7 @@ export const Home = () => {
 					abierto todos los días, asi puedas disfrutar de un buen
 					entrenamiento , de un espacio agradable y buena música!
 				</p>
-				<button className='btninscripsecpromo'>Inscribite Ahora!</button>
+				<button className='btninscripsecpromo'><i className="iconavbar fa-solid fa-id-card"></i>Inscribite Ahora!</button>
 				<img
 					className='img-secpromo'
 					src='/risen-wang-20jX9b35r_M-unsplash.jpg'

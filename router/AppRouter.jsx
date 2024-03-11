@@ -13,6 +13,7 @@ import { DatosUsuario } from '../src/components/DatosUsuario.jsx';
 import { GenerarPago } from '../src/components/GenerarPago.jsx';
 import { Contacto } from '../src/components/Contacto.jsx';
 import { AdminUser } from '../src/components/AdminUser.jsx';
+import { Error404 } from '../src/components/Error404.jsx'; // Importa tu componente de manejo de error 404
 
 
 
@@ -20,6 +21,7 @@ export const AppRouter = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
+			<Route path='/error404' element={<Error404 />}></Route>
 				<Route path='/' element={<Home />}></Route>
 				<Route path='/home' element={<Home />}></Route>
 				<Route path='/contacto' element={<Contacto />}></Route>
