@@ -126,7 +126,7 @@ export const ReservasUsuario = () => {
 					gap: '3px',
 				}}>
 				<IconButton
-					color='secondary'
+					style={{ color: 'red' }}
 					onClick={() => borrarTurno(row.original._id)}>
 					<DeleteIcon />
 				</IconButton>
@@ -147,7 +147,10 @@ export const ReservasUsuario = () => {
 				<h3 className='subtitleadusu'>Panel de Reservas Registradas</h3>
 			</div>
 
-			<hr />
+			<hr
+					className='mx-5 bg-warning'
+					style={{ border: '2px solid #ffcc00' }}
+				/>
 
 			<div className='botonesadm'>
 				<Link className='botonadm' to='/panelusuarios'>
@@ -167,7 +170,10 @@ export const ReservasUsuario = () => {
 					Mis Datos
 				</Link>
 			</div>
-			<hr />
+			<hr
+					className='mx-5 bg-warning'
+					style={{ border: '2px solid #ffcc00' }}
+				/>
 			<div>
 				<h2 className='titleagusu'>Mis Turnos Reservados </h2>
 				<div className='table-responsive'>
@@ -175,7 +181,10 @@ export const ReservasUsuario = () => {
 						<CssBaseline />
 						<MaterialReactTable table={table} />
 					</ThemeProvider>
-					<hr />
+					<hr
+					className='mx-5 bg-warning'
+					style={{ border: '2px solid #ffcc00' }}
+				/>
 				</div>
 			</div>
 		</div>
