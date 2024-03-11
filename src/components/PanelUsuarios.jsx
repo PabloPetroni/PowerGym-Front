@@ -42,7 +42,6 @@ export const PanelUsuarios = () => {
 				actividad: values.actividad,
 			};
 			setTurnoData(turnoData);
-			console.log(turnoData);
 		} catch (error) {
 			console.error(error);
 			Swal.fire({
@@ -62,7 +61,10 @@ export const PanelUsuarios = () => {
 					<h3 className='subtitleadusu'>Panel de Usuarios</h3>
 				</div>
 
-				<hr />
+				<hr
+					className='mx-5 bg-warning'
+					style={{ border: '2px solid #ffcc00' }}
+				/>
 
 				<div className='botonesadm'>
 					<Link className='botonadm' to='/panelusuarios'>
@@ -77,18 +79,25 @@ export const PanelUsuarios = () => {
 						<i className='iconavbar bi bi-archive-fill'></i>
 						Pagos
 					</Link>
-					<Button
+					<button
 						className='botonadm'
 						onClick={() => {
 							navigate(`/datosusuario`);
 						}}>
 						<i className='iconavbar bi bi-calendar-check'></i>
 						Mis Datos
-					</Button>
+					</button>
 				</div>
-				<hr />
+
+				<hr
+					className='mx-5 bg-warning'
+					style={{ border: '2px solid #ffcc00' }}
+				/>
+
 				<div className='busqueda'>
-					<h2 className='titleagusu'>Busca por fecha y/o por actividad</h2>
+					<h2 className='titleagusu'>
+						Busca tu clase por fecha y/o actividad
+					</h2>
 					<Form
 						className='Formcarga'
 						onSubmit={onSubmit}
@@ -100,6 +109,7 @@ export const PanelUsuarios = () => {
 								adapterLocale='es-mx'>
 								<DemoContainer components={['DatePicker']}>
 									<DatePicker
+										className='compdatepicker'
 										defaultValue={dayjs()}
 										label='Selecciona la fecha...'
 										inputFormat='DD/MM/YYYY'
@@ -130,14 +140,17 @@ export const PanelUsuarios = () => {
 						</Form.Group>
 
 						<Form.Group className='botonescarga' id='inputpassword'>
-							<Button className='botonbusqueda' type='submit'>
+							<button className='botonbusqueda' type='submit'>
 								<i className='iconavbar bi bi-check2-square'></i>
 								Buscar
-							</Button>
+							</button>
 						</Form.Group>
 					</Form>
 				</div>
-				<hr />
+				<hr
+					className='mx-5 bg-warning'
+					style={{ border: '2px solid #ffcc00' }}
+				/>
 				<div>
 					<ListadoTurnos fechaSeleccionada={turnoData} />
 				</div>

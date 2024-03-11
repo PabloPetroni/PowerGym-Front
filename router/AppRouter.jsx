@@ -11,6 +11,8 @@ import { PagosUsuarios } from '../src/components/PagosUsuarios.jsx';
 import { ReservasUsuario } from '../src/components/ReservasUsuario.jsx';
 import { DatosUsuario } from '../src/components/DatosUsuario.jsx';
 import { GenerarPago } from '../src/components/GenerarPago.jsx';
+import { Contacto } from '../src/components/Contacto.jsx';
+
 
 export const AppRouter = () => {
 	return (
@@ -18,6 +20,7 @@ export const AppRouter = () => {
 			<Routes>
 				<Route path='/' element={<Home />}></Route>
 				<Route path='/home' element={<Home />}></Route>
+				<Route path='/contacto' element={<Contacto />}></Route>
 				<Route path='/clima' element={<Clima />}></Route>
 				<Route path='/generarpago' element={<GenerarPago />}></Route>
 				<Route path='/panelusuarios' element={<PanelUsuarios />}></Route>

@@ -29,7 +29,7 @@ export const ListadoTurnos = ({ fechaSeleccionada }) => {
 	const cargarClases = async () => {
 		try {
 			if (!fechaSeleccionada.fecha) {
-				// Si no hay fecha seleccionada, establece la fecha de hoy
+				// Si no hay fecha seleccionada, establece la fecha de hoy como default
 				const today = new Date();
 				const year = today.getFullYear();
 				const month = String(today.getMonth() + 1).padStart(2, '0');
@@ -189,18 +189,20 @@ export const ListadoTurnos = ({ fechaSeleccionada }) => {
 					flexWrap: 'nowrap',
 					gap: '3px',
 				}}>
-				<Button
-					className='btnreservar'
-					color='primary'
-					onClick={() =>
-						reservarTurno(
-							row.original._id,
-							row.original.disponibilidad,
-							user
-						)
-					}>
-					Reservar
-				</Button>
+				{row.original.disponibilidad > 0 && (
+					<button
+						className='btnreservar'
+						color='primary'
+						onClick={() =>
+							reservarTurno(
+								row.original._id,
+								row.original.disponibilidad,
+								user
+							)
+						}>
+						Reservar
+					</button>
+				)}
 			</Box>
 		),
 	});

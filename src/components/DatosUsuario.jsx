@@ -31,44 +31,44 @@ export const DatosUsuario = () => {
 	return (
 		<div>
 			<Modal show={showModal} onHide={handleCancel}>
-				<Modal.Header closeButton>
-					<Modal.Title>Ver Mis Datos</Modal.Title>
+				<Modal.Header closeButton className='modalbg'>
+					<Modal.Title className='titlemodal'>Ver Mis Datos</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>
+				<Modal.Body className='modalbg'>
 					<Form>
 						<Form.Group className='mb-3' id='nombre'>
-							<Form.Label>
-								<u>Nombre:</u> {user.nombre}
+							<Form.Label className='labelmodal'>
+								<b>Nombre:</b> {user.nombre}
 							</Form.Label>
 						</Form.Group>
 						<Form.Group className='mb-3' id='apellido'>
-							<Form.Label>
-								<u>Apellido:</u> {user.apellido}
+							<Form.Label className='labelmodal'>
+								<b>Apellido:</b> {user.apellido}
 							</Form.Label>
 						</Form.Group>
 						<Form.Group className='mb-3' id='dni'>
-							<Form.Label>
-								<u>DNI: </u> {user.dni}
+							<Form.Label className='labelmodal'>
+								<b>DNI: </b> {user.dni}
 							</Form.Label>
 						</Form.Group>
 						<Form.Group className='mb-3' id='celular'>
-							<Form.Label>
-								<u>Celular:</u> {user.celular}
+							<Form.Label className='labelmodal'>
+								<b>Celular:</b> {user.celular}
 							</Form.Label>
 						</Form.Group>
 						<Form.Group className='mb-3' id='email'>
-							<Form.Label>
-								<u>Email:</u> {user.email}
+							<Form.Label className='labelmodal'>
+								<b>Email:</b> {user.email}
 							</Form.Label>
 						</Form.Group>
 						<Form.Group className='mb-3' id='domicilio'>
-							<Form.Label>
-								<u>Domicilio:</u> {user.domicilio}
+							<Form.Label className='labelmodal'>
+								<b>Domicilio:</b> {user.domicilio}
 							</Form.Label>
 						</Form.Group>
 					</Form>
 				</Modal.Body>
-				<Modal.Footer>
+				<Modal.Footer className='modalbg'>
 					<button
 						className='btneditgestion px-2'
 						onClick={() => {

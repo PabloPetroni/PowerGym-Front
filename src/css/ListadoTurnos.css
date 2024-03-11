@@ -1,17 +1,18 @@
-.titleagusu{
-	color: rgb(207, 207, 207);
-	background-color: #042c64;
+.titleagusu {
+	color: rgb(248, 246, 246);
 	text-align: center;
-	line-height: 70px;
+	font-weight: 800;
+	text-shadow: 4px 4px 4px rgba(8, 8, 8, 0.6);
 }
 .btnreservar {
-	color: rgb(207, 207, 207);
-	background-color: #042c64;
-	border-radius: 50px;
-	text-decoration: none;
-	padding: 10px !important;
+	color: #f6f5f5;
+	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 15px;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 7px;
 	cursor: pointer;
-	margin: 5px;
 }
 .acciconoagusu {
 	font-size: 100%;
@@ -22,9 +23,139 @@
 	font-size: 100% !important;
 	text-align: center;
 }
-
-.tabla{
+.tabla {
 	width: 200px;
-	background-color: #042c64;
-	color:aliceblue
+	background-color: rgb(143, 142, 139) !important;
+}
+.css-wsew38 {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-hsi95o-MuiTableRow-root td {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-1llu0od {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246);
+}
+.css-apge8j-MuiTableRow-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246);
+}
+.css-6pocm5-MuiTypography-root {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-1lxvlui-MuiTableBody-root {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-iudz2w-MuiTable-root {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-nhjqqh-MuiTableContainer-root {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-1atu56z-MuiPaper-root {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-iudz2w-MuiTable-root {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-118e0ip-MuiTableHead-root {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-apge8j-MuiTableRow-root {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-y1oenf-MuiTableCell-root {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-zrlv9q {
+	background-color: rgb(143, 142, 139);
+	color: rgb(248, 246, 246) !important;
+}
+.css-10gei56 {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-qnbsah-MuiTableRow-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-z5kguv-MuiTableCell-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-1atu56z-MuiPaper-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-i4bv87-MuiSvgIcon-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-m57fak-MuiTableCell-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-g01hi8-MuiTableCell-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-c3gv53-MuiTableCell-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-1x0rpxq-MuiTableCell-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-13ufsr8-MuiTableCell-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-1r34777-MuiTableCell-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-lapokc {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-vwljmp-MuiTypography-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-uqq6zz-MuiFormLabel-root-MuiInputLabel-root {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-1dmqq7i-MuiNativeSelect-select-MuiInputBase-input-MuiInput-input {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-wjh20t-MuiPagination-ul {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-r93niq-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+	background-color: rgb(143, 142, 139) !important;
+	color: rgb(248, 246, 246) !important;
+}
+.css-4jnixx-MuiStack-root {
+	color: #f6f5f5 !important;
+	border-color: #f6f5f5 !important;
+}
+.css-4jnixx-MuiStack-root > .MuiTextField-root {
+	color: #f6f5f5 !important;
+	border-color: #f6f5f5 !important;
 }

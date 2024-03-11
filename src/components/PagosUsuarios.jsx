@@ -126,7 +126,10 @@ export const PagosUsuarios = () => {
 				<h3 className='subtitleadusu'>Panel de Pagos</h3>
 			</div>
 
-			<hr />
+			<hr
+					className='mx-5 bg-warning'
+					style={{ border: '2px solid #ffcc00' }}
+				/>
 
 			<div className='botonesadm'>
 				<Link className='botonadm' to='/panelusuarios'>
@@ -146,7 +149,10 @@ export const PagosUsuarios = () => {
 					Mis Datos
 				</Link>
 			</div>
-			<hr />
+			<hr
+					className='mx-5 bg-warning'
+					style={{ border: '2px solid #ffcc00' }}
+				/>
 			<div>
 				<h2 className='titleagusu'>Mis Pagos </h2>
 				<div className='table-responsive'>
@@ -154,7 +160,10 @@ export const PagosUsuarios = () => {
 						<CssBaseline />
 						<MaterialReactTable table={table} />
 					</ThemeProvider>
-					<hr />
+					<hr
+					className='mx-5 bg-warning'
+					style={{ border: '2px solid #ffcc00' }}
+				/>
 				</div>
 			</div>
 		</div>
