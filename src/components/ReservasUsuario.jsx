@@ -13,6 +13,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MRT_Localization_ES } from 'material-react-table/locales/es';
 import { Link, useParams } from 'react-router-dom';
+import dayjs from 'dayjs';
+import { red } from '@mui/material/colors';
 
 export const ReservasUsuario = () => {
 	const [data, setData] = useState([]);
@@ -25,8 +27,9 @@ export const ReservasUsuario = () => {
 		const fetchData = async () => {
 			try {
 				const fetchedTurnos = await getTurnos();
+				const today = dayjs(new Date()).format('DD/MM/YYYY');
 				const turnosFiltrados = fetchedTurnos.filter(
-					(turno) => userId === turno.idUser
+					(turno) => userId === turno.idUser && turno.fecha >= today
 				);
 				setData(turnosFiltrados);
 			} catch (error) {
@@ -91,6 +94,12 @@ export const ReservasUsuario = () => {
 				enableColumnOrdering: false,
 				size: 300,
 			},
+			{
+				header: 'Sede',
+				accessorKey: 'sede',
+				enableColumnOrdering: false,
+				size: 50,
+			},
 		],
 		[]
 	);
@@ -123,11 +132,9 @@ export const ReservasUsuario = () => {
 				sx={{
 					display: 'flex',
 					flexWrap: 'nowrap',
-					gap: '3px',
+					color: 'red',
 				}}>
-				<IconButton
-					style={{ color: 'red' }}
-					onClick={() => borrarTurno(row.original._id)}>
+				<IconButton onClick={() => borrarTurno(row.original._id)}>
 					<DeleteIcon />
 				</IconButton>
 			</Box>
@@ -148,9 +155,9 @@ export const ReservasUsuario = () => {
 			</div>
 
 			<hr
-					className='mx-5 bg-warning'
-					style={{ border: '2px solid #ffcc00' }}
-				/>
+				className='mx-5 bg-warning'
+				style={{ border: '2px solid #ffcc00' }}
+			/>
 
 			<div className='botonesadm'>
 				<Link className='botonadm' to='/panelusuarios'>
@@ -171,9 +178,9 @@ export const ReservasUsuario = () => {
 				</Link>
 			</div>
 			<hr
-					className='mx-5 bg-warning'
-					style={{ border: '2px solid #ffcc00' }}
-				/>
+				className='mx-5 bg-warning'
+				style={{ border: '2px solid #ffcc00' }}
+			/>
 			<div>
 				<h2 className='titleagusu'>Mis Turnos Reservados </h2>
 				<div className='table-responsive'>
@@ -181,10 +188,6 @@ export const ReservasUsuario = () => {
 						<CssBaseline />
 						<MaterialReactTable table={table} />
 					</ThemeProvider>
-					<hr
-					className='mx-5 bg-warning'
-					style={{ border: '2px solid #ffcc00' }}
-				/>
 				</div>
 			</div>
 		</div>

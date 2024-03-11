@@ -150,6 +150,12 @@ export const ListadoTurnos = ({ fechaSeleccionada }) => {
 				size: 100,
 			},
 			{
+				header: 'Sede',
+				accessorKey: 'sede',
+				enableColumnOrdering: false,
+				size: 50,
+			},
+			{
 				header: 'Disponibilidad',
 				accessorKey: 'disponibilidad',
 				enableColumnOrdering: false,
