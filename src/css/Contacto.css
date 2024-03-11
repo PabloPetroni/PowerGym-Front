@@ -64,18 +64,19 @@
 	margin: 1vw;
 }
 .btncont {
+	color: #f8f4f4;
+	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 25px;
+	font-size: 16px;
 	font-weight: 700;
-	font-size: 100%;
-	margin-top: 2vw !important;
-	margin-bottom: 2vw !important;
-	background-color: #ff3333;
-	color: rgb(207, 207, 207);
-	width: auto;
-	border: 0.2vw outset rgb(143, 142, 139) !important;
-	border-radius: 5px;
-	padding: 1vw;
-	cursor: pointer;
+	padding: 5px;
 	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+	cursor: pointer;
+	margin-top: 10px;
+	
 	text-decoration: none;
 }
 .btncont:hover {

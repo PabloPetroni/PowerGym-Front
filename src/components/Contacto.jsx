@@ -1,10 +1,35 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 import '../css/Contacto.css';
 
 export const Contacto = () => {
 	const form = useRef();
+	const [nombre, setNombre] = useState('');
+	const [email, setEmail] = useState('');
+	const [mensaje, setMensaje] = useState('');
+
+	const validarFormContacto = () => {
+		const validarEmail = /^[\w+.-]+@\w+([.-]?\w+)*(\.\w{2,})+$/;
+		const resultadoValidacionEmail = validarEmail.test(email);
+
+		const validarNombre = /^[a-zA-Z]+$/;
+		const resultadoValidacionNombre = validarNombre.test(nombre);
+
+		if (nombre === '' || email === '' || mensaje === '') {
+			mostrarError('*Todos los campos son obligatorios*');
+		} else if (!resultadoValidacionEmail) {
+			mostrarError('*Ingrese un Email valido*');
+		} else if (!resultadoValidacionNombre) {
+			mostrarError(
+				'*Ingrese un nombre que no contenga signos, numeros ni caracteres especiales*'
+			);
+		} else if (mensaje.length > 300) {
+			mostrarError('*El texto no puede superar los 300 caracteres*');
+		} else {
+			sendEmail();
+		}
+	};
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -32,6 +57,14 @@ export const Contacto = () => {
 			);
 	};
 
+	const mostrarError = (mensaje) => {
+		Swal.fire({
+			icon: 'error',
+			title: 'Oops...',
+			text: mensaje,
+		});
+	};
+
 	return (
 		<div className='container-lg bodycontact'>
 			<div className=''>
@@ -50,6 +83,7 @@ export const Contacto = () => {
 							className='inputcontactemail'
 							type='text'
 							name='user_name'
+							onChange={(e) => setNombre(e.target.value)}
 							required
 						/>
 						<label
@@ -61,19 +95,28 @@ export const Contacto = () => {
 							className='inputcontactemail'
 							type='email'
 							name='user_email'
+							onChange={(e) => setEmail(e.target.value)}
 							required
 						/>
 						<label
 							className='labelcontact'
 							placeholder='Ingrese su mensaje..'>
+								
 							Mensaje
 						</label>
 						<textarea
 							className='inputcontactcoment'
 							name='message'
+							onChange={(e) => setMensaje(e.target.value)}
 							required
 						/>
-						<input className='botonadm' type='submit' value='Enviar Formulario' />
+						<button
+							className='btncont'
+							type='submit'
+							value='Enviar Formulario'
+							onClick={validarFormContacto}>
+							Enviar Formulario
+						</button>
 					</form>
 				</div>
 				<div>
