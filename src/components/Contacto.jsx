@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 import '../css/Contacto.css';
+import { Whatsapp } from './Whatsapp';
 
 export const Contacto = () => {
 	const form = useRef();
@@ -67,6 +68,7 @@ export const Contacto = () => {
 
 	return (
 		<div className='container-lg bodycontact'>
+			<Whatsapp />
 			<div className=''>
 				<h1 className='titulocont text-center'>¡Contactanos!</h1>
 				<p className='text-center Parrafo2'>
@@ -101,7 +103,6 @@ export const Contacto = () => {
 						<label
 							className='labelcontact'
 							placeholder='Ingrese su mensaje..'>
-								
 							Mensaje
 						</label>
 						<textarea

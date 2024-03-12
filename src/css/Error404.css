@@ -45,6 +45,7 @@
 	text-decoration: none;
    position: absolute;
    bottom: 20px;
+	left:240px
 }
 .boton404:hover {
 	opacity: 0.6;
