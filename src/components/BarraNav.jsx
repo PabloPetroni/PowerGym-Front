@@ -6,6 +6,9 @@ import { NavLink } from 'react-router-dom';
 import "../css/BarraNav.css"
 
 function BarraNav() {
+
+    
+    
     return (
       <>
     <Navbar expand="lg" className="navbar">
@@ -21,6 +24,12 @@ function BarraNav() {
             <NavLink className="nav-link link m-3" to="/about">Nosotros</NavLink>
             <NavLink className="nav-link link m-3" to="/contacto">Contacto</NavLink>
             <NavLink className="nav-link link m-3" to="/administrador">Administrador</NavLink>
+            
+            <button className="btn logout m-3">
+                <NavLink to="/login" className="linkIngresar">
+                  Cerrar sesión
+                </NavLink>
+            </button>
             
             <button className="btn ingresar m-3">
                 <NavLink to="/login" className="linkIngresar">

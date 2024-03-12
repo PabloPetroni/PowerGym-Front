@@ -51,7 +51,7 @@ export const Footer = () => {
 						<Link className=' text-center' to='/home'>
 							<img
 								className='logofooter'
-								src='/LOGO_POWERGYM.jpg'
+								src='https://i.postimg.cc/BvS6w0tQ/Logo-fondo-blanco.png'
 								width={100}
 								alt='logo'
 							/>
