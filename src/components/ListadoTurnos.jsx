@@ -16,7 +16,6 @@ import { Box } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MRT_Localization_ES } from 'material-react-table/locales/es';
-import { Button } from 'react-bootstrap';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es-mx';
 dayjs().format();
@@ -29,7 +28,7 @@ export const ListadoTurnos = ({ fechaSeleccionada }) => {
 	const cargarClases = async () => {
 		try {
 			if (!fechaSeleccionada.fecha) {
-				// Si no hay fecha seleccionada, establece la fecha de hoy
+				// Si no hay fecha seleccionada, establece la fecha de hoy como default
 				const today = new Date();
 				const year = today.getFullYear();
 				const month = String(today.getMonth() + 1).padStart(2, '0');
@@ -150,6 +149,12 @@ export const ListadoTurnos = ({ fechaSeleccionada }) => {
 				size: 100,
 			},
 			{
+				header: 'Sede',
+				accessorKey: 'sede',
+				enableColumnOrdering: false,
+				size: 50,
+			},
+			{
 				header: 'Disponibilidad',
 				accessorKey: 'disponibilidad',
 				enableColumnOrdering: false,
@@ -189,18 +194,20 @@ export const ListadoTurnos = ({ fechaSeleccionada }) => {
 					flexWrap: 'nowrap',
 					gap: '3px',
 				}}>
-				<Button
-					className='btnreservar'
-					color='primary'
-					onClick={() =>
-						reservarTurno(
-							row.original._id,
-							row.original.disponibilidad,
-							user
-						)
-					}>
-					Reservar
-				</Button>
+				{row.original.disponibilidad > 0 && (
+					<button
+						className='btnreservar'
+						color='primary'
+						onClick={() =>
+							reservarTurno(
+								row.original._id,
+								row.original.disponibilidad,
+								user
+							)
+						}><i className="iconavbar fa-solid fa-calendar-check"></i>
+						Reservar
+					</button>
+				)}
 			</Box>
 		),
 	});

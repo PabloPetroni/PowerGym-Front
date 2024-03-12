@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import '../css/Pagos.css'
+import '../css/Pagos.css';
 export const GenerarPago = () => {
 	const [showModal, setShowModal] = useState(true);
 	const navigate = useNavigate();
@@ -14,19 +14,21 @@ export const GenerarPago = () => {
 	return (
 		<>
 			<Modal show={showModal} onHide={handleCloseModal}>
-				<Modal.Header closeButton>
-					<Modal.Title className='text-white'>
+				<Modal.Header className='modalbg' closeButton>
+					<Modal.Title className='titlemodal'>
 						Abonar cuota/s pendiente/s
 					</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>
+				<Modal.Body className='modalbg'>
 					<Form>
-						<Form.Group className='mb-3 text-white' controlId=''>
+						<Form.Group className='mb-3 text-dark' controlId=''>
 							<Form.Label>
 								Puedes abonar tus cuotas pendientes con los siguientes
 								medios de pago:
 							</Form.Label>
-							<Form.Label>Cuenta Banco Galicia : </Form.Label>
+							<Form.Label className='subtitlemodal'>
+								Transferencias Banco Galicia
+							</Form.Label>
 							<ul>
 								<li>
 									<b>Caja de Ahorro en Pesos</b>
@@ -42,8 +44,10 @@ export const GenerarPago = () => {
 								</li>
 							</ul>
 						</Form.Group>
-						<Form.Group className='mb-3 text-white' controlId=''>
-							<Form.Label>Cuenta Banco Macro : </Form.Label>
+						<Form.Group className='mb-3 text-dark' controlId=''>
+							<Form.Label className='subtitlemodal'>
+								Transferencias Banco Macro
+							</Form.Label>
 							<ul>
 								<li>
 									<b>Caja de Ahorro en Pesos</b>
@@ -60,9 +64,11 @@ export const GenerarPago = () => {
 							</ul>
 						</Form.Group>
 						<Form.Group
-							className='mb-3 text-white d-flex flex-column'
+							className='mb-3 text-dark d-flex flex-column'
 							controlId=''>
-							<Form.Label>Mercado Pago :</Form.Label>
+							<Form.Label className='subtitlemodal'>
+								Mercado Pago
+							</Form.Label>
 							<button className='botonmp'>
 								<a
 									className='text-white text-decoration-none'
@@ -80,9 +86,11 @@ export const GenerarPago = () => {
 							/>
 						</Form.Group>
 						<Form.Group
-							className='mb-3 text-white d-flex flex-column'
+							className='mb-3 text-dark d-flex flex-column'
 							controlId=''>
-							<Form.Label>Criptomonedas :</Form.Label>
+							<Form.Label className='subtitlemodal'>
+								Criptomonedas{' '}
+							</Form.Label>
 							<img
 								className='mt-3 align-self-center'
 								src='/qr-binancec.png'
@@ -92,7 +100,7 @@ export const GenerarPago = () => {
 						</Form.Group>
 					</Form>
 				</Modal.Body>
-				<Modal.Footer>
+				<Modal.Footer className='modalbg'>
 					<button
 						className='btneditgestion px-2'
 						onClick={() => {

@@ -4,7 +4,7 @@ import '../css/Footer.css';
 
 export const Footer = () => {
 	return (
-		<footer className=' container-lg contfooter'>
+		<footer className=' container-fluid contfooter'>
 			<hr className='linea mx-3' />
 			<div className='container text-center'>
 				<div className='row'>
@@ -16,11 +16,11 @@ export const Footer = () => {
 						</li>
 						<li className='text-deg nav-item'>
 							<Link to='/nosotros' className='nav-link text-deg'>
-								Nosotros
+								Quienes Somos
 							</Link>
 						</li>
 						<li className='text-deg nav-item'>
-							<Link to='/contact' className='nav-link text-deg'>
+							<Link to='/contacto' className='nav-link text-deg'>
 								Contacto
 							</Link>
 						</li>
@@ -31,19 +31,19 @@ export const Footer = () => {
 							className='social-icon'
 							to='https://www.facebook.com/estudiopossetucuman?mibextid=ZbWKwL'
 							target='_blank'>
-							<i className='bi bi-facebook'></i>
+							<i className='fa-brands fa-facebook'></i>
 						</Link>
 						<Link
 							className='social-icon'
 							href='https://www.instagram.com/estudioposseasociados?igsh=bmYzN3VybGdlZGgw'
 							target='_blank'>
-							<i className='bi bi-instagram'></i>
+							<i className='fa-brands fa-square-instagram'></i>
 						</Link>
 						<Link
 							className='social-icon'
 							to='http://www.twitter.com'
 							target='_blank'>
-							<i className='bi bi-twitter-x'></i>
+							<i className='fa-brands fa-square-x-twitter'></i>
 						</Link>
 					</div>
 
@@ -51,17 +51,16 @@ export const Footer = () => {
 						<Link className=' text-center' to='/home'>
 							<img
 								className='logofooter'
-								src='/logo estudio.png'
+								src='/LOGO_POWERGYM.jpg'
 								width={100}
-								alt='logoestudio'
+								alt='logo'
 							/>
 						</Link>
 						<p className='text-center derechos'>
-							© 2024 Todos los Derechos Reservados - Estudio Juridico
-							Posse & Asoc.
+							© 2024 Todos los Derechos Reservados - POWER GYM S.A.
 						</p>
 						<p className='text-center derechos'>
-							Diseño y Desarrollo: Oscar Frias Viñals
+							Diseño y Desarrollo: PROYECTO FINAL ROLLING CODE 71i
 						</p>
 						`
 					</div>
