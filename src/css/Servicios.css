@@ -1,0 +1,70 @@
+.title-serv {
+	font-size: 24px;
+	font-weight: 800;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	text-align: center;
+	background-color: #ffad12;
+	color: #f7f7f6;
+	margin: 0;
+	text-shadow: 4px 4px 4px rgba(4, 4, 4, 0.6);
+	box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.cardabout {
+	color: rgb(207, 207, 207);
+	border: 0.9vw outset #ffad12;
+	text-align: center;
+	margin-right: 20px!important;
+	padding-top: 4vw;
+	margin-left: 20px!important;
+	margin-bottom: 4vw;
+   text-shadow: 4px 4px 4px rgba(4, 4, 4, 0.6);
+
+}
+.cardtitleabout {
+	color: #ff3333!important;
+	font-size: 120% !important;
+	font-weight: 700 !important;
+	margin-top: 4vw !important;
+	margin-bottom: 2vw !important;
+   text-shadow: 4px 4px 4px rgba(4, 4, 4, 0.6);
+
+}
+.contcard {
+	color: rgb(207, 207, 207) !important;
+	font-size: 90%;
+	font-weight: 400;
+	margin-left: 30px;
+	margin-right: 30px;
+	padding-bottom: 2vw;
+}
+.imgcard{
+   max-width: 400px;
+   max-height: 200px;
+   margin-top: 15px;
+}
+.divbtnserv{
+	margin-top: 20px;
+	text-align: center;
+}
+.btnturnoserv{
+	color: #f5f0f0;
+	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 25px;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 4px;
+	padding-left: 5px;
+	padding-right: 5px;
+	cursor: pointer;
+}
+
+@media (min-width: 576px) {
+	.contcard{
+		margin-left: 10px!important;
+		margin-right: 10px!important;
+	}
+}

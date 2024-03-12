@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Clima } from '../components/Clima.jsx';
 import '../css/Home.css';
 import { Card, Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Whatsapp } from './Whatsapp.jsx';
 
 export const Home = () => {
 	useEffect(() => {
@@ -90,7 +92,9 @@ export const Home = () => {
 	}, []);
 
 	return (
+	
 		<div className='container-fluid'>
+				<Whatsapp/>
 			<div>
 				<Clima />
 			</div>
@@ -110,7 +114,7 @@ export const Home = () => {
 				</video>
 			</div>
 
-			<h2 className='title-secsrev backg container'>
+			<h2 className='title-secsrev backg container-fluid'>
 				Disfruta todos los beneficios de ser
 				<span className='power-text'> POWER</span>!
 			</h2>
@@ -150,7 +154,7 @@ export const Home = () => {
 				</Carousel>
 			</div>
 
-			<div className='cont3 container'>
+			<div className='cont3 container-fluid'>
 				<div className='promo1'>
 					<p id='promo1-value' className='title-promo'>
 						+0
@@ -207,45 +211,54 @@ export const Home = () => {
 					</div>
 					<div className='cont-plan2'>
 						<div className='divplan'>
-							<p className='listplan'>Plan Power</p>
-							<Card className='cardplan'>
-								<Card.Body className='checkplan'>
-									<i className='fa-regular fa-circle-check icoplan'></i>
-									<i className='fa-regular fa-circle-check icoplan'></i>
-									<i className='fa-regular fa-circle-check icoplan'></i>
-									<i className='fa-regular fa-circle-check icoplan'></i>
-									<i className='fa-regular fa-circle-check icoplan'></i>
-								</Card.Body>
-							</Card>
+							<a href='/planes.jsx'>
+								<p className='listplan'>Plan Power</p>
+								<Card className='cardplan'>
+									<Card.Body className='checkplan'>
+										<i className='fa-regular fa-circle-check icoplan'></i>
+										<i className='fa-regular fa-circle-check icoplan'></i>
+										<i className='fa-regular fa-circle-check icoplan'></i>
+										<i className='fa-regular fa-circle-check icoplan'></i>
+										<i className='fa-regular fa-circle-check icoplan'></i>
+									</Card.Body>
+								</Card>
+							</a>
 						</div>
 						<div className='divplan'>
-							<p className='listplan'>Plan Class</p>
-							<Card className='cardplan'>
-								<Card.Body className='checkplan'>
-									<i className='fa-regular fa-circle-check icoplan'></i>
-									<i className='fa-regular fa-circle-check icoplan'></i>
-									<i className='fa-regular fa-circle-check icoplan'></i>
-									<i className='fa-regular fa-circle-xmark icoplan'></i>
-									<i className='fa-regular fa-circle-xmark icoplan'></i>
-								</Card.Body>
-							</Card>
+							<a href='/planes'>
+								<p className='listplan'>Plan Classic</p>
+								<Card className='cardplan'>
+									<Card.Body className='checkplan'>
+										<i className='fa-regular fa-circle-check icoplan'></i>
+										<i className='fa-regular fa-circle-check icoplan'></i>
+										<i className='fa-regular fa-circle-check icoplan'></i>
+										<i className='fa-regular fa-circle-xmark icoplan'></i>
+										<i className='fa-regular fa-circle-xmark icoplan'></i>
+									</Card.Body>
+								</Card>
+							</a>
 						</div>
 						<div className='divplan'>
-							<p className='listplan'>Plan Muscle</p>
-							<Card className='cardplan'>
-								<Card.Body className='checkplan'>
-									<i className='fa-regular fa-circle-xmark icoplan'></i>
-									<i className='fa-regular fa-circle-check icoplan'></i>
-									<i className='fa-regular fa-circle-check icoplan'></i>
-									<i className='fa-regular fa-circle-xmark icoplan'></i>
-									<i className='fa-regular fa-circle-xmark icoplan'></i>
-								</Card.Body>
-							</Card>
+							<a href='/planes'>
+								<p className='listplan'>Plan Muscle</p>
+								<Card className='cardplan'>
+									<Card.Body className='checkplan'>
+										<i className='fa-regular fa-circle-xmark icoplan'></i>
+										<i className='fa-regular fa-circle-check icoplan'></i>
+										<i className='fa-regular fa-circle-check icoplan'></i>
+										<i className='fa-regular fa-circle-xmark icoplan'></i>
+										<i className='fa-regular fa-circle-xmark icoplan'></i>
+									</Card.Body>
+								</Card>
+							</a>
 						</div>
 					</div>
 				</div>
 				<div className='divbtninscrip'>
-					<button className='btninscrip'><i className="iconavbar fa-solid fa-id-card"></i>Inscribite Ahora!</button>
+					<Link to='/registro' className='btninscrip'>
+						<i className='iconavbar fa-solid fa-id-card'></i>Inscribite
+						Ahora!
+					</Link>
 				</div>
 			</div>
 
@@ -254,12 +267,12 @@ export const Home = () => {
 				style={{ border: '2px solid #ffcc00' }}
 			/>
 
-			<div className='container'>
+			<div className='container-fluid'>
 				<h2 className='title-plan'>NUESTRAS ACTIVIDADES Y CLASES</h2>
 				<Carousel fade interval={2500} controls={false} indicators={false}>
 					<Carousel.Item className='itemcarousel'>
 						<div className='icocarousel'>
-							<a href='url_del_enlace_para_imagen_1'>
+							<a href='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/BOXEO.jpg'
@@ -268,14 +281,14 @@ export const Home = () => {
 							</a>
 							<p className='text-center pimgcarousel'>Boxeo</p>
 							<i className='fa-solid fa-bolt mb-3 text-danger'>
-								<span className='intact'>Media</span>{' '}
+								<span className='intact'>Alta</span>{' '}
 							</i>
 							<i className='fa-solid fa-clock text-danger'>
 								<span className='intact'>45 Minutos</span>
 							</i>
 						</div>
 						<div className='icocarousel'>
-							<a href='url_del_enlace_para_imagen_1'>
+							<a href='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/FUNCIONAL.jpg'
@@ -293,7 +306,7 @@ export const Home = () => {
 					</Carousel.Item>
 					<Carousel.Item className='itemcarousel'>
 						<div className='icocarousel'>
-							<a href='url_del_enlace_para_imagen_1'>
+							<a href='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/YOGA.jpg'
@@ -309,7 +322,7 @@ export const Home = () => {
 							</i>
 						</div>
 						<div className='icocarousel'>
-							<a href='url_del_enlace_para_imagen_1'>
+							<a href='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/CROSSFIT.jpg'
@@ -327,7 +340,7 @@ export const Home = () => {
 					</Carousel.Item>
 					<Carousel.Item className='itemcarousel'>
 						<div className='icocarousel'>
-							<a href='url_del_enlace_para_imagen_1'>
+							<a href='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/MUSCULACION.jpg'
@@ -343,7 +356,7 @@ export const Home = () => {
 							</i>
 						</div>
 						<div className='icocarousel'>
-							<a href='url_del_enlace_para_imagen_1'>
+							<a href='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/LOW-SPINNING.jpg'
@@ -361,7 +374,7 @@ export const Home = () => {
 					</Carousel.Item>
 					<Carousel.Item className='itemcarousel'>
 						<div className='icocarousel'>
-							<a href='url_del_enlace_para_imagen_1'>
+							<a href='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/ZUMBA.jpg'
@@ -377,7 +390,7 @@ export const Home = () => {
 							</i>
 						</div>
 						<div className='icocarousel'>
-							<a href='url_del_enlace_para_imagen_1'>
+							<a href='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/YOGA.jpg'
@@ -418,7 +431,9 @@ export const Home = () => {
 							src='/PERSONAL-TRAINING.jpg'
 							alt='imagen atencion personalizada'
 						/>
-						<p className='psecserv'>VER MAS</p>
+						<a href='/servicios'>
+							<p className='psecserv'>VER MAS</p>
+						</a>
 					</div>
 				</div>
 				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-right'>
@@ -428,7 +443,9 @@ export const Home = () => {
 							src='/ZONA-CARDIOVASCULAR.jpg'
 							alt='imagen cardio'
 						/>
-						<p className='psecserv'>VER MAS</p>
+						<a href='/servicios'>
+							<p className='psecserv'>VER MAS</p>
+						</a>
 					</div>
 					<div className='div-secserv'>
 						<h4 className='subtitle-secsrev'>ZONA CARDIO</h4>
@@ -454,7 +471,9 @@ export const Home = () => {
 							src='/SALA-DE-PES-LLIURE.jpg'
 							alt='imagen peso libre'
 						/>
-						<p className='psecserv'>VER MAS</p>
+						<a href='/servicios'>
+							<p className='psecserv'>VER MAS</p>
+						</a>
 					</div>
 				</div>
 				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-right'>
@@ -464,7 +483,9 @@ export const Home = () => {
 							src='/NUTRICION.jpeg'
 							alt='imagen nutricion'
 						/>
-						<p className='psecserv'>VER MAS</p>
+						<a href='/servicios'>
+							<p className='psecserv'>VER MAS</p>
+						</a>
 					</div>
 					<div className='div-secserv'>
 						<h4 className='subtitle-secsrev'>NUTRICION Y FISIO</h4>
@@ -491,7 +512,9 @@ export const Home = () => {
 							src='/ACTIVIDADES_DIRIGIDAS.jpg'
 							alt='imagen actividad'
 						/>
-						<p className='psecserv'>VER MAS</p>
+						<a href='/servicios'>
+							<p className='psecserv'>VER MAS</p>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -501,13 +524,18 @@ export const Home = () => {
 				style={{ border: '2px solid #ffcc00' }}
 			/>
 
-			<div className='video-container container'>
+			<div className='video-container container-fluid'>
 				<p className='p-secpromo'>
 					Para que no tengas excusas a la hora de entrenar , estamos
 					abierto todos los días, asi puedas disfrutar de un buen
 					entrenamiento , de un espacio agradable y buena música!
 				</p>
-				<button className='btninscripsecpromo'><i className="iconavbar fa-solid fa-id-card"></i>Inscribite Ahora!</button>
+				<a href='/registro'>
+					<button className='btninscripsecpromo'>
+						<i className='iconavbar fa-solid fa-id-card'></i>Inscribite
+						Ahora!
+					</button>
+				</a>
 				<img
 					className='img-secpromo'
 					src='/risen-wang-20jX9b35r_M-unsplash.jpg'
@@ -520,7 +548,7 @@ export const Home = () => {
 				style={{ border: '2px solid #ffcc00' }}
 			/>
 
-			<div className='container'>
+			<div className='container-fluid'>
 				<h2 className='title-plan'>NUESTRAS SEDES</h2>
 				<div className='contsede'>
 					<div className='divsede'>
