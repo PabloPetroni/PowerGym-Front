@@ -23,7 +23,7 @@ body {
 	text-align: center;
 	width: 100%;
 	font-family: 'Roboto Flex', sans-serif;
-	text-shadow: 2px 2px 2px rgba(248, 246, 246, 0.6);
+	text-shadow: 2px 2px 2px rgba(6, 6, 6, 0.6);
 }
 .video-subtitle {
 	position: absolute;
@@ -209,7 +209,6 @@ body {
 	padding-left: 35px;
 	padding-right: 35px;
 	cursor: pointer;
-
 	text-decoration: none;
 }
 .btninscrip:hover {
@@ -322,7 +321,6 @@ body {
 	font-weight: 700;
 	text-align: center;
 	padding-top: 1vw;
-
 	padding-bottom: 1vw;
 	margin-bottom: 0 !important;
 	cursor: pointer;

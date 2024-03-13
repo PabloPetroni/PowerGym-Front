@@ -29,12 +29,12 @@ export const Login = () => {
 			});
 
 			if (
-				user.email === 'ofvinals@gmail.com' ||
-				user.email === 'estudioposseyasociados@gmail.com'
+				user.email === 'admin@gmail.com'
+			
 			) {
 				navigate('/admin', { replace: true });
 			} else {
-				navigate('/adminusu', { replace: true });
+				navigate('/panelusuarios', { replace: true });
 			}
 		} catch (error) {
 			console.log(error);
@@ -48,42 +48,20 @@ export const Login = () => {
 		}
 	});
 
-	const handleGoogle = async (e) => {
-		e.preventDefault();
-		try {
-			await loginWithGoogle();
-			Swal.fire({
-				icon: 'success',
-				title: 'Inicio de sesión Google exitoso!',
-				showConfirmButton: false,
-				timer: 1500,
-			});
-		} catch (error) {
-			console.error('Error en el inicio de sesión:', error);
-			Swal.fire({
-				icon: 'error',
-				title: 'Ingreso rechazado',
-				text: 'El inicio de sesion Google falló!',
-				showConfirmButton: false,
-				timer: 1500,
-			});
-		}
-	};
-
 	useEffect(() => {
 		if (isAuthenticated) {
 			const user = currentUser?.email;
-			if (user === 'ofvinals@gmail.com') {
+			if (user === 'admin@gmail.com') {
 				navigate('/admin');
 			} else {
-				navigate('/adminusu');
+				navigate('/panelusuarios');
 			}
 		}
 	}, [isAuthenticated, currentUser, navigate]);
 
 	return (
 		<section className='login container-lg'>
-			<Form id='loginForm' className='logform bg-dark' onSubmit={onSubmit}>
+			<Form id='loginForm' className='logform' onSubmit={onSubmit}>
 				<h2 className='titulolog'>Ingreso a Mi cuenta</h2>
 				<Form.Group className='d-flex flex-column' controlId='inputemail'>
 					<Form.Label className='labellog' id='email'>
@@ -116,7 +94,7 @@ export const Login = () => {
 					<Form.Label className='labellog'>Contraseña</Form.Label>
 					<div className='d-flex flex-row justify-content-center'>
 						<input
-							className='inputlogpass'
+							className='inputlogpass ms-4 '
 							type={showPassword ? 'text' : 'password'}
 							autoComplete='current-password'
 							{...register('password', {
@@ -138,8 +116,8 @@ export const Login = () => {
 							id='vercontrasena'
 							className='btncontrasena'>
 							<i
-								className={`iconavbar p-0 ${
-									showPassword ? 'bi-eye-slash' : 'bi-eye'
+								className={`far ${
+									showPassword ? 'fa-eye-slash' : 'fa-eye'
 								}`}></i>
 						</button>
 					</div>
@@ -160,7 +138,7 @@ export const Login = () => {
 
 				<Form.Group className='botoneslogin' controlId='inputpassword'>
 					<Button className='input-submitlog' type='submit'>
-						<i className='iconavbar bi bi-box-arrow-in-right'></i>
+						<i className='iconavbar fa-solid fa-right-to-bracket'></i>
 						Ingresar
 					</Button>
 				</Form.Group>

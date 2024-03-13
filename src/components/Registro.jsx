@@ -50,11 +50,11 @@ export const Registro = () => {
 	return (
 		<section className='register container-lg'>
 			<Form
-				id='loginFormreg'
-				className='loginFormreg container fluid bg-dark'
+				id='Formreg'
+				className='Formreg container fluid'
 				onSubmit={onSubmit}
 				ref={form}>
-				<h2 className='login-tituloreg'>Crear Cuenta</h2>
+				<h2 className='titlereg'>Crear Cuenta</h2>
 
 				<div className='row'>
 					<div className='col-md-6'>
@@ -244,7 +244,7 @@ export const Registro = () => {
 
 				<Form.Group className='mb-3 botonesreg'>
 					<Button className='input-submitreg' type='submit'>
-						<i className='iconavbar bi bi-r-circle-fill'></i>
+						<i className='iconavbar fa-solid fa-registered'></i>
 						Registrar cuenta
 					</Button>
 
