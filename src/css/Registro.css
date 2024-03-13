@@ -1,0 +1,100 @@
+
+.register {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	background-image: linear-gradient(rgba(5, 7, 12, 0.5), rgba(5, 12, 7, 0.5)),
+		url(/public/60001091_1146068782230974_4278652480474054656_n.jpg);
+	background-size: cover;
+	object-fit: cover;
+	background-position: center;
+}
+.login-tituloreg {
+	text-align: center;
+	width: 100%;
+	margin-top: 6vw;
+	margin-bottom: 6vw;
+	font-size: 4vw;
+	color:#ffad12;
+}
+.loginFormreg {
+	display: flex !important;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	margin: 35px;
+	width: 50% !important;
+	border-radius: 5px;
+	border: 0.2vw outset rgb(143, 142, 139);
+	opacity: 0.85;
+	padding: 10px !important;
+
+}
+.labelreg {
+	font-weight: 700;
+	width: 100%;
+	margin: 10px;
+	background-color: rgb(36, 36, 36) !important;
+	color: rgb(207, 207, 207);
+	font-size: 100%;
+}
+.botonesreg {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+.inputreg {
+	color: rgb(207, 207, 207);
+	width: 90% !important;
+	margin: 10px;
+	outline-color: rgb(143, 142, 139);
+	font-size: 80% !important;
+	padding: 0.5vw !important;
+}
+.input-submitreg {
+	font-size: 100% !important;
+	font-weight: 600;
+	margin: 5px;
+	background-color: rgb(10, 61, 4) !important;
+	color: rgb(207, 207, 207);
+	width: auto;
+	border: 0.2vw outset rgb(143, 142, 139) !important;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 5px;
+}
+.input-submitreg:hover {
+	opacity: 0.8;
+	color: white;
+	background-color: transparent;
+}
+.input-submitreg:disabled {
+	background-color: rgb(10, 61, 4);
+	opacity: 0.3;
+	background-color: transparent;
+}
+.parraforeg {
+	font-size: 80%;
+	font-family: 'Poppins', sans-serif;
+	color: rgb(207, 207, 207);
+	margin-top: 5px;
+	font-weight: 600;
+}
+.parraforeg a {
+	text-decoration: underline;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+}
+.parraforeg a:hover {
+	opacity: 0.8;
+	background-color: transparent;
+}
+.btncontrasena{
+	color:white;
+}

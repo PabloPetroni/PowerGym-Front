@@ -1,0 +1,153 @@
+.login {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-image: linear-gradient(rgba(5, 7, 12, 0.5), rgba(5, 12, 7, 0.5)),
+		url(/01.jpg);
+	background-size: cover;
+	object-fit: cover;
+	background-position: center;
+}
+.titulolog {
+	text-align: center;
+	font-size: 150%;
+	margin: 3vw;
+	color: rgb(207, 207, 207);
+	font-weight: 700;
+}
+.logform {
+	display: flex !important;
+	flex-direction: column;
+	justify-content: center !important;
+	align-self: center;
+	align-content: center;
+	align-items: center;
+	width: auto;
+	border-radius: 5px;
+	border: 0.2vw outset rgb(143, 142, 139);
+	opacity: 0.85;
+	margin: 5vw;
+}
+.labellog {
+	font-weight: 700;
+	text-align: center;
+	width: 100%;
+	background-color: rgb(36, 36, 36) !important;
+	color: rgb(207, 207, 207);
+	font-size: 100%;
+	margin-bottom: 0px!important;
+}
+.inputlog {
+	align-items: center;
+	font-size: 100%;
+	align-self: center;
+	width: 95%;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	outline-color: rgb(143, 142, 139);
+}
+.inputlogpass {
+	align-items: center;
+	font-size: 100%;
+	align-self: center;
+	width: 70%;
+	margin: 5px;
+	border-radius: 5px;
+	outline-color: rgb(143, 142, 139);
+}
+.btncontrasena{
+	background-color: transparent;
+	border:none;
+	width: 10%;
+}
+.botoneslogin {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.input-submitlog {
+	text-align: center;
+	font-size: 100% !important;
+	font-weight: 600;
+	margin: 15px;
+	text-decoration: none;
+	background-color: rgb(10, 61, 4) !important;
+	color: rgb(207, 207, 207) !important;
+	width: auto;
+	border-radius: 5px;
+	border: 0.2vw outset rgb(143, 142, 139) !important;
+	cursor: pointer;
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	padding: 5px !important;
+}
+.input-submitlog:hover {
+	opacity: 0.8;
+	color: white;
+	background-color: transparent;
+}
+.error-message{
+	color:  rgb(237, 8, 8) !important;
+	text-align: center;
+	font-size: 14px; 
+	margin-bottom: 5px!important; 
+}
+.botongoogle {
+	text-align: center;
+	font-size: 100% !important;
+	font-weight: 600;
+	text-decoration: none;
+	background-color: rgb(9, 19, 92);
+	color: rgb(207, 207, 207) !important;
+	width: auto;
+	border-radius: 5px;
+	border: 0.2vw outset rgb(143, 142, 139) !important;
+	cursor: pointer;
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	padding: 5px !important;
+}
+
+.botongoogle:hover {
+	opacity: 0.8;
+	color: white;
+	background-color: transparent;
+}
+.parrafolog {
+	font-size: 80%;
+	color: rgb(207, 207, 207);
+	margin-top: 5px;
+	font-weight: 700;
+}
+.parrafolog:hover {
+	opacity: 0.8;
+	color: white;
+	background-color: transparent;
+}
+.parrafolog a {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+}
+.parrafolog a:hover {
+	opacity: 0.8;
+	background-color: transparent;
+}
+.swal2-html-container {
+	font-family: 'Poppins', sans-serif !important;
+	font-size: 100% !important;
+	color: rgb(207, 207, 207) !important;
+}
+.swal2-styled.swal2-confirm {
+	font-size: 100% !important;
+}
+.swal2-styled.swal2-cancel {
+	font-size: 100% !important;
+}
+.swal2-title {
+	font-size: 120% !important;
+}
