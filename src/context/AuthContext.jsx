@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { apiURL } from '/api/apiURL.js';
+
 // crea contexto
 const AuthContext = createContext();
 
