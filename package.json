@@ -10,22 +10,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-free": "^6.5.1",
     "@mui/icons-material": "^5.15.11",
     "@mui/material": "^5.15.11",
     "@mui/x-date-pickers": "^6.19.5",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "dayjs": "^1.11.10",
+    "emailjs": "^4.0.3",
     "material-react-table": "^2.12.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
     "react-datepicker": "^6.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.50.1",
+    "react-hook-form": "^7.51.0",
     "react-router-dom": "^6.22.2",
-    "sweetalert2": "^11.10.5"
+    "sweetalert2": "^11.10.6"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

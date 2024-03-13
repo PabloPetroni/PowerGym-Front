@@ -103,6 +103,7 @@ export const PagosUsuarios = () => {
 							gap: '3px',
 						}}>
 						<Link className='btnreservar' to='/GenerarPago'>
+							<i className='iconavbar fa-solid fa-wallet'></i>
 							Pagar
 						</Link>
 					</Box>
@@ -126,27 +127,33 @@ export const PagosUsuarios = () => {
 				<h3 className='subtitleadusu'>Panel de Pagos</h3>
 			</div>
 
-			<hr />
+			<hr
+				className='mx-5 bg-warning'
+				style={{ border: '2px solid #ffcc00' }}
+			/>
 
 			<div className='botonesadm'>
 				<Link className='botonadm' to='/panelusuarios'>
-					<i className='iconavbar bi bi-people-fill'></i>
+					<i className='iconavbar fa-solid fa-calendar-check'></i>
 					Reservar Turnos
 				</Link>
 				<Link className='botonadm' to='/reservasusuario'>
-					<i className='iconavbar bi bi-people-fill'></i>
+					<i className='iconavbar fa-solid fa-calendar-days'></i>
 					Mis Reservas
 				</Link>
 				<Link className='botonadm' to='/pagosusuarios'>
-					<i className='iconavbar bi bi-archive-fill'></i>
+					<i className='iconavbar fa-solid fa-money-bill-wave'></i>
 					Pagos
 				</Link>
 				<Link className='botonadm' to='/datosusuario'>
-					<i className='iconavbar bi bi-calendar-check'></i>
-					Mis Datos
+					<i className='iconavbar fa-solid fa-user-pen'></i>
+					Actualizar Mis Datos
 				</Link>
 			</div>
-			<hr />
+			<hr
+				className='mx-5 bg-warning'
+				style={{ border: '2px solid #ffcc00' }}
+			/>
 			<div>
 				<h2 className='titleagusu'>Mis Pagos </h2>
 				<div className='table-responsive'>
@@ -154,7 +161,10 @@ export const PagosUsuarios = () => {
 						<CssBaseline />
 						<MaterialReactTable table={table} />
 					</ThemeProvider>
-					<hr />
+					<hr
+						className='mx-5 bg-warning'
+						style={{ border: '2px solid #ffcc00' }}
+					/>
 				</div>
 			</div>
 		</div>

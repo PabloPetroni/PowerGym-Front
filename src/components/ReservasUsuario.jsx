@@ -13,6 +13,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MRT_Localization_ES } from 'material-react-table/locales/es';
 import { Link, useParams } from 'react-router-dom';
+import dayjs from 'dayjs';
+import { red } from '@mui/material/colors';
 
 export const ReservasUsuario = () => {
 	const [data, setData] = useState([]);
@@ -25,8 +27,9 @@ export const ReservasUsuario = () => {
 		const fetchData = async () => {
 			try {
 				const fetchedTurnos = await getTurnos();
+				const today = dayjs(new Date()).format('DD/MM/YYYY');
 				const turnosFiltrados = fetchedTurnos.filter(
-					(turno) => userId === turno.idUser
+					(turno) => userId === turno.idUser && turno.fecha >= today
 				);
 				setData(turnosFiltrados);
 			} catch (error) {
@@ -91,6 +94,12 @@ export const ReservasUsuario = () => {
 				enableColumnOrdering: false,
 				size: 300,
 			},
+			{
+				header: 'Sede',
+				accessorKey: 'sede',
+				enableColumnOrdering: false,
+				size: 50,
+			},
 		],
 		[]
 	);
@@ -123,11 +132,9 @@ export const ReservasUsuario = () => {
 				sx={{
 					display: 'flex',
 					flexWrap: 'nowrap',
-					gap: '3px',
+					color: 'red',
 				}}>
-				<IconButton
-					color='secondary'
-					onClick={() => borrarTurno(row.original._id)}>
+				<IconButton onClick={() => borrarTurno(row.original._id)}>
 					<DeleteIcon />
 				</IconButton>
 			</Box>
@@ -147,27 +154,33 @@ export const ReservasUsuario = () => {
 				<h3 className='subtitleadusu'>Panel de Reservas Registradas</h3>
 			</div>
 
-			<hr />
+			<hr
+				className='mx-5 bg-warning'
+				style={{ border: '2px solid #ffcc00' }}
+			/>
 
 			<div className='botonesadm'>
 				<Link className='botonadm' to='/panelusuarios'>
-					<i className='iconavbar bi bi-people-fill'></i>
+					<i className='iconavbar fa-solid fa-calendar-check'></i>
 					Reservar Turnos
 				</Link>
 				<Link className='botonadm' to='/reservasusuario'>
-					<i className='iconavbar bi bi-people-fill'></i>
+				<i className='iconavbar fa-solid fa-calendar-days'></i>
 					Mis Reservas
 				</Link>
 				<Link className='botonadm' to='/pagosusuarios'>
-					<i className='iconavbar bi bi-archive-fill'></i>
+					<i className='iconavbar fa-solid fa-money-bill-wave'></i>
 					Pagos
 				</Link>
 				<Link className='botonadm' to='/datosusuario'>
-					<i className='iconavbar bi bi-calendar-check'></i>
-					Mis Datos
+					<i className='iconavbar fa-solid fa-user-pen'></i>
+					Actualizar Mis Datos
 				</Link>
 			</div>
-			<hr />
+			<hr
+				className='mx-5 bg-warning'
+				style={{ border: '2px solid #ffcc00' }}
+			/>
 			<div>
 				<h2 className='titleagusu'>Mis Turnos Reservados </h2>
 				<div className='table-responsive'>
@@ -175,7 +188,6 @@ export const ReservasUsuario = () => {
 						<CssBaseline />
 						<MaterialReactTable table={table} />
 					</ThemeProvider>
-					<hr />
 				</div>
 			</div>
 		</div>

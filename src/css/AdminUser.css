@@ -1,0 +1,16 @@
+.tabla-usuarios{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.titulo{
+	font-weight: bold;
+    color:	#ffad12;
+
+}
+
+.texto-boton-back{
+    text-decoration: none;
+    font-weight:bold;
+    color:black;
+}
