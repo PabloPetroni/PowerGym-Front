@@ -17,7 +17,7 @@
 }
 .iconavbar {
 	font-size: 130% !important;
-	color: rgb(207, 207, 207);
+	color: rgb(247, 245, 245);
    padding-left: 15px;
 	padding-top: 0vw !important;
 	padding-bottom: 0vw !important;
@@ -68,7 +68,6 @@
 	padding-right: 15px;
 	cursor: pointer;
 	margin-top: 10px;
-	
 	text-decoration: none;
 }
 .compdatepicker {
