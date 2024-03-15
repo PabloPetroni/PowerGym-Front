@@ -22,4 +22,16 @@ export const updateUser = async (id, values) => {
 	}
 };
 
+export const createPago = async (pagoData, id) => {
+	try {
+		const response = await apiURL.post(`/api/users/${id}/pagos`, pagoData, {
+			withCredentials: true,
+		});
+		return response.data;
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+
 
