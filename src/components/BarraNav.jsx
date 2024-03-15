@@ -22,7 +22,7 @@ function BarraNav() {
           <Nav className="ms-auto d-flex align-items-center">            
             <NavLink className="nav-link link m-3" to="/servicios">Servicios</NavLink>
             <NavLink className="nav-link link m-3" to="/actividades">Actividades</NavLink>
-            <NavLink className="nav-link link m-3" to="/about">Nosotros</NavLink>
+            <NavLink className="nav-link link m-3" to="/nosotros">Nosotros</NavLink>
             <NavLink className="nav-link link m-3" to="/contacto">Contacto</NavLink>
 
           {isAuthenticated && currentUser?.email === 'admin@gmail.com' && (
@@ -46,7 +46,7 @@ function BarraNav() {
             </button>
             
             <button className="btn registro m-3">
-                <NavLink to="/register" className="linkRegistro">
+                <NavLink to="/registro" className="linkRegistro">
                   Registrarse
                 </NavLink>
             </button>

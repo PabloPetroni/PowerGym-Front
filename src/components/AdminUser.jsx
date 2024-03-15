@@ -5,6 +5,7 @@ import "../css/AdminUser.css"
 import { Button, Col, Modal, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import BarraNav from './BarraNav';
+import { apiURL } from '/api/apiURL.js';
 
 
 
@@ -19,9 +20,9 @@ export const AdminUser = () => {
 
     const cargarUser = async () => {
 		try {
-			const resp = await shopApi.get('/admin/usuarios');
+			const res = await apiURL.get('/api/users');
 
-			setCargarUsuarios(resp.data.usuarios);
+			setCargarUsuarios(res.data);
 		} catch (error) {
 			console.log(error);
 		}
@@ -29,7 +30,7 @@ export const AdminUser = () => {
 
     const eliminarUsuarioClick = async (id) => {
 		try {
-			const resp = await shopApi.delete(`/admin/eliminar/${id}`);
+			const resp = await apiURL.delete(`/api/users/${id}`);
 			console.log(resp);
             // Actualizar lista de usuarios despues de eliminar
             cargarUser();
@@ -85,22 +86,22 @@ export const AdminUser = () => {
                             <th>#ID</th>
                             <th>Nombre</th>
                             <th>Email</th>
-                            <th>Estado</th>
+                            <th>Telefono</th>
                             <th>Acciones</th>
                             
                         </tr>
                     </thead>
 
                     {cargarUsuarios.filter((usuario) => {
-                        return search.toLowerCase() === "" ? usuario : usuario.name.toLowerCase().includes(search)
+                        return search.toLowerCase() === "" ? usuario : usuario.apellido.toLowerCase().includes(search)
                     }).map((usuario) => {
                         return (
                             <tbody key={usuario._id}>
                                 <tr>
                                     <td>{usuario._id}</td>
-                                    <td>{usuario.name}</td>
+                                    <td>{usuario.apellido},{usuario.nombre}</td>
                                     <td>{usuario.email}</td>
-                                    <td>{usuario.estado}</td>
+                                    <td>{usuario.celular}</td>
                                     <td>
 									<Button onClick={() => handleDeleteConfirmation(usuario._id)} variant="danger">
                                         <i class="fa-solid fa-user-xmark"></i>
