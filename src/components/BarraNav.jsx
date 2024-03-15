@@ -4,10 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import "../css/BarraNav.css"
+import { useAuth } from '../context/AuthContext.jsx';
 
 function BarraNav() {
 
-    
+  const { currentUser, isAuthenticated, logout } = useAuth();
     
     return (
       <>
@@ -23,14 +24,21 @@ function BarraNav() {
             <NavLink className="nav-link link m-3" to="/actividades">Actividades</NavLink>
             <NavLink className="nav-link link m-3" to="/about">Nosotros</NavLink>
             <NavLink className="nav-link link m-3" to="/contacto">Contacto</NavLink>
+
+          {isAuthenticated && currentUser?.email === 'admin@gmail.com' && (
             <NavLink className="nav-link link m-3" to="/administrador">Administrador</NavLink>
-            
-            <button className="btn logout m-3">
+          )}
+
+          {isAuthenticated && (
+            <button className="btn logout m-3" onClick={logout}>
                 <NavLink to="/login" className="linkIngresar">
                   Cerrar sesión
                 </NavLink>
             </button>
+          )}
             
+          {!isAuthenticated && (
+            <>
             <button className="btn ingresar m-3">
                 <NavLink to="/login" className="linkIngresar">
                   Ingresar
@@ -42,6 +50,8 @@ function BarraNav() {
                   Registrarse
                 </NavLink>
             </button>
+            </>
+          )}
               
           </Nav>
         </Navbar.Collapse>
