@@ -24,6 +24,8 @@ import { ReservasUsuario } from '../src/components/ReservasUsuario.jsx';
 import { DatosUsuario } from '../src/components/DatosUsuario.jsx';
 import { GenerarPago } from '../src/components/GenerarPago.jsx';
 import { AdminUser } from '../src/components/AdminUser.jsx';
+import { Tabla } from '../src/components/Tabla.jsx';
+
 
 export const AppRouter = () => {
 	return (
@@ -52,6 +54,7 @@ export const AppRouter = () => {
 				<Route path='/panelusuarios' element={<PanelUsuarios />}></Route>
 				<Route path='/listadoturnos' element={<ListadoTurnos />}></Route>
 				<Route path='/pagosusuarios' element={<PagosUsuarios />}></Route>
+				<Route path='/tabla' element={<Tabla />}></Route>
 				{/* </Route> */}
 			</Routes>
 			<Footer />
