@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import "../css/AdminUser.css"
 import { Button, Col, Modal, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import BarraNav from './BarraNav';
 
 
 
@@ -61,6 +62,7 @@ export const AdminUser = () => {
 
   return (
     <div>
+        <BarraNav/>
         <div className="d-flex justify-content-around m-5 p-2">
             <h3 className="titulo">Usuarios</h3>
             <Form inline>
