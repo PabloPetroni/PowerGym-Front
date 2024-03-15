@@ -29,7 +29,7 @@
 	align-content: center;
 	margin: 35px;
 	width: 75% !important;
-	background-color: #ffad12!important;
+	background-color: #ffad12 !important;
 	border-radius: 5px;
 	border: 0.4vw outset #fbfaf7;
 	opacity: 0.85;
@@ -43,7 +43,6 @@
 	color: #060606;
 	font-size: 100%;
 	text-shadow: 4px 4px 2px rgba(250, 249, 249, 0.6);
-
 }
 .botonesreg {
 	display: flex;
@@ -53,7 +52,7 @@
 	width: 100%;
 }
 .inputreg {
-	color: rgb(207, 207, 207);
+	color: rgb(12, 12, 12);
 	width: 90% !important;
 	margin: 10px;
 	outline-color: rgb(143, 142, 139);
@@ -103,8 +102,8 @@
 	opacity: 0.8;
 	background-color: transparent;
 }
-.btncontrasena{
+.btncontrasena {
 	background-color: transparent;
-	border:none;
+	border: none;
 	width: 10%;
 }

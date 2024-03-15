@@ -22,13 +22,7 @@ export const Registro = () => {
 
 	const onSubmit = handleSubmit(async (values) => {
 		try {
-			Swal.fire({
-				title: 'Cargando...',
-				allowOutsideClick: false,
-				showConfirmButton: false,
-			});
 			await registro(values);
-			Swal.close();
 			Swal.fire({
 				icon: 'success',
 				title: 'Bienvenido! Registro de cuenta exitoso!',
@@ -64,14 +58,19 @@ export const Registro = () => {
 								className='inputreg'
 								type='text'
 								id='name'
-								name='username'
-								{...register('username', {
+								name='nombre'
+								{...register('nombre', {
 									required: {
 										value: true,
-										message: 'El nombre o razon social es requerido.',
+										message: 'El nombre es requerido.',
 									},
 								})}
 							/>
+							{errors.nombre && (
+								<Form.Text className='messerror'>
+									{errors.nombre.message}
+								</Form.Text>
+							)}
 						</Form.Group>
 
 						<Form.Group className='mb-3' id='inputsubname'>
@@ -81,8 +80,18 @@ export const Registro = () => {
 								type='text'
 								id='subname'
 								name='apellido'
-								{...register('apellido')}
+								{...register('apellido', {
+									required: {
+										value: true,
+										message: 'El apellido es requerido',
+									},
+								})}
 							/>
+							{errors.apellido && (
+								<Form.Text className='messerror'>
+									{errors.apellido.message}
+								</Form.Text>
+							)}
 						</Form.Group>
 
 						<Form.Group className='mb-3' id='inputdni'>
@@ -107,6 +116,11 @@ export const Registro = () => {
 									},
 								})}
 							/>
+							{errors.dni && (
+								<Form.Text className='messerror'>
+									{errors.dni.message}
+								</Form.Text>
+							)}
 						</Form.Group>
 
 						<Form.Group className='mb-3' id='inputdomic'>
@@ -119,10 +133,15 @@ export const Registro = () => {
 								{...register('domicilio', {
 									required: {
 										value: true,
-										message: 'El domicilio es requerido.',
+										message: 'El domicilio es requerido',
 									},
 								})}
 							/>
+							{errors.domicilio && (
+								<Form.Text className='messerror'>
+									{errors.domicilio.message}
+								</Form.Text>
+							)}
 						</Form.Group>
 					</div>
 					<div className='col-md-6'>
@@ -136,7 +155,7 @@ export const Registro = () => {
 								{...register('celular', {
 									required: {
 										value: true,
-										message: 'El celular es requerido.',
+										message: 'El celular es requerido',
 									},
 									minLength: {
 										value: 10,
@@ -148,6 +167,11 @@ export const Registro = () => {
 									},
 								})}
 							/>
+							{errors.celular && (
+								<Form.Text className='messerror'>
+									{errors.celular.message}
+								</Form.Text>
+							)}
 						</Form.Group>
 
 						<Form.Group className='mb-3' id='inputemail'>
@@ -164,14 +188,15 @@ export const Registro = () => {
 									},
 									pattern: {
 										value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-										message: 'Email no válido',
+										message:
+											'Email no válido. Ingrese un email valido',
 									},
 								})}
 							/>
 							{errors.email && (
-								<span className='error-message'>
+								<Form.Text className='messerror'>
 									{errors.email.message}
-								</span>
+								</Form.Text>
 							)}
 						</Form.Group>
 
@@ -193,6 +218,11 @@ export const Registro = () => {
 									},
 								})}
 							/>
+							{errors.password && (
+								<Form.Text className='messerror'>
+									{errors.password.message}
+								</Form.Text>
+							)}
 						</Form.Group>
 
 						<Form.Group className='mb-3 d-flex flex-column'>
@@ -224,6 +254,7 @@ export const Registro = () => {
 										},
 									})}
 								/>
+
 								<button
 									type='button'
 									onClick={toggleShowPassword}
@@ -236,7 +267,9 @@ export const Registro = () => {
 								</button>
 							</div>
 							{errors.copassword && (
-								<span>{errors.copassword.message}</span>
+								<Form.Text className='messerror'>
+									{errors.copassword.message}
+								</Form.Text>
 							)}
 						</Form.Group>
 					</div>
