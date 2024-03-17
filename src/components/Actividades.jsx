@@ -1,14 +1,17 @@
 import React from 'react';
 import '../css/Actividades.css';
 import { Whatsapp } from './Whatsapp';
+import { Profesores } from './Profesores';
 
 export const Actividades = () => {
 	return (
 		<>
 			<div className='container-fluid'>
-			<Whatsapp/>
+				<Whatsapp />
 				<h2 className='title-act'>ACTIVIDADES Y CLASES DIRIGIDAS</h2>
-				<h3 className='subtitle-act'>INTENSIDAD<span className='titint'> BAJA</span></h3>
+				<h3 className='subtitle-act'>
+					INTENSIDAD<span className='titint'> BAJA</span>
+				</h3>
 				<div className='div-act'>
 					<div className='flip-container'>
 						<div className='flipper'>
@@ -28,7 +31,12 @@ export const Actividades = () => {
 									al ritmo de una respiración adecuada
 								</p>
 								<p className='duract'>
-									<span className='durtact'>Duracion:</span> 60 Minutos
+									<span className='durtact '>Duracion:</span> 60
+									Minutos
+								</p>
+								<p className='durtacttrain'>
+									<span className='durtact'>Trainer:</span> Alejandra
+									Morel
 								</p>
 							</div>
 						</div>
@@ -56,13 +64,19 @@ export const Actividades = () => {
 										<span className='durtact'>Duracion:</span> 70
 										Minutos
 									</p>
+									<p className='durtacttrain'>
+										<span className='durtact'>Trainer:</span>{' '}
+										Alejandra Morel
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<h3 className='subtitle-act'>INTENSIDAD <span className='titint'>MEDIA</span></h3>
+				<h3 className='subtitle-act'>
+					INTENSIDAD <span className='titint'>MEDIA</span>
+				</h3>
 				<div className='div-act'>
 					<div className='flip-container'>
 						<div className='flipper'>
@@ -83,6 +97,10 @@ export const Actividades = () => {
 								</p>
 								<p className='duract'>
 									<span className='durtact'>Duracion:</span> 45 Minutos
+								</p>
+								<p className='durtacttrain'>
+									<span className='durtact'>Trainer:</span> Melisa
+									Sanchez
 								</p>
 							</div>
 						</div>
@@ -109,7 +127,11 @@ export const Actividades = () => {
 									<p className='duract'>
 										<span className='durtact'>Duracion:</span> 50
 										Minutos
-									</p>{' '}
+									</p>
+									<p className='durtacttrain'>
+										<span className='durtact'>Trainer:</span>Julieta
+										Roldan
+									</p>
 								</div>
 							</div>
 						</div>
@@ -138,13 +160,19 @@ export const Actividades = () => {
 										<span className='durtact'>Duracion:</span> 45
 										Minutos
 									</p>
+									<p className='durtacttrain'>
+										<span className='durtact'>Trainer:</span> Karina
+										Navarro
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<h3 className='subtitle-act'>INTENSIDAD<span className='titint'> ALTA</span></h3>
+				<h3 className='subtitle-act'>
+					INTENSIDAD<span className='titint'> ALTA</span>
+				</h3>
 				<div className='div-act'>
 					<div className='flip-container'>
 						<div className='flipper'>
@@ -165,6 +193,9 @@ export const Actividades = () => {
 								</p>
 								<p className='duract'>
 									<span className='durtact'>Duracion:</span> 60 Minutos
+								</p>
+								<p className='durtacttrain'>
+									<span className='durtact'>Trainer:</span>Axel Gines
 								</p>
 							</div>
 						</div>
@@ -191,16 +222,24 @@ export const Actividades = () => {
 										<span className='durtact'>Duracion:</span> 45
 										Minutos
 									</p>
+									<p className='durtacttrain'>
+										<span className='durtact'>Trainer:</span> Melisa
+										Sanchez
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div className='divbtnserv'>
-					<a href="/login">
-					<button className='btnturnoserv'><i className="iconavbar fa-solid fa-id-card"></i>Reserva tu Clase!</button>
+					<a href='/login'>
+						<button className='btnturnoserv'>
+							<i className='iconavbar fa-solid fa-id-card'></i>Reserva tu
+							Clase!
+						</button>
 					</a>
 				</div>
+				<Profesores />
 			</div>
 		</>
 	);

@@ -8,13 +8,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MRT_Localization_ES } from 'material-react-table/locales/es';
 
-export const Tabla = ({
-	columns,
-	data,
-	actions,
-
-}) => {
-
+export const Tabla = ({ columns, data, actions }) => {
 	// Funcion para cargar tabla de movimientos
 	const table = useMaterialReactTable({
 		columns,
@@ -50,6 +44,11 @@ export const Tabla = ({
 								key={index}
 								className='btnreservar'
 								onClick={() => action.onClick(row)}>
+								<span style={{           marginRight: '8px', paddingBottom: '8px ',
+                                fontSize: '14px', 
+                                verticalAlign: 'middle',  }}>
+									{action.icon}
+								</span>
 								{action.text}
 							</button>
 						);
@@ -74,11 +73,10 @@ export const Tabla = ({
 				<MaterialReactTable table={table} />
 			</ThemeProvider>
 
-         <hr
-					className='mx-5 bg-warning'
-					style={{ border: '2px solid #ffcc00' }}
-				/>
-
+			<hr
+				className='mx-5 bg-warning'
+				style={{ border: '2px solid #ffcc00' }}
+			/>
 		</div>
 	);
 };

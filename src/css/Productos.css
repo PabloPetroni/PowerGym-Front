@@ -1,0 +1,44 @@
+.subtitle-prod {
+	font-size: 24px;
+	font-weight: 700;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	text-align: center;
+	color: #ff3333;
+	margin-top: 25px;
+	text-shadow: 6px 6px 4px rgba(4, 4, 4, 0.6);
+}
+.cardaboutprod {
+	max-width: 300px!important;
+	font-size: 20px;
+	color: rgb(207, 207, 207);
+	text-align: center;
+	margin-right: 20px !important;
+	padding-top: 4vw;
+	margin-left: 20px !important;
+	margin-bottom: 4vw;
+	text-shadow: 4px 4px 4px rgba(4, 4, 4, 0.6);
+}
+.cardaboutprod:hover {
+	border: 0.7vw outset #ffad12;
+}
+.imgcardprod {
+	width: 200px;
+	max-width: 200px;
+	margin-top: 15px;
+}
+.cardtitleaboutprod {
+	color: #ff3333 !important;
+	font-size: 110% !important;
+	font-weight: 700 !important;
+	margin-top: 4vw !important;
+	margin-bottom: 2vw !important;
+	text-shadow: 4px 4px 4px rgba(4, 4, 4, 0.6);
+}
+.icoprod {
+	font-size: 30px;
+	color: #ffad12;
+}
+.icoprod:hover {
+	color: #fefdfd;
+}
