@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { createTurno, getTurnos } from '../utils/TurnosUtils.js';
 import { getUser } from '../utils/UsersUtils.js';
+import { FaCalendarCheck } from 'react-icons/fa';
 import {
 	updateDisponibilidad,
 	getClase,
@@ -16,6 +17,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { useAuth } from '../context/AuthContext.jsx';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es-mx';
 dayjs().format();
@@ -26,6 +28,7 @@ export const ListadoTurnos = () => {
 	const user = '65e215ee04166531ce18a8e3';
 	const { register, handleSubmit } = useForm();
 	const [turnoData, setTurnoData] = useState(new Date());
+	// const { currentUser} = useAuth({});
 	const [fecha, setFecha] = useState(new Date());
 
 	const cargarClases = async () => {
@@ -106,6 +109,7 @@ export const ListadoTurnos = () => {
 	const actions = [
 		{
 			text: 'Reservar',
+			icon: <FaCalendarCheck />,
 			onClick: (row) => {
 				if (row.original.disponibilidad > 0) {
 					reservarTurno(
@@ -145,7 +149,6 @@ export const ListadoTurnos = () => {
 
 	// funcion para confirmar el turno
 	const reservarTurno = async (idClase, disponibilidad, user) => {
-		console.log(user);
 		try {
 			const estaRegistrado = await verificarReservaUsuario(idClase, user);
 			if (estaRegistrado) {
@@ -162,6 +165,16 @@ export const ListadoTurnos = () => {
 				Swal.fire({
 					icon: 'error',
 					title: 'Tienes cuotas impagas!. Debes estar al dia para reservar turnos',
+					showConfirmButton: false,
+					timer: 3000,
+				});
+				return;
+			}
+			const planaut = await verificarPlanUsuario(user);
+			if (planaut === false) {
+				Swal.fire({
+					icon: 'error',
+					title: 'El usuario no tiene abonado ninguno de los planes habilitados para clases digiridas',
 					showConfirmButton: false,
 					timer: 3000,
 				});
@@ -197,7 +210,7 @@ export const ListadoTurnos = () => {
 			const usuario = await getUser(user);
 			const pagosUsuario = usuario.pagos;
 			const fechaActual = new Date();
-			// Busca algun pago inferior a 45 dias
+			// Busca algun pago inferior a 31 dias
 			const pagoReciente = pagosUsuario.some((pago) => {
 				// Parsea la fecha de pago en el formato "dd/mm/yyyy" a un objeto Date
 				const partesFecha = pago.fechapago.split('/');
@@ -212,9 +225,8 @@ export const ListadoTurnos = () => {
 				const diferenciaDias = Math.floor(
 					diferenciaMilisegundos / (1000 * 60 * 60 * 24)
 				);
-				return diferenciaDias <= 45;
+				return diferenciaDias <= 31;
 			});
-
 			return pagoReciente;
 		} catch (error) {
 			console.error('Error al verificar pagos del usuario:', error);
@@ -235,6 +247,27 @@ export const ListadoTurnos = () => {
 			return turnoRegistrado !== undefined;
 		} catch (error) {
 			console.error('Error al verificar reserva del usuario:', error);
+		}
+	};
+
+	const verificarPlanUsuario = async (user) => {
+		try {
+			const usuario = await getUser(user);
+			// Verificar si se encontraron datos del usuario
+			if (!usuario.pagos) {
+				return false;
+			}
+			const planesDeseados = ['Power', 'Classic'];
+			// Verificar si el ultimo pago tiene uno de los planes autorizados
+			const ultimoPago = usuario.pagos[usuario.pagos.length - 1];
+			const tienePlanDeseado = planesDeseados.includes(ultimoPago.plan);
+			if (!tienePlanDeseado) {
+				return false;
+			}
+			return true;
+		} catch (error) {
+			console.error('Error al verificar el plan del usuario:', error);
+			return false;
 		}
 	};
 
@@ -292,14 +325,13 @@ export const ListadoTurnos = () => {
 							aria-label='Default select'
 							{...register('actividad')}>
 							<option value=''>Selecciona una actividad...</option>
-							<option value='crossfit'>Crossfit</option>
-							<option value='funcional'>Funcional</option>
-							<option value='boxeo'>Boxeo</option>
-							<option value='yoga'>Yoga</option>
-							<option value='spinning'>Spinning</option>
-							<option value='zumba'>Zumba</option>
-							<option value='musculacion'>Musculacion</option>
-							<option value=''>Todas</option>
+							<option value='Crossfit'>Crossfit</option>
+							<option value='Funcional'>Funcional</option>
+							<option value='Boxeo'>Boxeo</option>
+							<option value='Yoga'>Yoga</option>
+							<option value='Spinning'>Spinning</option>
+							<option value='Zumba'>Zumba</option>
+							<option value='Musculacion'>Musculacion</option>
 						</select>
 					</Form.Group>
 

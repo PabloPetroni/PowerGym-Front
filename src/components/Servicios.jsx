@@ -80,10 +80,12 @@ export const Servicios = () => {
 				</Card.Body>
 			</div>
 			<div className='divbtnserv'>
+			<a href="/login">
 				<button className='btnturnoserv'>
 					<i className='iconavbar fa-solid fa-id-card'></i>Reserva Turno
 					Ahora!
 				</button>
+				</a>
 			</div>
 		</div>
 	);

@@ -12,6 +12,7 @@ export const DatosUsuario = () => {
 	const id = '65e249fae8b1f6e5b59c4461';
 	const navigate = useNavigate();
 	const [showModal, setShowModal] = useState(false);
+		// const { currentUser} = useAuth({});
 	const {
 		register,
 		handleSubmit,

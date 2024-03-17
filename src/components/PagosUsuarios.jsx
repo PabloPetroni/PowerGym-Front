@@ -10,8 +10,9 @@ import { Tabla } from './Tabla.jsx';
 export const PagosUsuarios = () => {
 	const [data, setData] = useState([]);
 	const [user, setUser] = useState([]);
+	// const { currentUser} = useAuth({});
 	const navigate = useNavigate();
-	const id = '65e249fae8b1f6e5b59c4461';
+	const id = '65e215ee04166531ce18a8e3';
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -52,19 +53,11 @@ export const PagosUsuarios = () => {
 				enableColumnOrdering: false,
 				size: 50,
 			},
-
 		],
 		[]
 	);
 
-	const actions = [
-		{
-			text: 'Pagar',
-			onClick: (row) => {
-				navigate('/generarpago');
-			},
-		},
-	];
+	const actions = [];
 
 	const darkTheme = createTheme({
 		palette: {
@@ -83,8 +76,8 @@ export const PagosUsuarios = () => {
 					</ThemeProvider>
 				</div>
 				<div className='d-flex align-items-center justify-content-center'>
-					<Link className='btnreservar' to='/generarpago'>PAGAR CUOTA MENSUAL
-
+					<Link className='botonadm' to={`/generarpago/${user._id}`}><i className="iconavbar fa-solid fa-money-check-dollar"></i>
+						PAGAR CUOTA MENSUAL
 					</Link>
 				</div>
 			</div>

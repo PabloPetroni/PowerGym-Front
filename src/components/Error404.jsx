@@ -11,9 +11,9 @@ export const Error404 = () => {
 				<h4 className='title404'>ERROR 404!</h4>
 				<h3 className='subtitle404'>Pagina en construccion</h3>
 			</div>
-			<div>
+			<div className="button-container">
 				<Link className='boton404' to='/home'>
-            <i class="iconavbar fa-solid fa-house"></i>
+            <i className="iconavbar fa-solid fa-house"></i>
 					Volver a Home
 				</Link>
 			</div>

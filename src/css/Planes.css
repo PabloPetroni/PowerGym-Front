@@ -26,13 +26,13 @@
 	font-size: 12px;
 	text-shadow: 4px 4px 2px rgba(4, 4, 4, 0.6);
 }
-.titint{
-	font-size:24px ;
+.titint {
+	font-size: 24px;
 	color: #ff3333;
 }
 .tit-img {
 	position: absolute;
-	top: 100px;
+	top: 150px;
 	color: rgb(250, 250, 250);
 	left: 0;
 	right: 0;
@@ -40,7 +40,7 @@
 	font-weight: 800;
 	text-shadow: 4px 4px 2px rgba(4, 4, 4, 0.6);
 }
-.div-act {
+.div-plan {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -50,7 +50,8 @@
 .flip-container {
 	perspective: 1000px;
 	width: 250px;
-	height: 250px;
+   height: 300px;
+   max-height: 300px;
 	text-align: center;
 }
 .flip-container:hover .flipper {
@@ -59,7 +60,8 @@
 
 .flipper {
 	width: 250px;
-	height: 250px;
+   height: 300px;
+   max-height: 300px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -71,7 +73,8 @@
 .front,
 .back {
 	width: 100%;
-	height: 100%;
+	height: 300px;
+   max-height: 300px;
 	backface-visibility: hidden;
 	display: flex;
 	padding: 15px;
@@ -90,17 +93,20 @@
 	justify-content: center;
 	align-items: center;
 	padding: 20px;
-	width: 100%;
-	height: 100%;
+	width: 250px;
+	height: 300px;
+   max-height: 300px;
 	position: absolute;
 	top: 0;
 	left: 0;
 	transform: rotateY(180deg);
 }
 
-.flip-image {
-	width: 100%;
-	height: auto;
+.flip-imageplan {
+	width: 200px;
+	max-width: 200px;
+	height: 300px;
+	max-height: 300px;
 	transition: transform 0.6s;
 	position: relative;
 	border-radius: 20px;
@@ -131,8 +137,8 @@
 	color: #ff3333;
 	font-size: 14px;
 }
-.durtacttrain{
-	margin-top: 0px!important;
+.durtacttrain {
+	margin-top: 0px !important;
 	font-size: 14px;
 	font-weight: 700;
 	color: #ffad12;

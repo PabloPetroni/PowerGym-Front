@@ -1,21 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import '../css/Pagos.css';
 import Form from 'react-bootstrap/Form';
 import { useForm } from 'react-hook-form';
+import { getUser } from '../utils/UsersUtils.js';
 import { createPago } from '../utils/UsersUtils.js';
 import { useAuth } from '../context/AuthContext';
 
 export const GenerarPago = () => {
 	const [showModal, setShowModal] = useState(true);
+	const [userp, setUserp] = useState();
+	const [precioPlan, setPrecioPlan] = useState(0);
 	const navigate = useNavigate();
+		// const { currentUser} = useAuth({});
+	const { user } = useParams();
 	const {
 		register,
-		getValues,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const userPago = await getUser(user);
+				setUserp(userPago);
+			} catch (error) {
+				console.error('Error al obtener pagos', error);
+			}
+		};
+		fetchData();
+	}, []);
+
+	const handlePlanChange = (event) => {
+		const selectedPlan = event.target.value;
+		if (selectedPlan === 'Power') {
+			setPrecioPlan(17000);
+		} else if (selectedPlan === 'Muscle') {
+			setPrecioPlan(15000);
+		} else if (selectedPlan === 'Classic') {
+			setPrecioPlan(12000);
+		}
+	};
 
 	// Función para cerrar el modal
 	const handleCloseModal = () => {
@@ -23,22 +50,37 @@ export const GenerarPago = () => {
 		navigate('/panelusuarios');
 	};
 
-	const onSubmit = handleSubmit(async (values) => {
+	const onSubmit = handleSubmit(async (values, id) => {
 		try {
-			await createPago({ ...movPago }, id);
-			Swal.fire({
-				icon: 'success',
-				title: 'Pago realizado correctamente',
-				showConfirmButton: false,
-				timer: 1500,
-			});
+			const fechaActual = new Date();
+			// Calcular la fecha de vencimiento sumando 30 días a la fecha actual
+			const fechaVencimiento = new Date(fechaActual);
+			fechaVencimiento.setDate(fechaVencimiento.getDate() + 30);
+			const dia = String(fechaVencimiento.getDate()).padStart(2, '0');
+			const mes = String(fechaVencimiento.getMonth() + 1).padStart(2, '0'); 
+			const anio = fechaVencimiento.getFullYear();
+			const fechaVencimientoFormateada = `${dia}/${mes}/${anio}`;
+			
+			const diaact = String(fechaActual.getDate()).padStart(2, '0');
+			const mesact = String(fechaActual.getMonth() + 1).padStart(2, '0'); 
+			const anioact = fechaActual.getFullYear();
+			const fechaActualFormateada = `${diaact}/${mesact}/${anioact}`;
+
+			console.log(fechaVencimientoFormateada);
+			const id = userp._id;
+			const plan = values.plan;
+			const pago = {
+				plan: plan,
+				estado: 'Abonado',
+				fechapago: fechaActualFormateada,
+				fechavenc: fechaVencimientoFormateada,
+			};
+			await createPago(pago, id);
 			handleCloseModal();
 		} catch (error) {
 			console.error(error);
 		}
 	});
-
-	const generarPago = () => {};
 
 	return (
 		<>
@@ -51,7 +93,13 @@ export const GenerarPago = () => {
 				<Modal.Body className='modalbg'>
 					<Form onSubmit={onSubmit}>
 						<Form.Group className='mb-3 text-dark' controlId=''>
-							<Form.Label className='labelreg'>Usuario:</Form.Label>
+							<Form.Label className='labelreg'>
+								Usuario:{' '}
+								<span className=''>
+									{' '}
+									{/* {userp.nombre} {userp.apellido} */}
+								</span>
+							</Form.Label>
 						</Form.Group>
 						<Form.Group
 							className='mb-3 d-flex flex-column text-center align-items-center'
@@ -67,7 +115,8 @@ export const GenerarPago = () => {
 										value: true,
 										message: 'Debes seleccionar un plan',
 									},
-								})}>
+								})}
+								onChange={handlePlanChange}>
 								<option value=''>Selecciona tu plan..</option>
 								<option value='Power'>Power</option>
 								<option value='Muscle'>Muscle</option>
@@ -79,8 +128,10 @@ export const GenerarPago = () => {
 								</Form.Text>
 							)}
 						</Form.Group>
-						<Form.Label className='labelreg'>Monto a pagar: $</Form.Label>
 						<Form.Label className='labelreg'>
+							Monto a pagar: ${precioPlan}
+						</Form.Label>
+						<Form.Label className=' text-center labelreg'>
 							Selecciona tu forma de pago
 						</Form.Label>
 						<div className='d-flex flex-row justify-content-around'>
@@ -96,7 +147,7 @@ export const GenerarPago = () => {
 							<button
 								className='btneditgestion bg-success'
 								type='submit'
-								onClick={generarPago()}>
+								onClick={onSubmit}>
 								PAGAR
 							</button>
 						</div>

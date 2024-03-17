@@ -2,8 +2,9 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { getTurnos, deleteTurno } from '../utils/TurnosUtils.js';
 import { updateDisponibilidad, getClase } from '../utils/ClasesUtils.js';
 import Swal from 'sweetalert2';
+import { FaCalendarTimes } from 'react-icons/fa';
 import '../css/ListadoTurnos.css';
-import { Delete as DeleteIcon } from '@mui/icons-material';
+import { useAuth } from '../context/AuthContext.jsx';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { useParams } from 'react-router-dom';
@@ -66,6 +67,7 @@ export const ReservasUsuario = () => {
 	const actions = [
 		{
 			text: 'Cancelar',
+			icon: <FaCalendarTimes />,
 			onClick: (row) => {
 				borrarTurno(row.original._id);
 			},

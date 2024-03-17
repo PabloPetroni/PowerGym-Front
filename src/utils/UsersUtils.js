@@ -22,9 +22,9 @@ export const updateUser = async (id, values) => {
 	}
 };
 
-export const createPago = async (pagoData, id) => {
+export const createPago = async (pago, id) => {
 	try {
-		const response = await apiURL.post(`/api/users/${id}/pagos`, pagoData, {
+		const response = await apiURL.post(`/api/users/${id}/pagos`, pago, {
 			withCredentials: true,
 		});
 		return response.data;
