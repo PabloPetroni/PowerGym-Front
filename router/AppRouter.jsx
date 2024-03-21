@@ -29,12 +29,15 @@ import { DatosUsuario } from '../src/components/DatosUsuario.jsx';
 import { GenerarPago } from '../src/components/GenerarPago.jsx';
 import { AdminUser } from '../src/components/AdminUser.jsx';
 import { Tabla } from '../src/components/Tabla.jsx';
+import { AdminPrincipal } from '../src/components/AdminPrincipal.jsx';
+import BarraNav from '../src/components/BarraNav.jsx';
 
 
 export const AppRouter = () => {
 	return (
 		<BrowserRouter>
 			<AuthProvider>
+			<BarraNav/>
 			<Routes>
 				<Route path='*' element={<Error404 />}></Route>
 				<Route path='/' element={<Home />}></Route>
@@ -63,6 +66,7 @@ export const AppRouter = () => {
 				<Route path='/listadoturnos' element={<ListadoTurnos />}></Route>
 				<Route path='/pagosusuarios' element={<PagosUsuarios />}></Route>
 				<Route path='/tabla' element={<Tabla />}></Route>
+				<Route path='/administrador' element={<AdminPrincipal />}></Route>
 				{/* </Route> */}
 			</Routes>
 			<Footer />
