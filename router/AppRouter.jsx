@@ -92,7 +92,7 @@ export const AppRouter = () => {
 						element={<ModalProductos />}></Route>
 					<Route path='/planes' element={<Planes />}></Route>
 
-					{/* <Route element={<PrivateRoute />}> */}
+					<Route element={<PrivateRoute />}>
 					<Route
 						path='/reservasusuario'
 						element={<ReservasUsuario />}></Route>
@@ -108,7 +108,7 @@ export const AppRouter = () => {
 					<Route
 						path='/administrador'
 						element={<AdminPrincipal />}></Route>
-					{/* </Route> */}
+					</Route>
 				</Routes>
 				<Footer />
 

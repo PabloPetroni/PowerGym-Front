@@ -13,8 +13,10 @@ export const GenerarPago = () => {
 	const [userp, setUserp] = useState();
 	const [precioPlan, setPrecioPlan] = useState(0);
 	const navigate = useNavigate();
-		// const { currentUser} = useAuth({});
-	const { user } = useParams();
+	const { currentUser } = useAuth({});
+	const userlogin = currentUser.displayname;
+	const user = currentUser._id;
+	console.log(userlogin);
 	const {
 		register,
 		handleSubmit,
@@ -57,12 +59,12 @@ export const GenerarPago = () => {
 			const fechaVencimiento = new Date(fechaActual);
 			fechaVencimiento.setDate(fechaVencimiento.getDate() + 30);
 			const dia = String(fechaVencimiento.getDate()).padStart(2, '0');
-			const mes = String(fechaVencimiento.getMonth() + 1).padStart(2, '0'); 
+			const mes = String(fechaVencimiento.getMonth() + 1).padStart(2, '0');
 			const anio = fechaVencimiento.getFullYear();
 			const fechaVencimientoFormateada = `${dia}/${mes}/${anio}`;
-			
+
 			const diaact = String(fechaActual.getDate()).padStart(2, '0');
-			const mesact = String(fechaActual.getMonth() + 1).padStart(2, '0'); 
+			const mesact = String(fechaActual.getMonth() + 1).padStart(2, '0');
 			const anioact = fechaActual.getFullYear();
 			const fechaActualFormateada = `${diaact}/${mesact}/${anioact}`;
 

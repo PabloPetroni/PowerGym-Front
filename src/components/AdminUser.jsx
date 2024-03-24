@@ -13,8 +13,8 @@ export const AdminUser = () => {
 	const [search, setSearch] = useState('');
 	const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 	const [usuarioIdToDelete, setUsuarioIdToDelete] = useState(null);
-	const user = '65e215ee04166531ce18a8e3';
-	const displayName = 'Oscar Frias Viñals';
+	const { currentUser } = useAuth();
+	const displayName = currentUser.displayName;
 
 	const cargarUser = async () => {
 		try {
@@ -61,7 +61,9 @@ export const AdminUser = () => {
 		<div>
 			<div className='main px-3 bodyadmin'>
 				<h4 className='titlead'>Bienvenido, {displayName} </h4>
-				<h3 className='subtitleadusu'>Panel de Administracion de Usuarios</h3>
+				<h3 className='subtitleadusu'>
+					Panel de Administracion de Usuarios
+				</h3>
 			</div>
 
 			<hr
@@ -70,7 +72,7 @@ export const AdminUser = () => {
 			/>
 			<div className='d-flex justify-content-around m-5 p-2'>
 				<h3 className='titulo'>Listado de Usuarios</h3>
-				<Form inline>
+				<Form>
 					<Row>
 						<Col xs='auto'>
 							<Form.Control
@@ -127,7 +129,9 @@ export const AdminUser = () => {
 				</Table>
 			</div>
 			<div className='d-flex justify-content-around'>
-				<Link className='botonadm' to='/administrador'>Volver a Admin</Link>
+				<Link className='botonadm' to='/administrador'>
+					Volver a Admin
+				</Link>
 				<Link className='botonadm'>Administrar clases</Link>
 			</div>
 

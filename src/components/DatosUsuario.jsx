@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import Modal from 'react-bootstrap/Modal';
 import { useAuth } from '../context/AuthContext.jsx';
 import { getUser, updateUser } from '../utils/UsersUtils.js';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 export const DatosUsuario = () => {
@@ -12,7 +12,9 @@ export const DatosUsuario = () => {
 	const id = '65e249fae8b1f6e5b59c4461';
 	const navigate = useNavigate();
 	const [showModal, setShowModal] = useState(false);
-		// const { currentUser} = useAuth({});
+	const { currentUser} = useAuth({});
+	const userlogin=currentUser.displayname
+	
 	const {
 		register,
 		handleSubmit,

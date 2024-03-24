@@ -25,10 +25,11 @@ import { Tabla } from './Tabla.jsx';
 
 export const ListadoTurnos = () => {
 	const [data, setData] = useState([]);
-	const user = '65e215ee04166531ce18a8e3';
 	const { register, handleSubmit } = useForm();
 	const [turnoData, setTurnoData] = useState(new Date());
-	// const { currentUser} = useAuth({});
+	const { currentUser } = useAuth();
+	const displayName = currentUser.displayname;
+	const user = currentUser._id;
 	const [fecha, setFecha] = useState(new Date());
 
 	const cargarClases = async () => {
