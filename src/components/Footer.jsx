@@ -24,6 +24,11 @@ export const Footer = () => {
 								Contacto
 							</Link>
 						</li>
+						<li className='text-deg nav-item'>
+							<Link to='/planes' className='nav-link text-deg'>
+								Planes
+							</Link>
+						</li>
 					</ul>
 
 					<div className='social-item col-6 col-md-4 d-flex flex-wrap align-items-center justify-content-center my-1'>
@@ -51,7 +56,7 @@ export const Footer = () => {
 						<Link className=' text-center' to='/home'>
 							<img
 								className='logofooter'
-								src='/LOGO_POWERGYM.jpg'
+								src='https://i.postimg.cc/BvS6w0tQ/Logo-fondo-blanco.png'
 								width={100}
 								alt='logo'
 							/>

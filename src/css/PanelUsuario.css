@@ -56,19 +56,19 @@
 	border-radius: 20px;
 }
 .botonadm {
-	color: #f8f4f4;
+	color: #f8f4f4!important;
 	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
 	border: 0.5vw outset rgb(143, 142, 139) !important;
-	border-radius: 25px;
+	border-radius: 25px!important;
 	font-size: 16px;
-	font-weight: 700;
-	padding: 5px;
+	font-weight: 700!important;
+	padding: 5px!important;
 	text-align: center;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 15px!important;
+	padding-right: 15px!important;
 	cursor: pointer;
-	margin-top: 10px;
-	text-decoration: none;
+	margin-top: 10px!important;
+	text-decoration: none!important;
 }
 .compdatepicker {
 	color: #f8f4f4;
@@ -129,18 +129,21 @@
 	background-color: transparent;
 }
 .modalbg {
-	background-color: rgb(143, 142, 139) !important;
+	background-color: #ffad12!important;
 }
 .titlemodal {
 	margin-top: 20px !important;
-	color: #ffad12 !important;
+	color: #fffefc !important;
 	font-weight: 800 !important;
-	text-decoration: underline;
+	
+	text-shadow: 4px 4px 2px rgba(4, 4, 4, 0.6);
+
 }
 .labelmodal {
-	color: #fbfaf8;
+	color: #050505;
 	font-weight: 600;
 	font-family: Roboto;
+	font-size: 18px;
 }
 .btn-close {
 	margin-top: 20px !important;
@@ -203,4 +206,12 @@
 	opacity: 0.6;
 	color: white;
 	background-color: transparent;
+}
+.messerror{
+	text-align: center!important;
+	color: #ff3333!important;
+	font-size: 16px!important;
+	font-weight: 700;
+	text-shadow: 4px 4px 2px rgba(251, 249, 249, 0.6);
+
 }

@@ -1,36 +1,24 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { getPagos } from '../utils/PagosUtils.js';
 import { getUser } from '../utils/UsersUtils.js';
-import Swal from 'sweetalert2';
 import '../css/ListadoTurnos.css';
-import {
-	MaterialReactTable,
-	useMaterialReactTable,
-} from 'material-react-table';
-import { Box } from '@mui/material';
+import { useAuth } from '../context/AuthContext.jsx';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { MRT_Localization_ES } from 'material-react-table/locales/es';
-import { Button } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
-import { GenerarPago } from './GenerarPago.jsx';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Tabla } from './Tabla.jsx';
 
 export const PagosUsuarios = () => {
 	const [data, setData] = useState([]);
 	const [user, setUser] = useState([]);
-	// const { currentUser, logout } = useAuth({});
-	const displayName = 'Oscar Frias Viñals';
-	const id = '65e249fae8b1f6e5b59c4461';
+	// const { currentUser} = useAuth({});
+	const navigate = useNavigate();
+	const id = '65e215ee04166531ce18a8e3';
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const fetchedPagos = await getPagos();
-				const pagosFiltrados = fetchedPagos.filter(
-					(pago) => id === pago.idUser
-				);
-				setData(pagosFiltrados);
 				const user = await getUser(id);
+				setData(user.pagos);
 				setUser(user);
 			} catch (error) {
 				console.error('Error al obtener pagos', error);
@@ -41,6 +29,12 @@ export const PagosUsuarios = () => {
 
 	const columns = useMemo(
 		() => [
+			{
+				header: 'Fecha Pago',
+				accessorKey: 'fechapago',
+				enableColumnOrdering: false,
+				size: 50,
+			},
 			{
 				header: 'Fecha de Vencimiento',
 				accessorKey: 'fechavenc',
@@ -59,112 +53,32 @@ export const PagosUsuarios = () => {
 				enableColumnOrdering: false,
 				size: 50,
 			},
-			{
-				header: 'Fecha Pago',
-				accessorKey: 'fechapago',
-				enableColumnOrdering: false,
-				size: 50,
-			},
 		],
 		[]
 	);
 
-	// Funcion para cargar tabla
-	const table = useMaterialReactTable({
-		columns,
-		data,
-		enableColumnFilterModes: true,
-		enableColumnOrdering: true,
-		enableGlobalFilterModes: true,
-		enableColumnPinning: true,
-		enableRowActions: true,
-		enableGrouping: true,
-		paginationDisplayMode: 'pages',
-		positionToolbarAlertBanner: 'bottom',
-		localization: MRT_Localization_ES,
-		muiSearchTextFieldProps: {
-			size: 'medium',
-			variant: 'outlined',
-		},
-		muiPaginationProps: {
-			color: 'primary',
-			rowsPerPageOptions: [5, 10, 20, 30],
-			shape: 'rounded',
-			variant: 'outlined',
-		},
+	const actions = [];
 
-		renderRowActions: ({ row, table }) => {
-			if (row.original.estado === 'pendiente') {
-				return (
-					<Box
-						sx={{
-							display: 'flex',
-							flexWrap: 'nowrap',
-							gap: '3px',
-						}}>
-						<Link className='btnreservar' to='/GenerarPago'>
-							<i className='iconavbar fa-solid fa-wallet'></i>
-							Pagar
-						</Link>
-					</Box>
-				);
-			} else {
-				return null;
-			}
-		},
-	});
-
-	const lightTheme = createTheme({
+	const darkTheme = createTheme({
 		palette: {
-			mode: 'light',
+			mode: 'dark',
 		},
 	});
 
 	return (
 		<div className='container-lg '>
-			<div className='main px-3 bodyadmin'>
-				<h4 className='titlead'>Bienvenido, {displayName} </h4>
-				<h3 className='subtitleadusu'>Panel de Pagos</h3>
-			</div>
-
-			<hr
-				className='mx-5 bg-warning'
-				style={{ border: '2px solid #ffcc00' }}
-			/>
-
-			<div className='botonesadm'>
-				<Link className='botonadm' to='/panelusuarios'>
-					<i className='iconavbar fa-solid fa-calendar-check'></i>
-					Reservar Turnos
-				</Link>
-				<Link className='botonadm' to='/reservasusuario'>
-					<i className='iconavbar fa-solid fa-calendar-days'></i>
-					Mis Reservas
-				</Link>
-				<Link className='botonadm' to='/pagosusuarios'>
-					<i className='iconavbar fa-solid fa-money-bill-wave'></i>
-					Pagos
-				</Link>
-				<Link className='botonadm' to='/datosusuario'>
-					<i className='iconavbar fa-solid fa-user-pen'></i>
-					Actualizar Mis Datos
-				</Link>
-			</div>
-			<hr
-				className='mx-5 bg-warning'
-				style={{ border: '2px solid #ffcc00' }}
-			/>
 			<div>
 				<h2 className='titleagusu'>Mis Pagos </h2>
 				<div className='table-responsive'>
-					<ThemeProvider theme={lightTheme}>
+					<ThemeProvider theme={darkTheme}>
 						<CssBaseline />
-						<MaterialReactTable table={table} />
+						<Tabla columns={columns} data={data} actions={actions} />
 					</ThemeProvider>
-					<hr
-						className='mx-5 bg-warning'
-						style={{ border: '2px solid #ffcc00' }}
-					/>
+				</div>
+				<div className='d-flex align-items-center justify-content-center'>
+					<Link className='botonadm' to={`/generarpago/${user._id}`}><i className="iconavbar fa-solid fa-money-check-dollar"></i>
+						PAGAR CUOTA MENSUAL
+					</Link>
 				</div>
 			</div>
 		</div>

@@ -15,11 +15,12 @@ export const Login = () => {
 		formState: { errors },
 	} = useForm();
 	const [showPassword, setShowPassword] = useState(false);
-	const { currentUser, isAuthenticated, login, loginWithGoogle } = useAuth();
+	const { currentUser, isAuthenticated, login } = useAuth();
 	const toggleShowPassword = () => setShowPassword(!showPassword);
 
 	const onSubmit = handleSubmit(async (values) => {
 		try {
+			console.log(values)
 			const user = await login(values);
 			Swal.fire({
 				icon: 'success',

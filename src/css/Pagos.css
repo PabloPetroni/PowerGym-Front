@@ -17,7 +17,8 @@
 }
 .botonmp {
 	background-color: rgb(12, 199, 251);
-	border: 0.2vw outset rgb(4, 45, 89) !important;
+	border: 0.5vw outset rgb(9, 75, 146) !important;
+	border-radius: 15px;
 	color: white;
 	width: auto;
 	align-self: center;
@@ -27,7 +28,7 @@
 }
 .botonmp:hover {
 	opacity: 0.8;
-	background-color: rgb(4, 75, 105);
+	background-color: rgb(24, 80, 165);
 }
 
 

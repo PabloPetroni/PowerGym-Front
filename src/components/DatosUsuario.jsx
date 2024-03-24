@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Modal from 'react-bootstrap/Modal';
+import { useAuth } from '../context/AuthContext.jsx';
 import { getUser, updateUser } from '../utils/UsersUtils.js';
 import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -11,11 +12,13 @@ export const DatosUsuario = () => {
 	const id = '65e249fae8b1f6e5b59c4461';
 	const navigate = useNavigate();
 	const [showModal, setShowModal] = useState(false);
+		// const { currentUser} = useAuth({});
 	const {
 		register,
 		handleSubmit,
 		setValue,
 		formState: { errors },
+		setMessage
 	} = useForm();
 
 	const handleCancel = () => {
@@ -77,38 +80,53 @@ export const DatosUsuario = () => {
 							<Form.Group className='mb-3' id='nombreEditarUsuario'>
 								<Form.Label className='labelmodal'>Nombre</Form.Label>
 								<Form.Control
-									className='inputedit'
+									className='inputreg'
 									type='text'
 									id='name'
 									{...register('nombre', {
 										required: {
 											value: true,
-											message: 'El nombre es requerido.',
+											message: 'El nombre es requerido',
 										},
 									})}
 								/>
+								{errors.nombre && (
+									<Form.Text className='messerror'>
+										{errors.nombre.message}
+									</Form.Text>
+								)}
 							</Form.Group>
 
 							<Form.Group className='mb-3' id='apellidoEditarUsuario'>
 								<Form.Label className='labelmodal'>Apellido</Form.Label>
 								<Form.Control
-									className='inputedit'
+									className='inputreg'
 									type='text'
 									id='subname'
-									{...register('apellido')}
+									{...register('apellido', {
+										required: {
+											value: true,
+											message: 'El apellido es requerido.',
+										},
+									})}
 								/>
+								{errors.apellido && (
+									<Form.Text className='messerror'>
+										{errors.apellido.message}
+									</Form.Text>
+								)}
 							</Form.Group>
 
 							<Form.Group className='mb-3' id='dniEditarUsuario'>
 								<Form.Label className='labelmodal'>DNI</Form.Label>
 								<Form.Control
-									className='inputedit'
-									type='text'
+									className='inputreg'
+									type='number'
 									id='dni'
 									{...register('dni', {
 										required: {
 											value: true,
-											message: 'El DNI/CUIT es requerido.',
+											message: 'El DNI es requerido.',
 										},
 										minLength: {
 											value: 7,
@@ -122,6 +140,11 @@ export const DatosUsuario = () => {
 										},
 									})}
 								/>
+								{errors.dni && (
+									<Form.Text className='messerror'>
+										{errors.dni.message}
+									</Form.Text>
+								)}
 							</Form.Group>
 
 							<Form.Group className='mb-3' id='domicilioEditarUsuario'>
@@ -129,41 +152,51 @@ export const DatosUsuario = () => {
 									Domicilio
 								</Form.Label>
 								<Form.Control
-									className='inputedit'
+									className='inputreg'
 									type='text'
 									id='domic'
 									{...register('domicilio', {
 										required: {
 											value: true,
-											message: 'El domicilio es requerido.',
+											message: 'El domicilio es requerido',
 										},
 									})}
 								/>
+								{errors.domicilio && (
+									<Form.Text className='messerror'>
+										{errors.domicilio.message}
+									</Form.Text>
+								)}
 							</Form.Group>
 
 							<Form.Group className='mb-3' id='celularEditarUsuario'>
 								<Form.Label className='labelmodal'>Celular</Form.Label>
 								<Form.Control
-									className='inputedit'
+									className='inputreg'
 									type='text'
 									id='cel'
 									{...register('celular', {
 										required: {
 											value: true,
-											message: 'El celular es requerido.',
+											message: 'El celular es requerido',
 										},
 										minLength: {
 											value: 10,
 											message:
-												'El celular debe contenter 10 digitos.',
+												'El celular debe contenter 10 digitos',
 										},
 										maxLength: {
 											value: 10,
 											message:
-												'El celular debe contenter 10 digitos.',
+												'El celular debe contenter 10 digitos',
 										},
 									})}
 								/>
+								{errors.celular && (
+									<Form.Text className='messerror'>
+										{errors.celular.message}
+									</Form.Text>
+								)}
 							</Form.Group>
 
 							<Form.Group className='modalbg botonesedit'>

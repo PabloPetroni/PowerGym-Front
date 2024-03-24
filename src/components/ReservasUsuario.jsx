@@ -2,27 +2,22 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { getTurnos, deleteTurno } from '../utils/TurnosUtils.js';
 import { updateDisponibilidad, getClase } from '../utils/ClasesUtils.js';
 import Swal from 'sweetalert2';
+import { FaCalendarTimes } from 'react-icons/fa';
 import '../css/ListadoTurnos.css';
-import {
-	MaterialReactTable,
-	useMaterialReactTable,
-} from 'material-react-table';
-import { Delete as DeleteIcon } from '@mui/icons-material';
-import { Box, IconButton } from '@mui/material';
+import { useAuth } from '../context/AuthContext.jsx';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { MRT_Localization_ES } from 'material-react-table/locales/es';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import dayjs from 'dayjs';
-import { red } from '@mui/material/colors';
+import { Tabla } from './Tabla.jsx';
 
 export const ReservasUsuario = () => {
 	const [data, setData] = useState([]);
 	// const { currentUser, logout } = useAuth({});
 	const userId = '65e215ee04166531ce18a8e3';
-	const displayName = 'Oscar Frias Viñals';
 	const params = useParams();
 
+	// Trae turnos y los filtra por usuario y fecha
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -38,41 +33,6 @@ export const ReservasUsuario = () => {
 		};
 		fetchData();
 	}, []);
-
-	// funcion para borrar turno
-	async function borrarTurno(id) {
-		const result = await Swal.fire({
-			title: '¿Estás seguro?',
-			text: 'Confirmas la cancelacion del turno?',
-			icon: 'warning',
-			showCancelButton: true,
-			confirmButtonColor: '#d33',
-			cancelButtonColor: '#8f8e8b',
-			confirmButtonText: 'Sí, confirmar',
-			cancelButtonText: 'Cancelar',
-		});
-		if (result.isConfirmed) {
-			try {
-				await deleteTurno(id);
-				const turno = data.find((turno) => turno._id === id);
-				const idClase = turno.idClase;
-				const clase = await getClase(idClase);
-				const nuevaDisponibilidad = clase.disponibilidad + 1;
-				await updateDisponibilidad(clase._id, {
-					disponibilidad: nuevaDisponibilidad,
-				});
-				Swal.fire({
-					icon: 'success',
-					title: 'Turno cancelado correctamente',
-					showConfirmButton: false,
-					timer: 2500,
-				});
-				window.location.reload();
-			} catch (error) {
-				console.error('Error al anular el turno:', error);
-			}
-		}
-	}
 
 	const columns = useMemo(
 		() => [
@@ -104,89 +64,64 @@ export const ReservasUsuario = () => {
 		[]
 	);
 
-	// Funcion para cargar tabla
-	const table = useMaterialReactTable({
-		columns,
-		data,
-		enableColumnFilterModes: true,
-		enableColumnOrdering: true,
-		enableGlobalFilterModes: true,
-		enableColumnPinning: true,
-		enableRowActions: true,
-		enableGrouping: true,
-		paginationDisplayMode: 'pages',
-		positionToolbarAlertBanner: 'bottom',
-		localization: MRT_Localization_ES,
-		muiSearchTextFieldProps: {
-			size: 'medium',
-			variant: 'outlined',
+	const actions = [
+		{
+			text: 'Cancelar',
+			icon: <FaCalendarTimes />,
+			onClick: (row) => {
+				borrarTurno(row.original._id);
+			},
 		},
-		muiPaginationProps: {
-			color: 'primary',
-			rowsPerPageOptions: [5, 10, 20, 30],
-			shape: 'rounded',
-			variant: 'outlined',
+	];
+
+	const darkTheme = createTheme({
+		palette: {
+			mode: 'dark',
 		},
-		renderRowActions: ({ row, table }) => (
-			<Box
-				sx={{
-					display: 'flex',
-					flexWrap: 'nowrap',
-					color: 'red',
-				}}>
-				<IconButton onClick={() => borrarTurno(row.original._id)}>
-					<DeleteIcon />
-				</IconButton>
-			</Box>
-		),
 	});
 
-	const lightTheme = createTheme({
-		palette: {
-			mode: 'light',
-		},
-	});
+	// funcion para borrar turno
+	async function borrarTurno(id) {
+		const result = await Swal.fire({
+			title: 'Confirmas la cancelacion del turno?',
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#d33',
+			cancelButtonColor: '#8f8e8b',
+			confirmButtonText: 'Sí, confirmar',
+			cancelButtonText: 'Cancelar',
+		});
+		if (result.isConfirmed) {
+			try {
+				await deleteTurno(id);
+				const turno = data.find((turno) => turno._id === id);
+				const idClase = turno.idClase;
+				const clase = await getClase(idClase);
+				const nuevaDisponibilidad = clase.disponibilidad + 1;
+				await updateDisponibilidad(clase._id, {
+					disponibilidad: nuevaDisponibilidad,
+				});
+				Swal.fire({
+					icon: 'success',
+					title: 'Turno cancelado correctamente',
+					showConfirmButton: false,
+					timer: 2500,
+				});
+				window.location.reload();
+			} catch (error) {
+				console.error('Error al anular el turno:', error);
+			}
+		}
+	}
 
 	return (
 		<div className='container-lg '>
-			<div className='main px-3 bodyadmin'>
-				<h4 className='titlead'>Bienvenido, {displayName} </h4>
-				<h3 className='subtitleadusu'>Panel de Reservas Registradas</h3>
-			</div>
-
-			<hr
-				className='mx-5 bg-warning'
-				style={{ border: '2px solid #ffcc00' }}
-			/>
-
-			<div className='botonesadm'>
-				<Link className='botonadm' to='/panelusuarios'>
-					<i className='iconavbar fa-solid fa-calendar-check'></i>
-					Reservar Turnos
-				</Link>
-				<Link className='botonadm' to='/reservasusuario'>
-				<i className='iconavbar fa-solid fa-calendar-days'></i>
-					Mis Reservas
-				</Link>
-				<Link className='botonadm' to='/pagosusuarios'>
-					<i className='iconavbar fa-solid fa-money-bill-wave'></i>
-					Pagos
-				</Link>
-				<Link className='botonadm' to='/datosusuario'>
-					<i className='iconavbar fa-solid fa-user-pen'></i>
-					Actualizar Mis Datos
-				</Link>
-			</div>
-			<hr
-				className='mx-5 bg-warning'
-				style={{ border: '2px solid #ffcc00' }}
-			/>
 			<div>
 				<h2 className='titleagusu'>Mis Turnos Reservados </h2>
 				<div className='table-responsive'>
-					<ThemeProvider theme={lightTheme}>
+					<ThemeProvider theme={darkTheme}>
 						<CssBaseline />
-						<MaterialReactTable table={table} />
+						<Tabla columns={columns} data={data} actions={actions} />
 					</ThemeProvider>
 				</div>
 			</div>

@@ -27,25 +27,29 @@
 }
 .subtitle404 {
 	font-size: 120%;
-	font-weight: 400;
+	font-weight: 600;
 	padding-top: 20px;
 	color: #f0eeeb;
 }
+.button-container {
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 .boton404 {
 	color: #f8f4f4;
 	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
 	border: 0.5vw outset rgb(143, 142, 139) !important;
 	border-radius: 25px;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 700;
-	padding: 5px;
-	padding-left: 40px;
-	padding-right: 45px;
+	padding: 10px 10px; 
 	cursor: pointer;
 	text-decoration: none;
-   position: absolute;
-   bottom: 20px;
-	left:240px
+	min-width: 150px; 
 }
 .boton404:hover {
 	opacity: 0.6;
