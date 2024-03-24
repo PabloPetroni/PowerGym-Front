@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import '../css/Pagos.css';
 import Form from 'react-bootstrap/Form';
 import { useForm } from 'react-hook-form';

@@ -1,3 +1,7 @@
+.containerplan{
+	display: flex;
+	flex-direction: column;
+}
 .title-act {
 	font-size: 24px;
 	font-weight: 800;
@@ -142,4 +146,27 @@
 	font-size: 14px;
 	font-weight: 700;
 	color: #ffad12;
+}
+
+.cajaFormplan {
+	display: flex !important;
+	flex-wrap: wrap;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	max-width: 400px;
+	margin: 5vw;
+	padding: 2vw;
+	border-radius: 5px;
+	border: 0.7vw outset #ffad12;
+	opacity: 0.85;
+}
+
+@media (min-width: 956px) {
+	.containerplan {
+		flex-direction: row;
+		justify-content: space-around
+	}
 }

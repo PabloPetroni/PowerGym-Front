@@ -37,8 +37,9 @@ export const Contacto = () => {
 
 		emailjs
 			.sendForm(
-				'service_iew5q2g',
-				'template_qar0tof',
+				'service_qzvax0v',
+				// 'template_qar0tof',
+				'template_fgl8bsq',
 				form.current,
 				'saMzvd5sdlHj2BhYr'
 			)

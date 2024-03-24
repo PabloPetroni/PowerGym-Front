@@ -39,10 +39,12 @@ export const AuthProvider = ({ children }) => {
 
 	// FUNCION LOGIN CON CORREO ELECTRONICO
 	const login = async (values) => {
+		console.log(values)
 		try {
 			const res = await apiURL.post('/api/login', values, {
 				credentials: 'include',
 			});
+			console.log(res.data)
 			document.cookie = `token=${res.data.token}; Path=/; `;
 			localStorage.setItem('token', res.data.token);
 			setIsAuthenticated(true);
