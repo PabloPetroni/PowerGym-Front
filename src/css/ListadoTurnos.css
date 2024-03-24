@@ -13,8 +13,13 @@
 	display: flex;
 	flex-direction: row;
 	font-weight: 700;
+
+	padding: 3px;
+	padding-right: 10px;
+
 	padding: 5px;
 	padding-right: 15px;
+
 	cursor: pointer;
 	text-decoration: none;
 	text-align: center;
