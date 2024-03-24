@@ -1,26 +1,41 @@
-import React from 'react'
-import BarraNav from './BarraNav'
-import { ListadoTurnos } from './ListadoTurnos'
-import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
-import "../css/ListadoTurnos.css"
+import React from 'react';
+import { ListadoTurnos } from './ListadoTurnos';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
+import '../css/ListadoTurnos.css';
 
 export const AdminPrincipal = () => {
-  return (
-    <div>
-        <h2 className="m-4 mb-5 titleagusu">Bienvenido, administrador</h2>
-        
-        <div className="d-flex justify-content-around m-4 mb-5">
-            <Button variant="warning" className="m-2">
-                <Link className="texto-boton-back" to="/admin-usuarios">Administrar usuarios</Link>
-            </Button>
-            <Button variant="warning"className="m-2">
-                <Link className="texto-boton-back">Administrar clases</Link>
-            </Button>
-        </div>
+	const user = '65e215ee04166531ce18a8e3';
+	const displayName = 'Oscar Frias Viñals';
 
-        <ListadoTurnos/>
-    </div>
-  )
-}
+	return (
+		<div>
+			<div className='main px-3 bodyadmin'>
+				<h4 className='titlead'>Bienvenido, {displayName} </h4>
+				<h3 className='subtitleadusu'>Panel de Administracion</h3>
+			</div>
+
+			<hr
+				className='mx-5 bg-warning'
+				style={{ border: '2px solid #ffcc00' }}
+			/>
+
+			<div className='d-flex justify-content-around m-4 mb-5'>
+				<Link className='botonadm' to='/admin-usuarios'>
+					Administrar usuarios
+				</Link>
+				<Link className='botonadm' to='/admin-usuarios'>
+					Administrar clases
+				</Link>
+			</div>
+
+			<hr
+				className='mx-5 bg-warning'
+				style={{ border: '2px solid #ffcc00' }}
+			/>
+
+			<ListadoTurnos />
+		</div>
+	);
+};

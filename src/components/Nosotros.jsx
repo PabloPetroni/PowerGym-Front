@@ -78,7 +78,7 @@ export const Nosotros = () => {
 									<i className='iconavbarteam fa-brands fa-github'></i>
 								</a>
 								<a href='http://www.linkedin.com/in/ofvinals' target='_blank'>
-									<i class='iconavbarteam fa-brands fa-linkedin'></i>
+									<i className='iconavbarteam fa-brands fa-linkedin'></i>
 								</a>
 							</div>
 						</div>
@@ -98,7 +98,7 @@ export const Nosotros = () => {
 									<i className='iconavbarteam fa-brands fa-github'></i>
 								</a>
 								<a href='' target='_blank'>
-									<i class='iconavbarteam fa-brands fa-linkedin'></i>
+									<i className='iconavbarteam fa-brands fa-linkedin'></i>
 								</a>
 							</div>
 						</div>
@@ -119,7 +119,7 @@ export const Nosotros = () => {
 									<i className='iconavbarteam fa-brands fa-github'></i>
 								</a>
 								<a href='' target='_blank'>
-									<i class='iconavbarteam fa-brands fa-linkedin'></i>
+									<i className='iconavbarteam fa-brands fa-linkedin'></i>
 								</a>
 							</div>
 						</div>
@@ -140,7 +140,7 @@ export const Nosotros = () => {
 									<i className='iconavbarteam fa-brands fa-github'></i>
 								</a>
 								<a href='' target='_blank'>
-									<i class='iconavbarteam fa-brands fa-linkedin'></i>
+									<i className='iconavbarteam fa-brands fa-linkedin'></i>
 								</a>
 							</div>
 						</div>
@@ -160,7 +160,7 @@ export const Nosotros = () => {
 									<i className='iconavbarteam fa-brands fa-github'></i>
 								</a>
 								<a href='' target='_blank'>
-									<i class='iconavbarteam fa-brands fa-linkedin'></i>
+									<i className='iconavbarteam fa-brands fa-linkedin'></i>
 								</a>
 							</div>
 						</div>

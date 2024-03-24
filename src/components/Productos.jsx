@@ -8,8 +8,10 @@ export const Productos = () => {
 		<div>
 			<Whatsapp />
 			<h1 className='title-serv'>SUPLEMENTACION DEPORTIVA</h1>
-			<h2 className='subtitle-prod'>Encontra nuestros productos en todas nuestras sedes!</h2>
-         <div className='d-flex row row-cols-sm-3  row-cols-lg-4 justify-content-center p-3'>
+			<h2 className='subtitle-prod'>
+				Encontra nuestros productos en todas nuestras sedes!
+			</h2>
+			<div className='d-flex row row-cols-sm-3  row-cols-lg-4 justify-content-center p-3'>
 				<Card.Body className='cardaboutprod'>
 					<Card.Img
 						className='imgcardprod'
@@ -24,7 +26,7 @@ export const Productos = () => {
 							<i className='icoprod fa-solid fa-circle-info'></i>
 						</a>
 						<a href='/error404'>
-							<i class='icoprod fa-solid fa-cart-shopping'></i>
+							<i className='icoprod fa-solid fa-cart-shopping'></i>
 						</a>
 					</div>
 				</Card.Body>
@@ -41,7 +43,7 @@ export const Productos = () => {
 							<i className='icoprod fa-solid fa-circle-info'></i>
 						</a>
 						<a href='/error404'>
-							<i class='icoprod fa-solid fa-cart-shopping'></i>
+							<i className='icoprod fa-solid fa-cart-shopping'></i>
 						</a>
 					</div>
 				</Card.Body>
@@ -60,7 +62,7 @@ export const Productos = () => {
 							<i className='icoprod fa-solid fa-circle-info'></i>
 						</a>
 						<a href='/error404'>
-							<i class='icoprod fa-solid fa-cart-shopping'></i>
+							<i className='icoprod fa-solid fa-cart-shopping'></i>
 						</a>
 					</div>
 				</Card.Body>
@@ -79,7 +81,7 @@ export const Productos = () => {
 							<i className='icoprod fa-solid fa-circle-info'></i>
 						</a>
 						<a href='/error404'>
-							<i class='icoprod fa-solid fa-cart-shopping'></i>
+							<i className='icoprod fa-solid fa-cart-shopping'></i>
 						</a>
 					</div>
 				</Card.Body>
@@ -97,7 +99,7 @@ export const Productos = () => {
 							<i className='icoprod fa-solid fa-circle-info'></i>
 						</a>
 						<a href='/error404'>
-							<i class='icoprod fa-solid fa-cart-shopping'></i>
+							<i className='icoprod fa-solid fa-cart-shopping'></i>
 						</a>
 					</div>
 				</Card.Body>
@@ -115,7 +117,7 @@ export const Productos = () => {
 							<i className='icoprod fa-solid fa-circle-info'></i>
 						</a>
 						<a href='/error404'>
-							<i class='icoprod fa-solid fa-cart-shopping'></i>
+							<i className='icoprod fa-solid fa-cart-shopping'></i>
 						</a>
 					</div>
 				</Card.Body>

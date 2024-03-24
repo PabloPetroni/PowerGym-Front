@@ -25,7 +25,7 @@ export const Profesores = () => {
 								<a
 									href='/error404'
 									target='_blank'>
-									<i class='iconavbarteam fa-brands fa-square-instagram'></i>
+									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
 								</a>
 							</div>
 						</div>
@@ -45,7 +45,7 @@ export const Profesores = () => {
 									<i className='iconavbarteam fa-brands fa-facebook'></i>
 								</a>
 								<a href='/error404' target='_blank'>
-									<i class='iconavbarteam fa-brands fa-square-instagram'></i>
+									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
 								</a>
 							</div>
 						</div>
@@ -66,7 +66,7 @@ export const Profesores = () => {
 									<i className='iconavbarteam fa-brands fa-facebook'></i>
 								</a>
 								<a href='/error404' target='_blank'>
-									<i class='iconavbarteam fa-brands fa-square-instagram'></i>
+									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
 								</a>
 							</div>
 						</div>
@@ -87,7 +87,7 @@ export const Profesores = () => {
 									<i className='iconavbarteam fa-brands fa-facebook'></i>
 								</a>
 								<a href='/error404' target='_blank'>
-									<i class='iconavbarteam fa-brands fa-square-instagram'></i>
+									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
 								</a>
 							</div>
 						</div>
@@ -107,7 +107,7 @@ export const Profesores = () => {
 									<i className='iconavbarteam fa-brands fa-facebook'></i>
 								</a>
 								<a href='/error404' target='_blank'>
-									<i class='iconavbarteam fa-brands fa-square-instagram'></i>
+									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
 								</a>
 							</div>
 						</div>
