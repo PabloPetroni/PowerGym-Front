@@ -67,16 +67,6 @@ export const PanelClases = () => {
 				/>
 
 				<div className='botonesadm'>
-					{/* <Link className='botonadm' to='/panelusuarios'>
-						<i class="iconavbar fa fa-plus" aria-hidden="true"></i>
-						Crear Clase
-					</Link> 
-					
-					MICHEL 
-
-
-					*/}
-
 					<button className='botonadm'
 						onClick={  () => {
 							navigate(`/CargaClase`);
