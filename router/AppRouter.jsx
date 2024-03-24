@@ -24,6 +24,10 @@ import { ReservasUsuario } from '../src/components/ReservasUsuario.jsx';
 import { DatosUsuario } from '../src/components/DatosUsuario.jsx';
 import { GenerarPago } from '../src/components/GenerarPago.jsx';
 import { AdminUser } from '../src/components/AdminUser.jsx';
+import { PanelClases } from '../src/components/PanelClases.jsx';
+import { EditarClases } from '../src/components/EditarClases.jsx';
+import { CargaClase } from '../src/components/CargaClase.jsx';
+
 
 export const AppRouter = () => {
 	return (
@@ -52,6 +56,9 @@ export const AppRouter = () => {
 				<Route path='/panelusuarios' element={<PanelUsuarios />}></Route>
 				<Route path='/listadoturnos' element={<ListadoTurnos />}></Route>
 				<Route path='/pagosusuarios' element={<PagosUsuarios />}></Route>
+				<Route path='/panelclases' element={<PanelClases />}></Route>
+				<Route path='/editarclases/:id' element={<EditarClases />}></Route>
+				<Route path='/cargaclase' element={<CargaClase />}></Route>
 				{/* </Route> */}
 			</Routes>
 			<Footer />
