@@ -2,7 +2,7 @@ import { apiURL } from '/api/apiURL.js';
 
 export const getClases = async () => {
 	try {
-		const res = await apiURL.get('/api/clases', { withCredentials: true });
+		const res = await apiURL.get('/api/clases', );
 		return res.data;
 	} catch (error) {
 		console.error(error);

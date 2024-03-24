@@ -7,15 +7,14 @@ import '../css/ListadoTurnos.css';
 import { useAuth } from '../context/AuthContext.jsx';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { useParams } from 'react-router-dom';
 import dayjs from 'dayjs';
 import { Tabla } from './Tabla.jsx';
 
 export const ReservasUsuario = () => {
 	const [data, setData] = useState([]);
-	// const { currentUser, logout } = useAuth({});
-	const userId = '65e215ee04166531ce18a8e3';
-	const params = useParams();
+	const { currentUser } = useAuth({});
+	const userlogin = currentUser.displayname;
+	const userId = currentUser._id;
 
 	// Trae turnos y los filtra por usuario y fecha
 	useEffect(() => {

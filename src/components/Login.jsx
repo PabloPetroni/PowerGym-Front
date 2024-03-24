@@ -16,6 +16,8 @@ export const Login = () => {
 	} = useForm();
 	const [showPassword, setShowPassword] = useState(false);
 	const { currentUser, isAuthenticated, login } = useAuth();
+	console.log(currentUser)
+	const user = currentUser
 	const toggleShowPassword = () => setShowPassword(!showPassword);
 
 	const onSubmit = handleSubmit(async (values) => {
@@ -33,7 +35,7 @@ export const Login = () => {
 				user.email === 'admin@gmail.com'
 			
 			) {
-				navigate('/admin', { replace: true });
+				navigate('/administrador', { replace: true });
 			} else {
 				navigate('/panelusuarios', { replace: true });
 			}

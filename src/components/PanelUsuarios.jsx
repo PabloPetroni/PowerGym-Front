@@ -2,20 +2,21 @@ import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import '../css/PanelUsuario.css';
-import { ListadoTurnos} from './ListadoTurnos';
-import { ReservasUsuario} from './ReservasUsuario';
-import { PagosUsuarios} from './PagosUsuarios';
-import { DatosUsuario} from './DatosUsuario';
+import { ListadoTurnos } from './ListadoTurnos';
+import { ReservasUsuario } from './ReservasUsuario';
+import { PagosUsuarios } from './PagosUsuarios';
+import { DatosUsuario } from './DatosUsuario';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es-mx';
 dayjs().format();
 
 export const PanelUsuarios = () => {
-	// const { currentUser, logout } = useAuth({});
+	const { currentUser } = useAuth({});
+	const displayName = currentUser.displayname;
 	const navigate = useNavigate();
-	const params = useParams();
-	const user = '65e215ee04166531ce18a8e3';
-	const displayName = 'Oscar Frias Viñals';
+
+	const user = currentUser._id;
+
 	const [selectedComponent, setSelectedComponent] = useState('listadoTurnos');
 
 	const handleComponentChange = (componentName) => {

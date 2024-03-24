@@ -6,9 +6,10 @@ import { useAuth } from '../context/AuthContext';
 import '../css/ListadoTurnos.css';
 
 export const AdminPrincipal = () => {
-	const user = '65e215ee04166531ce18a8e3';
-	const displayName = 'Oscar Frias Viñals';
-
+	const { currentUser } = useAuth();
+	console.log(currentUser.email);
+	const displayName = currentUser.displayName;
+	console.log(currentUser);
 	return (
 		<div>
 			<div className='main px-3 bodyadmin'>

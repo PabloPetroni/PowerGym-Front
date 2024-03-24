@@ -10,9 +10,10 @@ import { Tabla } from './Tabla.jsx';
 export const PagosUsuarios = () => {
 	const [data, setData] = useState([]);
 	const [user, setUser] = useState([]);
-	// const { currentUser} = useAuth({});
+	const { currentUser } = useAuth({});
+	const userlogin = currentUser.displayname;
 	const navigate = useNavigate();
-	const id = '65e215ee04166531ce18a8e3';
+	const id = currentUser._id;
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -76,7 +77,8 @@ export const PagosUsuarios = () => {
 					</ThemeProvider>
 				</div>
 				<div className='d-flex align-items-center justify-content-center'>
-					<Link className='botonadm' to={`/generarpago/${user._id}`}><i className="iconavbar fa-solid fa-money-check-dollar"></i>
+					<Link className='botonadm' to={`/generarpago/${user._id}`}>
+						<i className='iconavbar fa-solid fa-money-check-dollar'></i>
 						PAGAR CUOTA MENSUAL
 					</Link>
 				</div>
