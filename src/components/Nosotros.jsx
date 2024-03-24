@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-
 import '../css/Nosotros.css';
 
 export const Nosotros = () => {
@@ -64,40 +63,49 @@ export const Nosotros = () => {
 			/>
 
 			<div className='team container-fluid'>
-				<h1 className='tituloaboutteam'>NUESTRO EQUIPO</h1>
+				<h1 className='tituloteam'>NUESTRO EQUIPO</h1>
 
-				<div className='row row-cols-md-2 row-cols-sm-8 cardnosotros'>
+				<div className=' cardnosotros'>
 					<div className='our-team'>
 						<div className='team-image'>
 							<img className='imgteam' src='/Oscar Frias.png' />
-							{/* <p className='description'>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Praesent urna diam, maximus ut ullamcorper quis
-							</p> */}
 						</div>
 						<div className='team-info'>
 							<h3 className='titlenosotros'>Oscar Frias Viñals</h3>
 							<span className='post'>Developer</span>
+							<div className='d-flex flex-row justify-content-around pt-2'>
+								<a href='https://github.com/ofvinals' target='_blank'>
+									<i className='iconavbarteam fa-brands fa-github'></i>
+								</a>
+								<a href='http://www.linkedin.com/in/ofvinals' target='_blank'>
+									<i className='iconavbarteam fa-brands fa-linkedin'></i>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div className='row row-cols-md-2 row-cols-sm-8 cardnosotros'>
+				<div className='cardnosotros'>
 					<div className='our-team'>
 						<div className='team-image'>
 							<img className='imgteam' src='/Petroni.png' />
-							{/* <p className='description'>
-								Lorem ipsum dolor sit amet, 
-							</p> */}
 						</div>
 						<div className='team-info'>
 							<h3 className='titlenosotros'>Pablo Petroni</h3>
 							<span className='post'>Developer</span>
+							<div className='d-flex flex-row justify-content-around pt-2'>
+								<a href='https://github.com/PabloPetroni' target='_blank'>
+									<i className='iconavbarteam fa-brands fa-github'></i>
+								</a>
+								<a href='' target='_blank'>
+									<i className='iconavbarteam fa-brands fa-linkedin'></i>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div className='row row-cols-md-2 row-cols-sm-8 cardnosotros'>
+				<div className='cardnosotros'>
 					<div className='our-team'>
 						<div className='team-image'>
 							<img className='imgteam' src='/MICHEL KIKANO.jpg' />
@@ -106,39 +114,55 @@ export const Nosotros = () => {
 						<div className='team-info'>
 							<h3 className='titlenosotros'>Michel Kikano</h3>
 							<span className='post'>Developer</span>
+							<div className='d-flex flex-row justify-content-around pt-2'>
+								<a href='https://github.com/Michelkikano' target='_blank'>
+									<i className='iconavbarteam fa-brands fa-github'></i>
+								</a>
+								<a href='' target='_blank'>
+									<i className='iconavbarteam fa-brands fa-linkedin'></i>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div className='row row-cols-md-4 row-cols-sm-8 cardnosotros'>
+				<div className=' cardnosotros'>
 					<div className='our-team'>
 						<div className='team-image'>
 							<img className='imgteam' src='/Orlando Navarro.png' />
-							{/* <p className='description'>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Praesent urna diam, maximus ut ull
-							</p> */}
 						</div>
 
 						<div className='team-info'>
 							<h3 className='titlenosotros'>Orlando Navarro</h3>
 							<span className='post'>Developer</span>
+							<div className='d-flex flex-row justify-content-around pt-2'>
+								<a href='https://github.com/MichyNavarro' target='_blank'>
+									<i className='iconavbarteam fa-brands fa-github'></i>
+								</a>
+								<a href='' target='_blank'>
+									<i className='iconavbarteam fa-brands fa-linkedin'></i>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div className='row row-cols-md-2 row-cols-sm-10 cardnosotros'>
+				<div className='cardnosotros'>
 					<div className='our-team'>
 						<div className='team-image'>
 							<img className='imgteam' src='' />
-							{/* <p className='description'>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Praesent urna diam, maximus ut ullamcorper quis
-							</p> */}
 						</div>
 						<div className='team-info'>
 							<h3 className='titlenosotros'>Federico Roldan</h3>
 							<span className='post'>Developer</span>
+							<div className='d-flex flex-row justify-content-around pt-2'>
+								<a href='' target='_blank'>
+									<i className='iconavbarteam fa-brands fa-github'></i>
+								</a>
+								<a href='' target='_blank'>
+									<i className='iconavbarteam fa-brands fa-linkedin'></i>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>

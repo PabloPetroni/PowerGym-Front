@@ -39,10 +39,13 @@ export const AuthProvider = ({ children }) => {
 
 	// FUNCION LOGIN CON CORREO ELECTRONICO
 	const login = async (values) => {
+		console.log(values);
 		try {
 			const res = await apiURL.post('/api/login', values, {
 				credentials: 'include',
 			});
+			console.log(res);
+
 			document.cookie = `token=${res.data.token}; Path=/; `;
 			localStorage.setItem('token', res.data.token);
 			setIsAuthenticated(true);
@@ -54,7 +57,7 @@ export const AuthProvider = ({ children }) => {
 			throw error; // Re-lanzar el error para manejarlo en onSubmit
 		}
 	};
-
+	console.log(currentUser);
 	// FUNCION LOGOUT
 	const logout = async () => {
 		Cookies.remove('token');
@@ -67,6 +70,7 @@ export const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		async function checkLogin() {
 			const cookies = Cookies.get();
+			console.log(cookies)
 			if (!cookies.token) {
 				setIsAuthenticated(false);
 				setIsLoading(false);

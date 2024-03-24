@@ -102,6 +102,9 @@
 	text-align: center;
 	font-size: 14px; 
 	margin-bottom: 5px!important; 
+	font-weight: 700;
+	text-shadow: 4px 4px 2px rgba(250, 248, 248, 0.6);
+
 }
 .parrafolog {
 	font-size: 80%;
