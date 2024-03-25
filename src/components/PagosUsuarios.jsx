@@ -10,7 +10,7 @@ import { Tabla } from './Tabla.jsx';
 export const PagosUsuarios = () => {
 	const [data, setData] = useState([]);
 	const [user, setUser] = useState([]);
-	const { currentUser } = useAuth({});
+	const { currentUser } = useAuth();
 	const userlogin = currentUser.displayname;
 	const navigate = useNavigate();
 	const id = currentUser.id;
