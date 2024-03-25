@@ -11,7 +11,7 @@ import 'dayjs/locale/es-mx';
 dayjs().format();
 
 export const PanelUsuarios = () => {
-	const { currentUser } = useAuth({});
+	const { currentUser } = useAuth();
 	const displayName = currentUser.displayName;
 	const navigate = useNavigate();
 	const user = currentUser._id;
