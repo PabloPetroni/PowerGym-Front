@@ -13,8 +13,7 @@ import { Tabla } from './Tabla.jsx';
 export const ReservasUsuario = () => {
 	const [data, setData] = useState([]);
 	const { currentUser } = useAuth({});
-	const userlogin = currentUser.displayname;
-	const userId = currentUser._id;
+	const userId = currentUser.id;
 
 	// Trae turnos y los filtra por usuario y fecha
 	useEffect(() => {
