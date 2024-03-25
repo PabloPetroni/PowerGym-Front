@@ -44,7 +44,7 @@
 	text-align: center;
 }
 .botonesadm {
-	background-color: #ffad12;
+	background-color: #ffad12!important;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;

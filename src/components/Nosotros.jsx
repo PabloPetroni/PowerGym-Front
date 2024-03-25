@@ -77,7 +77,9 @@ export const Nosotros = () => {
 								<a href='https://github.com/ofvinals' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-github'></i>
 								</a>
-								<a href='http://www.linkedin.com/in/ofvinals' target='_blank'>
+								<a
+									href='http://www.linkedin.com/in/ofvinals'
+									target='_blank'>
 									<i className='iconavbarteam fa-brands fa-linkedin'></i>
 								</a>
 							</div>
@@ -94,7 +96,9 @@ export const Nosotros = () => {
 							<h3 className='titlenosotros'>Pablo Petroni</h3>
 							<span className='post'>Developer</span>
 							<div className='d-flex flex-row justify-content-around pt-2'>
-								<a href='https://github.com/PabloPetroni' target='_blank'>
+								<a
+									href='https://github.com/PabloPetroni'
+									target='_blank'>
 									<i className='iconavbarteam fa-brands fa-github'></i>
 								</a>
 								<a href='' target='_blank'>
@@ -115,7 +119,9 @@ export const Nosotros = () => {
 							<h3 className='titlenosotros'>Michel Kikano</h3>
 							<span className='post'>Developer</span>
 							<div className='d-flex flex-row justify-content-around pt-2'>
-								<a href='https://github.com/Michelkikano' target='_blank'>
+								<a
+									href='https://github.com/Michelkikano'
+									target='_blank'>
 									<i className='iconavbarteam fa-brands fa-github'></i>
 								</a>
 								<a href='' target='_blank'>
@@ -136,7 +142,9 @@ export const Nosotros = () => {
 							<h3 className='titlenosotros'>Orlando Navarro</h3>
 							<span className='post'>Developer</span>
 							<div className='d-flex flex-row justify-content-around pt-2'>
-								<a href='https://github.com/MichyNavarro' target='_blank'>
+								<a
+									href='https://github.com/MichyNavarro'
+									target='_blank'>
 									<i className='iconavbarteam fa-brands fa-github'></i>
 								</a>
 								<a href='' target='_blank'>
@@ -150,7 +158,7 @@ export const Nosotros = () => {
 				<div className='cardnosotros'>
 					<div className='our-team'>
 						<div className='team-image'>
-							<img className='imgteam' src='' />
+							<img className='imgteam' src='/federoldan.jpeg' />
 						</div>
 						<div className='team-info'>
 							<h3 className='titlenosotros'>Federico Roldan</h3>

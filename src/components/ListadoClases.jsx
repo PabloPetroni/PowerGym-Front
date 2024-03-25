@@ -18,18 +18,17 @@ import { Box } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MRT_Localization_ES } from 'material-react-table/locales/es';
+import { useAuth } from '../context/AuthContext.jsx';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es-mx';
 dayjs().format();
 
-
-
 export const ListadoClases = ({ fechaSeleccionada }) => {
 	const [data, setData] = useState([]);
-	const displayName = 'Oscar Frias Viñals';
-	const user = '65e215ee04166531ce18a8e3';
+	const { currentUser } = useAuth();
+	const displayName = currentUser.displayName;
+	const user = currentUser.id;
 	const navigate = useNavigate();
-
 
 	const cargarClases = async () => {
 		try {
@@ -122,38 +121,35 @@ export const ListadoClases = ({ fechaSeleccionada }) => {
 		await createTurno(claseSeleccionada, user);
 	};
 
-
-// funcion para eliminar gastos
-async function borrarClase(id) {
-	try {
-		const result = await Swal.fire({
-			title: '¿Estás seguro?',
-			text: 'Confirmas la eliminacion de la clase',
-			icon: 'warning',
-			showCancelButton: true,
-			confirmButtonColor: '#d33',
-			cancelButtonColor: '#8f8e8b',
-			confirmButtonText: 'Sí, eliminar',
-			cancelButtonText: 'Cancelar',
-		});
-		if (result.isConfirmed) {
-			await deleteClase(id);
-			Swal.fire({
-				icon: 'success',
-				title: 'Gasto eliminado correctamente',
-				showConfirmButton: false,
-				timer: 1500,
+	// funcion para eliminar gastos
+	async function borrarClase(id) {
+		try {
+			const result = await Swal.fire({
+				title: '¿Estás seguro?',
+				text: 'Confirmas la eliminacion de la clase',
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#d33',
+				cancelButtonColor: '#8f8e8b',
+				confirmButtonText: 'Sí, eliminar',
+				cancelButtonText: 'Cancelar',
 			});
-			
-			//consutar Oscar
-			//setData((prevData) => prevData.filter((gasto) => gasto._id !== id));
-			
-		}
-	} catch (error) {
-		console.error('Error al eliminar el gasto:', error);
-	}
-}
+			if (result.isConfirmed) {
+				await deleteClase(id);
+				Swal.fire({
+					icon: 'success',
+					title: 'Gasto eliminado correctamente',
+					showConfirmButton: false,
+					timer: 1500,
+				});
 
+				//consutar Oscar
+				//setData((prevData) => prevData.filter((gasto) => gasto._id !== id));
+			}
+		} catch (error) {
+			console.error('Error al eliminar el gasto:', error);
+		}
+	}
 
 	// Función para actualizar la disponibilidad de la clase
 	const actualizarDisponibilidad = async (idClase, disponibilidad) => {
@@ -238,21 +234,17 @@ async function borrarClase(id) {
 					className='btnreservar'
 					color='primary'
 					onClick={() => {
-						console.log(row.original._id);
 						navigate(`/editarclases/${row.original._id}`);
 					}}>
-
-					<i class="iconavbarCl fa fa-pencil" aria-hidden="true"></i>
+					<i className='iconavbarCl fa fa-pencil' aria-hidden='true'></i>
 				</button>
-
 
 				<button
 					className='btnreservar'
 					color='primary'
-					//llamado a la funcion 
+					//llamado a la funcion
 					onClick={() => borrarClase(row.original._id)}>
-
-					<i class="iconavbarCl fa fa-trash-o" aria-hidden="true"></i>
+					<i className='iconavbarCl fa fa-trash-o' aria-hidden='true'></i>
 				</button>
 			</Box>
 		),

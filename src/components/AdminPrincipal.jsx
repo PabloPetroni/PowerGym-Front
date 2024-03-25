@@ -7,9 +7,7 @@ import '../css/ListadoTurnos.css';
 
 export const AdminPrincipal = () => {
 	const { currentUser } = useAuth();
-	console.log(currentUser.email);
 	const displayName = currentUser.displayName;
-	console.log(currentUser);
 	return (
 		<div>
 			<div className='main px-3 bodyadmin'>
@@ -22,12 +20,12 @@ export const AdminPrincipal = () => {
 				style={{ border: '2px solid #ffcc00' }}
 			/>
 
-			<div className='d-flex justify-content-around m-4 mb-5'>
-				<Link className='botonadm' to='/admin-usuarios'>
-					Administrar usuarios
+			<div className='botonesadm'>
+				<Link className='botonadm' to='/admin-usuarios'><i className="iconavbar fa-solid fa-users"></i>
+					Administrar Usuarios
 				</Link>
-				<Link className='botonadm' to='/admin-usuarios'>
-					Administrar clases
+				<Link className='botonadm' to='/panelclases'><i className="iconavbar fa-solid fa-person-chalkboard"></i>
+					Administrar Clases
 				</Link>
 			</div>
 
@@ -36,7 +34,7 @@ export const AdminPrincipal = () => {
 				style={{ border: '2px solid #ffcc00' }}
 			/>
 
-			<ListadoTurnos />
+
 		</div>
 	);
 };

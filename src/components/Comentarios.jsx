@@ -87,7 +87,9 @@ export const Comentarios = () => {
 					<div className=''>
 						<div className=''>
 							<h2 className='subtitle-com'>Dejanos Tu Comentario</h2>
-							<Form.Group className='text-center d-flex justify-content-center mb-3' id='inputname'>
+							<Form.Group
+								className='text-center d-flex justify-content-center mb-3'
+								id='inputname'>
 								<Form.Control
 									className='inputcoment'
 									placeholder='Tu nombre...'
@@ -107,12 +109,14 @@ export const Comentarios = () => {
 									</span>
 								)}
 							</Form.Group>
-							<Form.Group className='text-center d-flex justify-content-center  mb-3' id='inputname'>
+							<Form.Group
+								className='text-center d-flex justify-content-center  mb-3'
+								id='inputname'>
 								<Form.Control
 									className='inputcoment'
 									placeholder='Tu comentario....'
 									as='textarea'
-                           rows={4}
+									rows={4}
 									id='comentario'
 									name='comentario'
 									{...register('comentario', {
@@ -125,7 +129,7 @@ export const Comentarios = () => {
 											message:
 												'El comentario debe ser mayor a 10 caracteres',
 										},
-                              maxLength: {
+										maxLength: {
 											value: 75,
 											message:
 												'El comentario debe ser menor a 75 caracteres',

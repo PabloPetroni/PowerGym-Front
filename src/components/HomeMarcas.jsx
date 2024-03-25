@@ -22,7 +22,7 @@ export const HomeMarcas = () => {
 									className='imagebenefit'
 								/>
 								<p className='pbenefit'>
-								15% desc en	Kanpai - Productos Alimenticios
+									15% desc en Kanpai - Productos Alimenticios
 								</p>
 							</a>
 						</div>
@@ -38,7 +38,9 @@ export const HomeMarcas = () => {
 									alt='beneficio2'
 									className='imagebenefit'
 								/>
-								<p className='pbenefit'>25% desc en Oxigeno - Ropa Deportiva</p>
+								<p className='pbenefit'>
+									25% desc en Oxigeno - Ropa Deportiva
+								</p>
 							</a>
 						</div>
 					</Carousel.Item>
@@ -53,7 +55,9 @@ export const HomeMarcas = () => {
 									alt='beneficio2'
 									className='imagebenefit'
 								/>
-								<p className='pbenefit'>15 % desc en Shark - Suplementos Deportivos</p>
+								<p className='pbenefit'>
+									15 % desc en Shark - Suplementos Deportivos
+								</p>
 							</a>
 						</div>
 					</Carousel.Item>

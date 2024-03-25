@@ -54,6 +54,3 @@ export const createPago = async (pago, id) => {
 		console.log(error);
 	}
 };
-
-
-

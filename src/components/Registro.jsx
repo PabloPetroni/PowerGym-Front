@@ -23,6 +23,7 @@ export const Registro = () => {
 	const onSubmit = handleSubmit(async (values) => {
 		try {
 			await registro(values);
+			navigate('/panelusuarios');
 			Swal.fire({
 				icon: 'success',
 				title: 'Bienvenido! Registro de cuenta exitoso!',

@@ -15,31 +15,75 @@
 	font-size: 17px;
 	font-weight: bold !important;
 }
-
+.estadolog {
+	font-size: 80%;
+	text-align: center;
+	align-items: center;
+	margin-top: 1vw;
+	width: 100%;
+	color: rgb(6, 6, 6);
+}
 .menu {
 	background-color: #e4e5ecff;
 }
+.botones {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 15px;
+}
 
 .ingresar {
-	background-color: #ff7c39 !important;
+	color: #050505;
+	background:  #ff7c39;
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 25px;
+	font-size: 18px;
+	font-weight: 700;
+	padding: 7px;
+	padding-left: 35px;
+	padding-right: 35px;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 .ingresar:hover {
-	color: rgb(16, 19, 22);
+	color: rgb(241, 242, 244);
 	background-color: #ff7c39 !important;
 	border: 4px solid;
-	border-color: rgb(16, 19, 22) !important;
+	border-color: rgb(252, 253, 253) !important;
+}
+.iconavbarbar{
+	font-size: 130% !important;
+	color: rgb(6, 6, 6);
+   padding-left: 15px;
+	padding-top: 0vw !important;
+	padding-bottom: 0vw !important;
+	padding-right: 10px;
 }
 
 .registro {
-	background-color: #ffc107 !important;
+
+	color: #0c0c0c;
+	background: #ffc107;
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 25px;
+	font-size: 18px;
+	font-weight: 700;
+	padding: 7px;
+	padding-left: 35px;
+	padding-right: 35px;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 .registro:hover {
 	background-color: #ffc107 !important;
-	color: rgb(16, 19, 22);
+	color: rgb(203, 206, 208);
 	border: 4px solid;
-	border-color: rgb(16, 19, 22) !important;
+	border-color: rgb(250, 251, 251) !important;
 }
 
 .linkIngresar {
@@ -58,11 +102,21 @@
 
 .logout {
 	background-color: #dc3545 !important;
+	color: #050505;
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 25px;
+	font-size: 18px;
+	font-weight: 700;
+	padding: 7px;
+	padding-left: 35px;
+	padding-right: 35px;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 .logout:hover {
 	background-color: #dc3545 !important;
-	color: rgb(16, 19, 22);
+	color: rgb(251, 251, 252);
 	border: 4px solid;
-	border-color: rgb(16, 19, 22) !important;
+	border-color: rgb(239, 242, 244) !important;
 }

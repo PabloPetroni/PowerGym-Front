@@ -14,7 +14,6 @@ export const PagosUsuarios = () => {
 	const userlogin = currentUser.displayname;
 	const navigate = useNavigate();
 	const id = currentUser.id;
-	console.log(id);
 
 	useEffect(() => {
 		const fetchData = async () => {

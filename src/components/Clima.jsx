@@ -68,62 +68,74 @@ export const Clima = () => {
 
 	return (
 		<div className='container-fluid'>
-		<Dropdown show={isOpen} onToggle={toggleMenu}>
-			<Dropdown.Toggle
-				variant='light'
-				id='dropdown-basic'
-				className='btnclima'>
-				Estado del Tiempo
-			</Dropdown.Toggle>
+			<Dropdown show={isOpen} onToggle={toggleMenu}>
+				<Dropdown.Toggle
+					variant='light'
+					id='dropdown-basic'
+					className='btnclima'>
+					Estado del Tiempo
+				</Dropdown.Toggle>
 
-			<Dropdown.Menu className='contclima'>
-				<div className='container-fluid contclima'>
-					<div className='contSMT d-flex flex-column align-items-center'>
-						<h4 className='titleclima'>San Miguel de Tucuman</h4>
-						<div className='icoclima'>
-							<img
-								src={`${baseImageUrl}${datosSMT.image}.png`}
-								alt='icono clima'
-								width={50}
-								className='image-clima'
-							/>
+				<Dropdown.Menu className='contclima'>
+					<div className='container-fluid contclima'>
+						<div className='contSMT d-flex flex-column align-items-center'>
+							<h4 className='titleclima'>San Miguel de Tucuman</h4>
+							<div className='icoclima'>
+								<img
+									src={`${baseImageUrl}${datosSMT.image}.png`}
+									alt='icono clima'
+									width={50}
+									className='image-clima'
+								/>
+							</div>
+							<p className='subtitleclima'>{datosSMT.description}</p>
+							<p className='subtitleclima'>
+								Temp:{datosSMT.temperature}º
+							</p>
+							<p className='subtitleclima'>
+								Humedad:{datosSMT.humidity}%
+							</p>
 						</div>
-						<p className='subtitleclima'>{datosSMT.description}</p>
-						<p className='subtitleclima'>Temp:{datosSMT.temperature}º</p>
-						<p className='subtitleclima'>Humedad:{datosSMT.humidity}%</p>
-					</div>
 
-					<div className='contSMT d-flex flex-column align-items-center'>
-						<h4 className='titleclima'>Yerba Buena</h4>
-						<div className='icoclima'>
-							<img
-								src={`${baseImageUrl}${datosYB.image}.png`}
-								alt='icono clima'
-								className='image-clima'
-								width={50}
-							/>
+						<div className='contSMT d-flex flex-column align-items-center'>
+							<h4 className='titleclima'>Yerba Buena</h4>
+							<div className='icoclima'>
+								<img
+									src={`${baseImageUrl}${datosYB.image}.png`}
+									alt='icono clima'
+									className='image-clima'
+									width={50}
+								/>
+							</div>
+							<p className='subtitleclima'>{datosYB.description}</p>
+							<p className='subtitleclima'>
+								Temp:{datosYB.temperature}º
+							</p>
+							<p className='subtitleclima'>
+								Humedad:{datosYB.humidity}%
+							</p>
 						</div>
-						<p className='subtitleclima'>{datosYB.description}</p>
-						<p className='subtitleclima'>Temp:{datosYB.temperature}º</p>
-						<p className='subtitleclima'>Humedad:{datosYB.humidity}%</p>
-					</div>
-					<div className='contSMT d-flex flex-column align-items-center'>
-						<h4 className='titleclima'>Tafi Viejo</h4>
-						<div className='icoclima'>
-							<img
-								src={`${baseImageUrl}${datosYB.image}.png`}
-								alt='icono clima'
-								className='image-clima'
-								width={50}
-							/>
+						<div className='contSMT d-flex flex-column align-items-center'>
+							<h4 className='titleclima'>Tafi Viejo</h4>
+							<div className='icoclima'>
+								<img
+									src={`${baseImageUrl}${datosYB.image}.png`}
+									alt='icono clima'
+									className='image-clima'
+									width={50}
+								/>
+							</div>
+							<p className='subtitleclima'>{datosYB.description}</p>
+							<p className='subtitleclima'>
+								Temp:{datosYB.temperature}º
+							</p>
+							<p className='subtitleclima'>
+								Humedad:{datosYB.humidity}%
+							</p>
 						</div>
-						<p className='subtitleclima'>{datosYB.description}</p>
-						<p className='subtitleclima'>Temp:{datosYB.temperature}º</p>
-						<p className='subtitleclima'>Humedad:{datosYB.humidity}%</p>
 					</div>
-				</div>
-			</Dropdown.Menu>
-		</Dropdown>
+				</Dropdown.Menu>
+			</Dropdown>
 		</div>
 	);
 };

@@ -2,7 +2,9 @@ import { apiURL } from '/api/apiURL.js';
 
 export const getClases = async () => {
 	try {
-		const res = await apiURL.get('/api/clases', );
+		const res = await apiURL.get('/api/clases', {
+			withCredentials: true,
+		});
 		return res.data;
 	} catch (error) {
 		console.error(error);
@@ -11,7 +13,9 @@ export const getClases = async () => {
 
 export const getClase = async (id) => {
 	try {
-		const res = await apiURL.get(`/api/clases/${id}`, { withCredentials: true });
+		const res = await apiURL.get(`/api/clases/${id}`, {
+			withCredentials: true,
+		});
 		return res.data;
 	} catch (error) {
 		console.error(error);
@@ -51,6 +55,7 @@ export const deleteTurno = async (id) => {
 		const res = await apiURL.delete(`/api/turnos/${id}`, {
 			withCredentials: true,
 		});
+		return res.data;
 	} catch (error) {
 		console.error(error);
 	}
@@ -64,6 +69,7 @@ export const deleteClase = async (id) => {
 		const res = await apiURL.delete(`/api/clases/${id}`, {
 			withCredentials: true,
 		});
+		return res.data;
 	} catch (error) {
 		console.error(error);
 	}
@@ -72,7 +78,6 @@ export const deleteClase = async (id) => {
 //se altera la ruta para el update de la clase /update - falta prueba
 export const updateClase = async (id, values) => {
 	try {
-		console.log(values);
 		const res = await apiURL.put(`/api/clases/update/${id}`, values, {
 			withCredentials: true,
 		});
@@ -81,7 +86,6 @@ export const updateClase = async (id, values) => {
 		console.error(error);
 	}
 };
-
 
 //crear clase
 
