@@ -105,7 +105,8 @@ export const ReservasUsuario = () => {
 					showConfirmButton: false,
 					timer: 2500,
 				});
-				window.location.reload();
+				setData((prevData) => prevData.filter((turno) => turno._id !== id));
+
 			} catch (error) {
 				console.error('Error al anular el turno:', error);
 			}
