@@ -28,8 +28,7 @@ export const ListadoTurnos = () => {
 	const { register, handleSubmit } = useForm();
 	const [turnoData, setTurnoData] = useState(new Date());
 	const { currentUser } = useAuth();
-	const displayName = currentUser.displayname;
-	const user = currentUser._id;
+	const user = currentUser.id;
 	const [fecha, setFecha] = useState(new Date());
 
 	const cargarClases = async () => {

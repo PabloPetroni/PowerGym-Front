@@ -13,7 +13,8 @@ export const PagosUsuarios = () => {
 	const { currentUser } = useAuth({});
 	const userlogin = currentUser.displayname;
 	const navigate = useNavigate();
-	const id = currentUser._id;
+	const id = currentUser.id;
+	console.log(id);
 
 	useEffect(() => {
 		const fetchData = async () => {

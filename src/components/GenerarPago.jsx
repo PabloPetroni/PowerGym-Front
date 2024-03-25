@@ -14,9 +14,10 @@ export const GenerarPago = () => {
 	const [precioPlan, setPrecioPlan] = useState(0);
 	const navigate = useNavigate();
 	const { currentUser } = useAuth({});
-	const userlogin = currentUser.displayname;
-	const user = currentUser._id;
-	console.log(userlogin);
+	const userlogin = currentUser.displayName;
+	const user = currentUser.id;
+	console.log(currentUser)
+	console.log(user);
 	const {
 		register,
 		handleSubmit,
