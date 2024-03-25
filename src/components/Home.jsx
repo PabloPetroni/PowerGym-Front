@@ -122,7 +122,7 @@ export const Home = () => {
 				<span className='power-text'> POWER</span>!
 			</h2>
 
-			<HomeMarcas/>
+			<HomeMarcas />
 
 			<div className='cont3'>
 				<div className='promo1'>
@@ -152,7 +152,7 @@ export const Home = () => {
 				style={{ border: '2px solid #ffcc00' }}
 			/>
 
-			<HomePlan/>
+			<HomePlan />
 
 			<hr
 				className='mx-5 bg-warning'

@@ -19,15 +19,8 @@ export const CargaClase = () => {
 	const navigate = useNavigate();
 	const { register, handleSubmit } = useForm();
 	const [showModal, setShowModal] = useState(true);
-	
+
 	const [fecha, setFecha] = useState(new Date());
-
-	//const [valorSeleccionado, setValorSeleccionado] = useState('');
-
-	// const handleSelectChange = (event) => {
-	// 	setValorSeleccionado(event.target.value);
-	// };
-
 
 	// Función para cerrar el modal
 	const handleCloseModal = () => {
@@ -35,16 +28,8 @@ export const CargaClase = () => {
 		navigate('/PanelClases');
 	};
 
-//si no funciona ek ckasedata.actividad, va el useState...
 	const onSubmit = handleSubmit(async (values) => {
-		
-		
-		console.log(values);
-		console.log(fecha)
 		try {
-
-			console.log(values.fecha);
-
 			const fechaSeleccionada = new Date(fecha);
 			const dia = fechaSeleccionada.getDate();
 			const mes = fechaSeleccionada.getMonth() + 1;
@@ -59,11 +44,6 @@ export const CargaClase = () => {
 				actividad: values.actividad,
 				disponibilidad: values.disponibilidad,
 			};
-			
-
-			console.log(fechaFormateada);
-
-			console.log(claseData);
 
 			await createClase(claseData);
 
@@ -90,16 +70,12 @@ export const CargaClase = () => {
 			<div className='bodyedit'>
 				<Modal show={showModal} onHide={handleCloseModal}>
 					<Modal.Header closeButton>
-						<Modal.Title className='titlemodal'>
-							Crear Clase
-						</Modal.Title>
+						<Modal.Title className='titlemodal'>Crear Clase</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>
 						<Form className='formedit' onSubmit={onSubmit}>
 							<Form.Group className='mb-3' id='inputname'>
-								<Form.Label className='labeledit'>
-									Fecha
-								</Form.Label>
+								<Form.Label className='labeledit'>Fecha</Form.Label>
 
 								<LocalizationProvider
 									dateAdapter={AdapterDayjs}
@@ -119,49 +95,36 @@ export const CargaClase = () => {
 								</LocalizationProvider>
 							</Form.Group>
 
-
-
 							<Form.Group className='' id='inputhora'>
-								<Form.Label className='labeledit'>
-									Horario
-								</Form.Label>
+								<Form.Label className='labeledit'>Horario</Form.Label>
 								<Form.Control
 									className='inputedit'
 									type='string'
-									
 									{...register('hora')}
 								/>
 							</Form.Group>
 
-
-
 							<Form.Group className='mb-3' id='inputconcepto'>
-								<Form.Label className='labeledit'>
-									Actividad
-								</Form.Label>
+								<Form.Label className='labeledit'>Actividad</Form.Label>
 								<select
 									className='inputcarga'
 									aria-label='Default select'
 									{...register('actividad')}
 									//onChange={handleSelectChange}
-									>
+								>
 									<option value=''>Selecciona una actividad...</option>
-									<option value='crossfit'>Crossfit</option>
-									<option value='funcional'>Funcional</option>
-									<option value='boxeo'>Boxeo</option>
-									<option value='yoga'>Yoga</option>
-									<option value='spinning'>Spinning</option>
-									<option value='zumba'>Zumba</option>
-									<option value='musculacion'>Musculacion</option>
-						
+									<option value='Crossfit'>Crossfit</option>
+									<option value='Funcional'>Funcional</option>
+									<option value='Boxeo'>Boxeo</option>
+									<option value='Yoga'>Yoga</option>
+									<option value='Spinning'>Spinning</option>
+									<option value='Zumba'>Zumba</option>
+									<option value='Musculacion'>Musculacion</option>
 								</select>
 							</Form.Group>
 
-	
 							<Form.Group className='' id='inputhora'>
-								<Form.Label className='labeledit'>
-									Cupos
-								</Form.Label>
+								<Form.Label className='labeledit'>Cupos</Form.Label>
 								<Form.Control
 									className='inputedit'
 									type='number'

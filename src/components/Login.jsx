@@ -16,13 +16,10 @@ export const Login = () => {
 	} = useForm();
 	const [showPassword, setShowPassword] = useState(false);
 	const { currentUser, isAuthenticated, login } = useAuth();
-	console.log(currentUser)
-	const user = currentUser
 	const toggleShowPassword = () => setShowPassword(!showPassword);
 
 	const onSubmit = handleSubmit(async (values) => {
 		try {
-			console.log(values)
 			const user = await login(values);
 			Swal.fire({
 				icon: 'success',
@@ -31,10 +28,7 @@ export const Login = () => {
 				timer: 2000,
 			});
 
-			if (
-				user.email === 'admin@gmail.com'
-			
-			) {
+			if (user.email === 'admin@gmail.com') {
 				navigate('/administrador', { replace: true });
 			} else {
 				navigate('/panelusuarios', { replace: true });
@@ -55,7 +49,7 @@ export const Login = () => {
 		if (isAuthenticated) {
 			const user = currentUser?.email;
 			if (user === 'admin@gmail.com') {
-				navigate('/admin');
+				navigate('/administrador');
 			} else {
 				navigate('/panelusuarios');
 			}

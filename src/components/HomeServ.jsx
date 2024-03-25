@@ -20,7 +20,9 @@ export const HomeServ = () => {
 							alt='imagen atencion personalizada'
 						/>
 						<a href='/servicios'>
-							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>VER MAS</p>
+							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
+								VER MAS
+							</p>
 						</a>
 					</div>
 				</div>
@@ -31,8 +33,10 @@ export const HomeServ = () => {
 							src='/ZONA-CARDIOVASCULAR.jpg'
 							alt='imagen cardio'
 						/>
-						<a href='/servicios' className="text-center">
-							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>VER MAS</p>
+						<a href='/servicios' className='text-center'>
+							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
+								VER MAS
+							</p>
 						</a>
 					</div>
 					<div className='div-secserv'>
@@ -60,7 +64,9 @@ export const HomeServ = () => {
 							alt='imagen peso libre'
 						/>
 						<a href='/servicios'>
-							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>VER MAS</p>
+							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
+								VER MAS
+							</p>
 						</a>
 					</div>
 				</div>
@@ -72,7 +78,9 @@ export const HomeServ = () => {
 							alt='imagen nutricion'
 						/>
 						<a href='/servicios'>
-							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>VER MAS</p>
+							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
+								VER MAS
+							</p>
 						</a>
 					</div>
 					<div className='div-secserv'>
@@ -101,7 +109,9 @@ export const HomeServ = () => {
 							alt='imagen actividad'
 						/>
 						<a href='/servicios'>
-							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>VER MAS</p>
+							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
+								VER MAS
+							</p>
 						</a>
 					</div>
 				</div>

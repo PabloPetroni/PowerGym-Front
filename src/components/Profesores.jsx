@@ -22,9 +22,7 @@ export const Profesores = () => {
 								<a href='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-facebook'></i>
 								</a>
-								<a
-									href='/error404'
-									target='_blank'>
+								<a href='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
 								</a>
 							</div>

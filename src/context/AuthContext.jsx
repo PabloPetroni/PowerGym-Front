@@ -26,7 +26,10 @@ export const AuthProvider = ({ children }) => {
 	const registro = async (values) => {
 		try {
 			const res = await apiURL.post('/api/register', values);
+			console.log(res)
 			if (res.status === 200) {
+				document.cookie = `token=${res.data.token}; Path=/; `;
+				localStorage.setItem('token', res.data.token);
 				setCurrentUser(res.data);
 				setIsAuthenticated(true);
 				return res.data;
@@ -39,18 +42,18 @@ export const AuthProvider = ({ children }) => {
 
 	// FUNCION LOGIN CON CORREO ELECTRONICO
 	const login = async (values) => {
-		console.log(values);
 		try {
 			const res = await apiURL.post('/api/login', values, {
 				credentials: 'include',
 			});
-			console.log(res);
-
-			document.cookie = `token=${res.data.token}; Path=/; `;
-			localStorage.setItem('token', res.data.token);
-			setIsAuthenticated(true);
-			setCurrentUser(res.data);
-			return res.data;
+			if (res.status === 200) {
+				console.log(res);
+				document.cookie = `token=${res.data.token}; Path=/; `;
+				localStorage.setItem('token', res.data.token);
+				setIsAuthenticated(true);
+				setCurrentUser(res.data);
+				return res.data;
+			}
 		} catch (error) {
 			console.log(error.response.data);
 			setErrors(error.response.data);
@@ -70,7 +73,7 @@ export const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		async function checkLogin() {
 			const cookies = Cookies.get();
-			console.log(cookies)
+			console.log(cookies);
 			if (!cookies.token) {
 				setIsAuthenticated(false);
 				setIsLoading(false);

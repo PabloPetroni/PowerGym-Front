@@ -9,23 +9,22 @@ import Swal from 'sweetalert2';
 
 export const DatosUsuario = () => {
 	const [user, setUser] = useState([]);
-	const id = '65e249fae8b1f6e5b59c4461';
 	const navigate = useNavigate();
 	const [showModal, setShowModal] = useState(false);
-	const { currentUser} = useAuth({});
-	const userlogin=currentUser.displayname
-	
+	const { currentUser } = useAuth({});
+	const userlogin = currentUser.displayName;
+	const id = currentUser.id;
+
 	const {
 		register,
 		handleSubmit,
 		setValue,
 		formState: { errors },
-		setMessage
+		setMessage,
 	} = useForm();
 
 	const handleCancel = () => {
 		setShowModal(false);
-		navigate('/panelusuarios');
 	};
 
 	useEffect(() => {

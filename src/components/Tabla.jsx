@@ -7,7 +7,7 @@ import { Box } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MRT_Localization_ES } from 'material-react-table/locales/es';
-
+import '../css/Tabla.css'
 export const Tabla = ({ columns, data, actions }) => {
 	// Funcion para cargar tabla de movimientos
 	const table = useMaterialReactTable({
@@ -44,9 +44,13 @@ export const Tabla = ({ columns, data, actions }) => {
 								key={index}
 								className='btnreservar'
 								onClick={() => action.onClick(row)}>
-								<span style={{           marginRight: '8px', paddingBottom: '8px ',
-                                fontSize: '14px', 
-                                verticalAlign: 'middle',  }}>
+								<span
+									style={{
+										marginRight: '8px',
+										paddingBottom: '8px ',
+										fontSize: '14px',
+										verticalAlign: 'middle',
+									}}>
 									{action.icon}
 								</span>
 								{action.text}
@@ -60,7 +64,7 @@ export const Tabla = ({ columns, data, actions }) => {
 		),
 	});
 
-	const lightTheme = createTheme({
+	const darkTheme = createTheme({
 		palette: {
 			mode: 'dark',
 		},
@@ -68,7 +72,7 @@ export const Tabla = ({ columns, data, actions }) => {
 
 	return (
 		<div>
-			<ThemeProvider theme={lightTheme}>
+			<ThemeProvider theme={darkTheme}>
 				<CssBaseline />
 				<MaterialReactTable table={table} />
 			</ThemeProvider>

@@ -13,7 +13,7 @@ export const createTurno = async (turnoSeleccionado, user) => {
 	const datosSolicitud = {
 		turnoSeleccionado,
 		user,
-  };
+	};
 	try {
 		const res = await apiURL.post('/api/turnos', datosSolicitud, {
 			withCredentials: true,

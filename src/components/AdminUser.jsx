@@ -6,6 +6,7 @@ import { Button, Col, Modal, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { apiURL } from '/api/apiURL.js';
 import { useAuth } from '../context/AuthContext';
+import '../css/PanelUsuario.css';
 
 export const AdminUser = () => {
 	const [cargarUsuarios, setCargarUsuarios] = useState([]);
@@ -18,7 +19,9 @@ export const AdminUser = () => {
 
 	const cargarUser = async () => {
 		try {
-			const res = await apiURL.get('/api/users');
+			const res = await apiURL.get('/api/users', {
+				withCredentials: true,
+			});
 			setCargarUsuarios(res.data);
 		} catch (error) {
 			console.log(error);
@@ -27,8 +30,9 @@ export const AdminUser = () => {
 
 	const eliminarUsuarioClick = async (id) => {
 		try {
-			const resp = await apiURL.delete(`/api/users/${id}`);
-			console.log(resp);
+			const resp = await apiURL.delete(`/api/users/${id}`, {
+				withCredentials: true,
+			});
 			// Actualizar lista de usuarios despues de eliminar
 			cargarUser();
 		} catch (error) {
@@ -64,6 +68,22 @@ export const AdminUser = () => {
 				<h3 className='subtitleadusu'>
 					Panel de Administracion de Usuarios
 				</h3>
+			</div>
+
+			<hr
+				className='mx-5 bg-warning'
+				style={{ border: '2px solid #ffcc00' }}
+			/>
+
+			<div className='botonesadm'>
+				<Link className='botonadm' to='/panelclases'>
+					<i className='iconavbar fa-solid fa-person-chalkboard'></i>
+					Administrar Clases
+				</Link>
+				<Link className='botonadm' to='/administrador'>
+					<i className='iconavbar fa-solid fa-arrow-rotate-left'></i>
+					Volver
+				</Link>
 			</div>
 
 			<hr
@@ -127,12 +147,6 @@ export const AdminUser = () => {
 							);
 						})}
 				</Table>
-			</div>
-			<div className='d-flex justify-content-around'>
-				<Link className='botonadm' to='/administrador'>
-					Volver a Admin
-				</Link>
-				<Link className='botonadm'>Administrar clases</Link>
 			</div>
 
 			{/* Modal de confirmación */}

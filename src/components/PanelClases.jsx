@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 // import { useAuth } from '../context/AuthContext.jsx';
 import '../css/PanelUsuario.css';
@@ -14,18 +13,18 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es-mx';
+import { useAuth } from '../context/AuthContext';
 dayjs().format();
 
 export const PanelClases = () => {
-	// const { currentUser, logout } = useAuth({});
+	const { currentUser } = useAuth({});
 	const navigate = useNavigate();
 	const params = useParams();
-	const user = '65e215ee04166531ce18a8e3';
-	const displayName = 'Oscar Frias Viñals';
+	const user = currentUser.id;
+	const displayName = currentUser.displayName;
 	const { register, handleSubmit } = useForm();
 	const [turnoData, setTurnoData] = useState(new Date());
 	const [fecha, setFecha] = useState(new Date());
-	const [turnosFiltrados, setTurnosFiltrados] = useState();
 
 	const onSubmit = handleSubmit(async (values) => {
 		try {
@@ -58,7 +57,7 @@ export const PanelClases = () => {
 			<div className='container-lg '>
 				<div className='main px-3 bodyadmin'>
 					<h4 className='titlead'>Bienvenido, {displayName} </h4>
-					<h3 className='subtitleadusu'>Panel de Usuarios</h3>
+					<h3 className='subtitleadusu'>Panel de Administracion de Clases</h3>
 				</div>
 
 				<hr
@@ -67,12 +66,20 @@ export const PanelClases = () => {
 				/>
 
 				<div className='botonesadm'>
-					<button className='botonadm'
-						onClick={  () => {
+					<button
+						className='botonadm'
+						onClick={() => {
 							navigate(`/CargaClase`);
 						}}>
-						<i class="iconavbar fa fa-plus" aria-hidden="true"></i>
-						Crear Clase
+						<i className='iconavbar fa fa-plus' aria-hidden='true'></i>
+						Crear Nueva Clase
+					</button>
+					<button
+						className='botonadm'
+						onClick={() => {
+							navigate(`/administrador`);
+						}}><i className="iconavbar fa-solid fa-arrow-rotate-left"></i>
+						Volver
 					</button>
 				</div>
 
@@ -83,7 +90,7 @@ export const PanelClases = () => {
 
 				<div className='busqueda'>
 					<h2 className='titleagusu'>
-						Busca tu clase por fecha y/o actividad
+						Busca clases por fecha y/o actividad
 					</h2>
 					<Form
 						className='Formcarga'
@@ -122,7 +129,6 @@ export const PanelClases = () => {
 								<option value='spinning'>Spinning</option>
 								<option value='zumba'>Zumba</option>
 								<option value='musculacion'>Musculacion</option>
-								<option value=''>Todas</option>
 							</select>
 						</Form.Group>
 

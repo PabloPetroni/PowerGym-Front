@@ -10,7 +10,8 @@ export const Contacto = () => {
 	const [email, setEmail] = useState('');
 	const [mensaje, setMensaje] = useState('');
 
-	const validarFormContacto = () => {
+	const validarFormContacto = (e) => {
+		e.preventDefault();
 		const validarEmail = /^[\w+.-]+@\w+([.-]?\w+)*(\.\w{2,})+$/;
 		const resultadoValidacionEmail = validarEmail.test(email);
 
@@ -28,7 +29,7 @@ export const Contacto = () => {
 		} else if (mensaje.length > 300) {
 			mostrarError('*El texto no puede superar los 300 caracteres*');
 		} else {
-			sendEmail();
+			sendEmail(e);
 		}
 	};
 
@@ -116,7 +117,7 @@ export const Contacto = () => {
 							className='btncont'
 							type='submit'
 							value='Enviar Formulario'
-							onClick={validarFormContacto}>
+							onClick={validarFormContacto}><i className="iconavbar fa-solid fa-share-from-square"></i>
 							Enviar Formulario
 						</button>
 					</form>

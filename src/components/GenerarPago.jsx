@@ -16,8 +16,6 @@ export const GenerarPago = () => {
 	const { currentUser } = useAuth({});
 	const userlogin = currentUser.displayName;
 	const user = currentUser.id;
-	console.log(currentUser)
-	console.log(user);
 	const {
 		register,
 		handleSubmit,
@@ -69,7 +67,7 @@ export const GenerarPago = () => {
 			const anioact = fechaActual.getFullYear();
 			const fechaActualFormateada = `${diaact}/${mesact}/${anioact}`;
 
-			console.log(fechaVencimientoFormateada);
+
 			const id = userp._id;
 			const plan = values.plan;
 			const pago = {

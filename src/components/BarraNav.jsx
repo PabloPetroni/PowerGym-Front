@@ -1,17 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import '../css/BarraNav.css';
 import { useAuth } from '../context/AuthContext.jsx';
 
 function BarraNav() {
+	const [estadoLogin, setEstadoLogin] = useState('');
+	const navigate = useNavigate();
 	const { currentUser, isAuthenticated, logout } = useAuth();
 	const [expanded, setExpanded] = useState(false);
+	const user = currentUser ? currentUser.email : null;
 
 	const closeNavbar = () => {
 		setExpanded(false);
+	};
+
+	useEffect(() => {
+		if (!user) {
+			setEstadoLogin('No hay usuario logueado');
+		} else {
+			setEstadoLogin(user);
+		}
+	}, [user]);
+
+	const handleLogOut = async () => {
+		await logout();
+		Swal.fire({
+			icon: 'success',
+			title: 'Su sesion fue cerrada!',
+			showConfirmButton: false,
+			timer: 1500,
+		});
+		navigate('/home');
 	};
 
 	return (
@@ -46,6 +68,18 @@ function BarraNav() {
 							</NavLink>
 							<NavLink
 								className='nav-link link m-3'
+								to='/planes'
+								onClick={closeNavbar}>
+								Planes
+							</NavLink>
+							<NavLink
+								className='nav-link link m-3'
+								to='/productos'
+								onClick={closeNavbar}>
+								Productos
+							</NavLink>
+							<NavLink
+								className='nav-link link m-3'
 								to='/nosotros'
 								onClick={closeNavbar}>
 								Nosotros
@@ -63,42 +97,53 @@ function BarraNav() {
 										className='nav-link link m-3'
 										to='/administrador'
 										onClick={closeNavbar}>
-										Administrador
+										Panel de Administrador
 									</NavLink>
 								)}
-
 							{isAuthenticated && (
-								<button className='btn logout m-3' onClick={logout}>
-									<NavLink
-										to='/login'
-										className='linkIngresar'
-										onClick={closeNavbar}>
-										Cerrar sesión
-									</NavLink>
-								</button>
+								<NavLink
+									className='nav-link link m-3'
+									to='/panelusuarios'
+									onClick={closeNavbar}>
+									Panel de Usuarios
+								</NavLink>
 							)}
 
-							{!isAuthenticated && (
-								<>
-									<button className='btn ingresar m-3'>
-										<NavLink
+							<div className='botones'>
+								<p className='estadolog'>
+									Estas logueado como: {estadoLogin}
+								</p>
+								{user ? (
+									<button
+										onClick={(e) => {
+											closeNavbar();
+											handleLogOut();
+										}}
+										className='logout'>
+										<i className='iconavbarbar fa-solid fa-right-from-bracket'></i>{' '}
+										Cerrar Sesión
+									</button>
+								) : (
+									<>
+										<Link
 											to='/login'
-											className='linkIngresar'
-											onClick={closeNavbar}>
-											Ingresar
-										</NavLink>
-									</button>
-
-									<button className='btn registro m-3'>
-										<NavLink
+											onClick={closeNavbar}
+											className='ingresar'>
+											<i className='iconavbarbar fa-solid fa-right-to-bracket'></i>
+											Iniciar Sesión
+										</Link>
+										<Link
 											to='/registro'
-											className='linkRegistro'
-											onClick={closeNavbar}>
-											Registrarse
-										</NavLink>
-									</button>
-								</>
-							)}
+											className='registro'
+											onClick={(e) => {
+												closeNavbar();
+											}}>
+											<i className='iconavbarbar fa-solid fa-registered'></i>
+											Registrarme
+										</Link>
+									</>
+								)}
+							</div>
 						</Nav>
 					</Navbar.Collapse>
 				</Container>

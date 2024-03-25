@@ -1,33 +1,31 @@
 .modal-header {
-    background-color: rgb(63, 62, 62) !important;
-    font-family: 'Roboto Flex', sans-serif;
-
+	background-color: rgb(63, 62, 62) !important;
+	font-family: 'Roboto Flex', sans-serif;
 }
 
 .modal-body {
-    background-color: rgb(93, 91, 91) !important;
-    font-family: 'Roboto Flex', sans-serif;
-    color: #ffad12;
-    font-size: 20px;
+	background-color: rgb(93, 91, 91) !important;
+	font-family: 'Roboto Flex', sans-serif;
+	color: #ffad12;
+	font-size: 20px;
 	font-weight: 900;
-
 }
 
 /* .modal{
     animation: count 1s ease-in-out;
 } */
 
-.inputedit{
-    background-color:rgb(93, 91, 91) !important;
-    font-family: 'Roboto Flex', sans-serif;
-    
+.inputedit {
+	background-color: rgb(93, 91, 91) !important;
+	font-family: 'Roboto Flex', sans-serif;
+    color:#f9f8f6!important
 }
 
-.btncancmodal{
-    padding-left: 2px;
-    margin-top: 15px;
+.btncancmodal {
+	padding-left: 2px;
+	margin-top: 15px;
 }
 
-.labeledit{
-    margin-top: 10px;
+.labeledit {
+	margin-top: 10px;
 }
