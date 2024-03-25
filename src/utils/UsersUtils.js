@@ -38,6 +38,7 @@ export const deleteUser = async (id) => {
 		const res = await apiURL.delete(`/api/users/${id}`, {
 			withCredentials: true,
 		});
+		console.log(res)
 		return res.data;
 	} catch (error) {
 		console.error(error);

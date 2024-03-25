@@ -29,6 +29,7 @@ export const deleteTurno = async (id) => {
 		const res = await apiURL.delete(`/api/turnos/${id}`, {
 			withCredentials: true,
 		});
+		return res.data;
 	} catch (error) {
 		console.error(error);
 	}
