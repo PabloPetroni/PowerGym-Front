@@ -61,12 +61,14 @@ export const AuthProvider = ({ children }) => {
 		}
 	};
 	console.log(currentUser);
+	
 	// FUNCION LOGOUT
 	const logout = async () => {
 		Cookies.remove('token');
 		localStorage.removeItem('token');
 		setCurrentUser(null);
 		setIsAuthenticated(false);
+		navigate('/home');
 	};
 
 	// Función de autenticacion de usuario logueado
