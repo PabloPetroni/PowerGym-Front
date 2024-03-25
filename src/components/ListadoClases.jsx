@@ -80,7 +80,7 @@ export const ListadoClases = ({ fechaSeleccionada }) => {
 				await deleteClase(id);
 				Swal.fire({
 					icon: 'success',
-					title: 'Gasto eliminado correctamente',
+					title: 'Clase eliminada correctamente',
 					showConfirmButton: false,
 					timer: 1500,
 				});

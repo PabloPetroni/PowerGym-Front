@@ -32,6 +32,7 @@ export const AuthProvider = ({ children }) => {
 				localStorage.setItem('token', res.data.token);
 				setCurrentUser(res.data);
 				setIsAuthenticated(true);
+				navigate('/panelusuarios');
 				return res.data;
 			}
 		} catch (error) {
