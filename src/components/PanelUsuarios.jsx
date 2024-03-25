@@ -12,15 +12,22 @@ dayjs().format();
 
 export const PanelUsuarios = () => {
 	const { currentUser } = useAuth();
-	const displayName = currentUser.displayName;
 	const navigate = useNavigate();
-	const user = currentUser._id;
+
+	// Verificar si currentUser está definido antes de acceder a sus propiedades
+	const displayName = currentUser ? currentUser.displayName : 'Usuario';
+	const userId = currentUser ? currentUser._id : '';
 
 	const [selectedComponent, setSelectedComponent] = useState('listadoTurnos');
 
 	const handleComponentChange = (componentName) => {
 		setSelectedComponent(componentName);
 	};
+
+	// Verificar si currentUser está definido antes de renderizar el componente
+	if (!currentUser) {
+		return <div>Cargando...</div>;
+	}
 
 	return (
 		<>
@@ -68,10 +75,10 @@ export const PanelUsuarios = () => {
 				/>
 
 				<div>
-					{selectedComponent === 'listadoTurnos' && <ListadoTurnos />}
-					{selectedComponent === 'misReservas' && <ReservasUsuario />}
-					{selectedComponent === 'pagos' && <PagosUsuarios />}
-					{selectedComponent === 'actualizarDatos' && <DatosUsuario />}
+					{selectedComponent === 'listadoTurnos' && <ListadoTurnos userId={userId} />}
+					{selectedComponent === 'misReservas' && <ReservasUsuario userId={userId} />}
+					{selectedComponent === 'pagos' && <PagosUsuarios userId={userId} />}
+					{selectedComponent === 'actualizarDatos' && <DatosUsuario userId={userId} />}
 				</div>
 			</div>
 		</>
