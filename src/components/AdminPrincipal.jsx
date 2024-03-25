@@ -21,10 +21,12 @@ export const AdminPrincipal = () => {
 			/>
 
 			<div className='botonesadm'>
-				<Link className='botonadm' to='/admin-usuarios'><i className="iconavbar fa-solid fa-users"></i>
+				<Link className='botonadm' to='/admin-usuarios'>
+					<i className='iconavbar fa-solid fa-users'></i>
 					Administrar Usuarios
 				</Link>
-				<Link className='botonadm' to='/panelclases'><i className="iconavbar fa-solid fa-person-chalkboard"></i>
+				<Link className='botonadm' to='/panelclases'>
+					<i className='iconavbar fa-solid fa-person-chalkboard'></i>
 					Administrar Clases
 				</Link>
 			</div>
@@ -33,8 +35,6 @@ export const AdminPrincipal = () => {
 				className='mx-5 bg-warning'
 				style={{ border: '2px solid #ffcc00' }}
 			/>
-
-
 		</div>
 	);
 };

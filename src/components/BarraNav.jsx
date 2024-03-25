@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import '../css/BarraNav.css';
 import { useAuth } from '../context/AuthContext.jsx';
 import Swal from 'sweetalert2';
 
 function BarraNav() {
 	const [estadoLogin, setEstadoLogin] = useState('');
-	const navigate = useNavigate();
 	const { currentUser, isAuthenticated, logout } = useAuth();
 	const [expanded, setExpanded] = useState(false);
 	const user = currentUser ? currentUser.email : null;
@@ -34,7 +33,6 @@ function BarraNav() {
 			showConfirmButton: false,
 			timer: 1500,
 		});
-		navigate('/home');
 	};
 
 	return (
