@@ -93,19 +93,18 @@ export const GenerarPago = () => {
 				</Modal.Header>
 				<Modal.Body className='modalbg'>
 					<Form onSubmit={onSubmit}>
-						<Form.Group className='mb-3 text-dark' controlId=''>
-							<Form.Label className='labelreg'>
-								Usuario:{' '}
-								<span className=''>
-									{' '}
-									{/* {userp.nombre} {userp.apellido} */}
+						<Form.Group className='mb-3' controlId=''>
+							<Form.Label className='labeledit'>
+								Usuario: <br />
+								<span className='labeledit text-dark'>
+									{userlogin}
 								</span>
 							</Form.Label>
 						</Form.Group>
 						<Form.Group
 							className='mb-3 d-flex flex-column text-center align-items-center'
 							id='inputplan'>
-							<Form.Label className='w-50 labelreg'>
+							<Form.Label className='w-50 labeledit'>
 								Elegi tu Plan
 							</Form.Label>
 							<select
@@ -129,10 +128,10 @@ export const GenerarPago = () => {
 								</Form.Text>
 							)}
 						</Form.Group>
-						<Form.Label className='labelreg'>
-							Monto a pagar: ${precioPlan}
+						<Form.Label className='labeledit'>
+							Monto a pagar: $ {precioPlan}
 						</Form.Label>
-						<Form.Label className=' text-center labelreg'>
+						<Form.Label className=' text-center labeledit w-100'>
 							Selecciona tu forma de pago
 						</Form.Label>
 						<div className='d-flex flex-row justify-content-around'>

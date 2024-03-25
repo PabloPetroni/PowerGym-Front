@@ -134,13 +134,15 @@ export const AdminUser = () => {
 										<td>{usuario.email}</td>
 										<td>{usuario.celular}</td>
 										<td>
-											<Button
-												onClick={() =>
-													handleDeleteConfirmation(usuario._id)
-												}
-												variant='danger'>
-												<i className='fa-solid fa-user-xmark'></i>
-											</Button>
+											{usuario.email !== 'admin@gmail.com' && (
+												<Button
+													onClick={() =>
+														handleDeleteConfirmation(usuario._id)
+													}
+													variant='danger'>
+													<i className='fa-solid fa-user-xmark'></i>
+												</Button>
+											)}
 										</td>
 									</tr>
 								</tbody>

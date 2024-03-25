@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import '../css/BarraNav.css';
 import { useAuth } from '../context/AuthContext.jsx';
+import Swal from 'sweetalert2';
 
 function BarraNav() {
 	const [estadoLogin, setEstadoLogin] = useState('');
