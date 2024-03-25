@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import '../css/AdminUser.css';
-import { Button, Col, Modal, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { apiURL } from '/api/apiURL.js';
 import { useAuth } from '../context/AuthContext';
 import '../css/PanelUsuario.css';
+import Swal from 'sweetalert2';
+import { deleteUser } from '../utils/UsersUtils';
 
 export const AdminUser = () => {
 	const [cargarUsuarios, setCargarUsuarios] = useState([]);
-	//barra de busqueda
 	const [search, setSearch] = useState('');
 	const [showConfirmationModal, setShowConfirmationModal] = useState(false);
-	const [usuarioIdToDelete, setUsuarioIdToDelete] = useState(null);
 	const { currentUser } = useAuth();
 	const displayName = currentUser.displayName;
 
@@ -28,38 +28,37 @@ export const AdminUser = () => {
 		}
 	};
 
-	const eliminarUsuarioClick = async (id) => {
+	const borrarUsuario = async (id) => {
 		try {
-			const resp = await apiURL.delete(`/api/users/${id}`, {
-				withCredentials: true,
+			const result = await Swal.fire({
+				title: '¿Estás seguro?',
+				text: 'Confirmas la eliminacion del usuario?',
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#d33',
+				cancelButtonColor: '#8f8e8b',
+				confirmButtonText: 'Sí, eliminar',
+				cancelButtonText: 'Cancelar',
 			});
-			// Actualizar lista de usuarios despues de eliminar
-			cargarUser();
-		} catch (error) {
-			if (error.response.status === 401) {
-				localStorage.removeItem('token');
-				navigate('/login');
+			if (result.isConfirmed) {
+				await deleteUser(id);
+				Swal.close();
+				Swal.fire({
+					icon: 'success',
+					title: 'Usuario eliminado correctamente',
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				setCargarUsuarios((prevData) => prevData.filter((user) => user._id !== id));
 			}
+		} catch (error) {
+			console.error('Error al eliminar el usuario:', error);
 		}
 	};
 
 	useEffect(() => {
 		cargarUser();
 	}, []);
-
-	const handleDeleteConfirmation = (id) => {
-		setUsuarioIdToDelete(id);
-		setShowConfirmationModal(true);
-	};
-
-	const confirmDelete = () => {
-		eliminarUsuarioClick(usuarioIdToDelete);
-		setShowConfirmationModal(false);
-	};
-
-	const cancelDelete = () => {
-		setShowConfirmationModal(false);
-	};
 
 	return (
 		<div>
@@ -137,7 +136,7 @@ export const AdminUser = () => {
 											{usuario.email !== 'admin@gmail.com' && (
 												<Button
 													onClick={() =>
-														handleDeleteConfirmation(usuario._id)
+														borrarUsuario(usuario._id)
 													}
 													variant='danger'>
 													<i className='fa-solid fa-user-xmark'></i>
@@ -150,24 +149,6 @@ export const AdminUser = () => {
 						})}
 				</Table>
 			</div>
-
-			{/* Modal de confirmación */}
-			<Modal show={showConfirmationModal} onHide={cancelDelete}>
-				<Modal.Header closeButton>
-					<Modal.Title>Confirmación</Modal.Title>
-				</Modal.Header>
-				<Modal.Body>
-					¿Estás seguro de que quieres eliminar este usuario?
-				</Modal.Body>
-				<Modal.Footer>
-					<Button variant='secondary' onClick={cancelDelete}>
-						Cancelar
-					</Button>
-					<Button variant='danger' onClick={confirmDelete}>
-						Confirmar
-					</Button>
-				</Modal.Footer>
-			</Modal>
 		</div>
 	);
 };

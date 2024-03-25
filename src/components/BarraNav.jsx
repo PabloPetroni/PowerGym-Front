@@ -52,7 +52,7 @@ function BarraNav() {
 						onClick={() => setExpanded(!expanded)}
 					/>
 					<Navbar.Collapse id='responsive-navbar-nav' className='menu'>
-						<Nav className='ms-auto d-flex align-items-center'>
+						<Nav className='ms-auto d-flex align-items-center '>
 							<NavLink
 								className='nav-link link m-3'
 								to='/servicios'
