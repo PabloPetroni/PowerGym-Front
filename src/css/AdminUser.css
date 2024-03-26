@@ -18,10 +18,17 @@
 	text-align: center;
 	padding-bottom: 20px;
 	border-radius: 20px;
+	margin-left: 25px;
+	margin-right: 25px;
+
 }
 
 .texto-boton-back {
 	text-decoration: none;
 	font-weight: bold;
 	color: black;
+}
+.botonesadmuser{
+	display: flex;
+	height: 65px!important;
 }

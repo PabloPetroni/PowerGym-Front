@@ -37,6 +37,7 @@ export const EditarClases = ({}) => {
 				setValue('hora', claseData.hora);
 				setValue('actividad', claseData.actividad);
 				setValue('disponibilidad', claseData.disponibilidad);
+				setValue('sede', claseData.sede)
 				handleOpenModal();
 			} catch (error) {
 				console.error('Error al cargar la Clase', error);
@@ -59,6 +60,7 @@ export const EditarClases = ({}) => {
 				hora: values.hora,
 				actividad: values.actividad,
 				disponibilidad: values.disponibilidad,
+				sede: values.sede
 			};
 
 			await updateClase(id, claseData);
@@ -126,14 +128,13 @@ export const EditarClases = ({}) => {
 									className='inputcarga'
 									aria-label='Default select'
 									{...register('actividad')}>
-									<option value=''>Selecciona una actividad...</option>
-									<option value='crossfit'>Crossfit</option>
-									<option value='funcional'>Funcional</option>
-									<option value='boxeo'>Boxeo</option>
-									<option value='yoga'>Yoga</option>
-									<option value='spinning'>Spinning</option>
-									<option value='zumba'>Zumba</option>
-									<option value='musculacion'>Musculacion</option>
+									<option value='Crossfit'>Crossfit</option>
+									<option value='Funcional'>Funcional</option>
+									<option value='Boxeo'>Boxeo</option>
+									<option value='Yoga'>Yoga</option>
+									<option value='Spinning'>Spinning</option>
+									<option value='Zumba'>Zumba</option>
+									<option value='Musculacion'>Musculacion</option>
 								</select>
 							</Form.Group>
 
@@ -144,6 +145,19 @@ export const EditarClases = ({}) => {
 									type='number'
 									{...register('disponibilidad')}
 								/>
+							</Form.Group>
+
+							<Form.Group className='mb-3' id='sede'>
+								<Form.Label className='labeledit'>Sede</Form.Label>
+								<select
+									className='inputcarga'
+									aria-label='Default select'
+									{...register('sede')}
+								>
+									<option value='Centro'>Centro</option>
+									<option value='Yerba Buena'>Yerba Buena</option>
+									<option value='Tafi Viejo'>Tafi Viejo</option>
+								</select>
 							</Form.Group>
 
 							<Form.Group className='botonesedit'>

@@ -26,7 +26,6 @@ export const AuthProvider = ({ children }) => {
 	const registro = async (values) => {
 		try {
 			const res = await apiURL.post('/api/register', values);
-			console.log(res)
 			if (res.status === 200) {
 				document.cookie = `token=${res.data.token}; Path=/; `;
 				localStorage.setItem('token', res.data.token);
@@ -48,7 +47,6 @@ export const AuthProvider = ({ children }) => {
 				credentials: 'include',
 			});
 			if (res.status === 200) {
-				console.log(res);
 				document.cookie = `token=${res.data.token}; Path=/; `;
 				localStorage.setItem('token', res.data.token);
 				setIsAuthenticated(true);
@@ -61,8 +59,7 @@ export const AuthProvider = ({ children }) => {
 			throw error; // Re-lanzar el error para manejarlo en onSubmit
 		}
 	};
-	console.log(currentUser);
-	
+
 	// FUNCION LOGOUT
 	const logout = async () => {
 		Cookies.remove('token');
@@ -76,7 +73,6 @@ export const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		async function checkLogin() {
 			const cookies = Cookies.get();
-			console.log(cookies);
 			if (!cookies.token) {
 				setIsAuthenticated(false);
 				setIsLoading(false);

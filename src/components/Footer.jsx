@@ -34,13 +34,13 @@ export const Footer = () => {
 					<div className='social-item col-6 col-md-4 d-flex flex-wrap align-items-center justify-content-center my-1'>
 						<Link
 							className='social-icon'
-							to='https://www.facebook.com/estudiopossetucuman?mibextid=ZbWKwL'
+							to='https://www.facebook.com/'
 							target='_blank'>
 							<i className='fa-brands fa-facebook'></i>
 						</Link>
 						<Link
 							className='social-icon'
-							href='https://www.instagram.com/estudioposseasociados?igsh=bmYzN3VybGdlZGgw'
+							href='https://www.instagram.com/'
 							target='_blank'>
 							<i className='fa-brands fa-square-instagram'></i>
 						</Link>
