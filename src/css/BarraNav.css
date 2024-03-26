@@ -1,14 +1,24 @@
 .navbar {
 	background-color: #e4e5ecff;
-	height: 8rem;
+	height: auto;
 	z-index: 1000;
+	display: flex!important;
+	flex-direction: row!important;
+	align-items: center!important;
+	justify-items: space-around!important;
 }
-
 .logo {
 	width: 200px;
 	height: 100px;
 }
-
+.containernav{
+	display: flex!important;
+	flex-direction: row!important;
+	flex-wrap: wrap!important;
+	justify-content: space-around!important;
+	align-items: center!important;
+	width: 900px!important;
+}
 .link {
 	text-decoration: none;
 	color: rgb(16, 19, 22) !important;
@@ -25,11 +35,15 @@
 }
 .menu {
 	background-color: #e4e5ecff;
+	display: flex!important;
+	flex-direction: column!important;
+	flex-wrap: wrap!important;
+	justify-content: space-around!important;
 }
 .botones {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-around!important;
 	align-items: center;
 	width: 100%;
 	margin-bottom: 15px;
@@ -45,6 +59,7 @@
 	padding: 7px;
 	padding-left: 35px;
 	padding-right: 35px;
+	margin-bottom: 10px;
 	cursor: pointer;
 	text-decoration: none;
 }
@@ -73,6 +88,7 @@
 	font-size: 16px;
 	font-weight: 700;
 	padding: 7px;
+	margin-bottom: 10px;
 	padding-left: 35px;
 	padding-right: 35px;
 	cursor: pointer;
@@ -124,7 +140,16 @@
 .logout{
 	padding-left: 5px;
 	padding-right: 5px;
-	text-wrap: wrap ;
+	text-wrap: nowrap ;
 }
-
+.botones{
+	flex-wrap: nowrap;
+}
+.registro{
+	text-wrap: nowrap ;
+}
+.ingresar{
+	text-wrap: nowrap ;
+	
+}
 }

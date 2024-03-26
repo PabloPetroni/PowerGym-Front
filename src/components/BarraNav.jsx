@@ -37,8 +37,8 @@ function BarraNav() {
 
 	return (
 		<>
-			<Navbar expand='lg' className='navbar' expanded={expanded}>
-				<Container>
+			<Navbar expand='lg' className='mb-4 container-fluid navbar' expanded={expanded}>
+				<Container className='containernav'>
 					<Navbar.Brand href='/'>
 						<img
 							src='https://i.postimg.cc/XY51w3dy/Logo-fondo-transparente-Photoroom-png-Photoroom.png'
@@ -51,8 +51,8 @@ function BarraNav() {
 						style={{ color: '#bac7d6ff', border: 'white' }}
 						onClick={() => setExpanded(!expanded)}
 					/>
-					<Navbar.Collapse id='responsive-navbar-nav' className='menu'>
-						<Nav className='ms-auto d-flex align-items-center '>
+					<Navbar.Collapse id='responsive-navbar-nav' className=''>
+						<Nav className='ms-auto d-flex align-items-center justify-content-around flex-wrap'>
 							<NavLink
 								className='nav-link link m-3'
 								to='/servicios'
