@@ -50,7 +50,7 @@ export const ReservasUsuario = () => {
 				header: 'Actividad',
 				accessorKey: 'actividad',
 				enableColumnOrdering: false,
-				size: 300,
+				size: 100,
 			},
 			{
 				header: 'Sede',

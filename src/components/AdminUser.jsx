@@ -8,14 +8,23 @@ import { apiURL } from '/api/apiURL.js';
 import { useAuth } from '../context/AuthContext';
 import '../css/PanelUsuario.css';
 import Swal from 'sweetalert2';
+import { DatosUsuario } from './DatosUsuario';
 import { deleteUser } from '../utils/UsersUtils';
 
 export const AdminUser = () => {
 	const [cargarUsuarios, setCargarUsuarios] = useState([]);
 	const [search, setSearch] = useState('');
-	const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 	const { currentUser } = useAuth();
 	const displayName = currentUser.displayName;
+	const [selectedComponent, setSelectedComponent] = useState('');
+	const [userId, setUserId] = useState('');
+	const [showModal, setShowModal] = useState(false);
+
+	const handleComponentChange = (componentName, userId) => {
+		setSelectedComponent(componentName);
+		setUserId(userId);
+		setShowModal(true);
+	};
 
 	const cargarUser = async () => {
 		try {
@@ -49,7 +58,9 @@ export const AdminUser = () => {
 					showConfirmButton: false,
 					timer: 1500,
 				});
-				setCargarUsuarios((prevData) => prevData.filter((user) => user._id !== id));
+				setCargarUsuarios((prevData) =>
+					prevData.filter((user) => user._id !== id)
+				);
 			}
 		} catch (error) {
 			console.error('Error al eliminar el usuario:', error);
@@ -105,10 +116,10 @@ export const AdminUser = () => {
 				</Form>
 			</div>
 			<div className='tabla-usuarios'>
-				<Table bordered hover responsive>
+				<Table bordered hover responsive variant="dark">
 					<thead>
 						<tr>
-							<th>#ID</th>
+
 							<th>Nombre</th>
 							<th>Email</th>
 							<th>Telefono</th>
@@ -126,21 +137,32 @@ export const AdminUser = () => {
 							return (
 								<tbody key={usuario._id}>
 									<tr>
-										<td>{usuario._id}</td>
 										<td>
 											{usuario.apellido},{usuario.nombre}
 										</td>
 										<td>{usuario.email}</td>
 										<td>{usuario.celular}</td>
-										<td>
+										<td className='botonesadmuser'>
 											{usuario.email !== 'admin@gmail.com' && (
-												<Button
-													onClick={() =>
-														borrarUsuario(usuario._id)
-													}
-													variant='danger'>
-													<i className='fa-solid fa-user-xmark'></i>
-												</Button>
+												<>
+													<Button
+													className='me-2'
+														onClick={() =>
+															borrarUsuario(usuario._id)
+														}
+														variant='danger'>
+														<i className='fa-solid fa-user-xmark'></i>
+													</Button>
+													<Button
+														onClick={() =>
+															handleComponentChange(
+																'actualizarDatos',
+																usuario._id
+															)
+														}>
+														<i className="fa-solid fa-user-pen"></i>
+													</Button>
+												</>
 											)}
 										</td>
 									</tr>
@@ -148,6 +170,11 @@ export const AdminUser = () => {
 							);
 						})}
 				</Table>
+			</div>
+			<div>
+				{selectedComponent === 'actualizarDatos' && (
+					<DatosUsuario userId={userId} showModal={showModal} setShowModal={setShowModal} />
+				)}
 			</div>
 		</div>
 	);

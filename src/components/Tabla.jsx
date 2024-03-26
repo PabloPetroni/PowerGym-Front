@@ -7,9 +7,14 @@ import { Box } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MRT_Localization_ES } from 'material-react-table/locales/es';
-import '../css/Tabla.css'
+import '../css/Tabla.css';
 export const Tabla = ({ columns, data, actions }) => {
 	// Funcion para cargar tabla de movimientos
+
+	const handleEdit = (userId) => {
+		return <EditarPagos userId={userId} />;
+	};
+
 	const table = useMaterialReactTable({
 		columns,
 		data: data || [],
@@ -36,7 +41,7 @@ export const Tabla = ({ columns, data, actions }) => {
 			<Box sx={{}}>
 				{actions.map((action, index) => {
 					if (
-						row.original.estado !== 'Abonado' &&
+						// row.original.estado !== 'Abonado' &&
 						row.original.disponibilidad !== 'Cupo completo'
 					) {
 						return (

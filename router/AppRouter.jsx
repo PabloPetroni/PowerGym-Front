@@ -34,6 +34,7 @@ import { EditarClases } from '../src/components/EditarClases.jsx';
 import { CargaClase } from '../src/components/CargaClase.jsx';
 import { Tabla } from '../src/components/Tabla.jsx';
 import { AdminPrincipal } from '../src/components/AdminPrincipal.jsx';
+import { ListadoClaseDia } from '../src/components/ListadoClaseDia.jsx';
 
 export const AppRouter = () => {
 	return (
@@ -59,28 +60,41 @@ export const AppRouter = () => {
 						element={<ModalProductos />}></Route>
 					<Route path='/planes' element={<Planes />}></Route>
 
-					{/* <Route element={<PrivateRoute />}> */}
-					<Route
-						path='/reservasusuario'
-						element={<ReservasUsuario />}></Route>
-					<Route path='/datosusuario' element={<DatosUsuario />}></Route>
-					<Route path='/admin-usuarios' element={<AdminUser />}></Route>
-					<Route path='/generarpago' element={<GenerarPago />}></Route>
-					<Route path='/panelusuarios' element={<PanelUsuarios />}></Route>
-					<Route path='/listadoturnos' element={<ListadoTurnos />}></Route>
-					<Route path='/pagosusuarios' element={<PagosUsuarios />}></Route>
-					<Route path='/panelclases' element={<PanelClases />}></Route>
-					<Route
-						path='/editarclases/:id'
-						element={<EditarClases />}></Route>
-					<Route path='/cargaclase' element={<CargaClase />}></Route>
-					{/* </Route> */}
+					<Route element={<PrivateRoute />}>
+						
+						<Route path='/tabla' element={<Tabla />}></Route>
+						<Route
+							path='/reservasusuario'
+							element={<ReservasUsuario />}></Route>
+						<Route
+							path='/datosusuario'
+							element={<DatosUsuario />}></Route>
+						<Route path='/admin-usuarios' element={<AdminUser />}></Route>
+						<Route path='/generarpago' element={<GenerarPago />}></Route>
+						<Route
+							path='/panelusuarios'
+							element={<PanelUsuarios />}></Route>
+						<Route
+							path='/listadoturnos'
+							element={<ListadoTurnos />}></Route>
+						<Route
+							path='/pagosusuarios'
+							element={<PagosUsuarios />}></Route>
+						<Route path='/panelclases' element={<PanelClases />}></Route>
+						<Route
+							path='/editarclases/:id'
+							element={<EditarClases />}></Route>
+						<Route path='/cargaclase' element={<CargaClase />}></Route>
+					</Route>
 					<Route
 						path='/generarpago/:user'
 						element={<GenerarPago />}></Route>
 					<Route
 						path='/administrador'
 						element={<AdminPrincipal />}></Route>
+											<Route
+						path='/listadoclasesdia'
+						element={<ListadoClaseDia />}></Route>
 				</Routes>
 				<Footer />
 			</AuthProvider>

@@ -7,13 +7,12 @@ import { getUser, updateUser } from '../utils/UsersUtils.js';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-export const DatosUsuario = () => {
-	const [user, setUser] = useState([]);
-	const navigate = useNavigate();
-	const [showModal, setShowModal] = useState(false);
+export const DatosUsuario = ({ userId, showModal, setShowModal }) => {
+	const [user, setUser] = useState({});
+	const [showModalLocal, setShowModalLocal] = useState(false); // Cambia el nombre a showModalLocal
 	const { currentUser } = useAuth({});
 	const userlogin = currentUser.displayName;
-	const id = currentUser.id;
+	const id = userId;
 
 	const {
 		register,
@@ -24,7 +23,7 @@ export const DatosUsuario = () => {
 	} = useForm();
 
 	const handleCancel = () => {
-		setShowModal(false);
+		setShowModalLocal(false);
 	};
 
 	useEffect(() => {
@@ -38,13 +37,13 @@ export const DatosUsuario = () => {
 				setValue('domicilio', usuario.domicilio);
 				setValue('celular', usuario.celular);
 				setUser(usuario);
-				setShowModal(true);
+				setShowModalLocal(true);
 			} catch (error) {
 				console.error('Error al cargar los datos del usuario', error);
 			}
 		}
 		loadUsuario();
-	}, []);
+	}, [userId, setShowModal]);
 
 	const onSubmit = handleSubmit(async (values) => {
 		try {
@@ -69,7 +68,7 @@ export const DatosUsuario = () => {
 
 	return (
 		<div>
-			<Modal show={showModal} onHide={handleCancel}>
+			<Modal show={showModalLocal} onHide={handleCancel}>
 				<Modal.Header closeButton className='modalbg'>
 					<Modal.Title className='titlemodal'>
 						Actualizar Mis Datos
