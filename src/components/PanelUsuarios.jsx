@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import '../css/PanelUsuario.css';
 import { ListadoTurnos } from './ListadoTurnos';
@@ -12,18 +11,25 @@ dayjs().format();
 
 export const PanelUsuarios = () => {
 	const { currentUser } = useAuth();
-	const navigate = useNavigate();
-
-	// Verificar si currentUser está definido antes de acceder a sus propiedades
+	const [showModal, setShowModal] = useState(false);
 	const displayName = currentUser ? currentUser.displayName : 'Usuario';
-	const userId = currentUser ? currentUser._id : '';
-
+	const userId = currentUser ? currentUser.id : '';
+	const userMail = currentUser.email;
 	const [selectedComponent, setSelectedComponent] = useState('listadoTurnos');
 
 	const handleComponentChange = (componentName) => {
+		if (
+			componentName === 'actualizarDatos' &&
+			userMail === 'admin@gmail.com'
+		) {
+			alert(
+				'Acceso denegado. No tienes permiso para actualizar datos como administrador.'
+			);
+			return;
+		}
 		setSelectedComponent(componentName);
+		setShowModal(true);
 	};
-
 	// Verificar si currentUser está definido antes de renderizar el componente
 	if (!currentUser) {
 		return <div>Cargando...</div>;
@@ -75,10 +81,22 @@ export const PanelUsuarios = () => {
 				/>
 
 				<div>
-					{selectedComponent === 'listadoTurnos' && <ListadoTurnos userId={userId} />}
-					{selectedComponent === 'misReservas' && <ReservasUsuario userId={userId} />}
-					{selectedComponent === 'pagos' && <PagosUsuarios userId={userId} />}
-					{selectedComponent === 'actualizarDatos' && <DatosUsuario userId={userId} />}
+					{selectedComponent === 'listadoTurnos' && (
+						<ListadoTurnos userId={userId} />
+					)}
+					{selectedComponent === 'misReservas' && (
+						<ReservasUsuario userId={userId} />
+					)}
+					{selectedComponent === 'pagos' && (
+						<PagosUsuarios userId={userId} />
+					)}
+					{selectedComponent === 'actualizarDatos' && (
+						<DatosUsuario
+							userId={userId}
+							showModal={showModal}
+							setShowModal={setShowModal}
+						/>
+					)}
 				</div>
 			</div>
 		</>

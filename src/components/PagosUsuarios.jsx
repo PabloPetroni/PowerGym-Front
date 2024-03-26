@@ -4,7 +4,7 @@ import '../css/ListadoTurnos.css';
 import { useAuth } from '../context/AuthContext.jsx';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Tabla } from './Tabla.jsx';
 
 export const PagosUsuarios = () => {
@@ -12,9 +12,8 @@ export const PagosUsuarios = () => {
 	const [user, setUser] = useState([]);
 	const { currentUser } = useAuth();
 	const userlogin = currentUser.displayname;
-	const navigate = useNavigate();
 	const id = currentUser.id;
-
+	
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -83,6 +82,7 @@ export const PagosUsuarios = () => {
 					</Link>
 				</div>
 			</div>
+
 		</div>
 	);
 };

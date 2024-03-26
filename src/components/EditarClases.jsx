@@ -128,14 +128,13 @@ export const EditarClases = ({}) => {
 									className='inputcarga'
 									aria-label='Default select'
 									{...register('actividad')}>
-									<option value=''>Selecciona una actividad...</option>
-									<option value='crossfit'>Crossfit</option>
-									<option value='funcional'>Funcional</option>
-									<option value='boxeo'>Boxeo</option>
-									<option value='yoga'>Yoga</option>
-									<option value='spinning'>Spinning</option>
-									<option value='zumba'>Zumba</option>
-									<option value='musculacion'>Musculacion</option>
+									<option value='Crossfit'>Crossfit</option>
+									<option value='Funcional'>Funcional</option>
+									<option value='Boxeo'>Boxeo</option>
+									<option value='Yoga'>Yoga</option>
+									<option value='Spinning'>Spinning</option>
+									<option value='Zumba'>Zumba</option>
+									<option value='Musculacion'>Musculacion</option>
 								</select>
 							</Form.Group>
 
@@ -155,7 +154,6 @@ export const EditarClases = ({}) => {
 									aria-label='Default select'
 									{...register('sede')}
 								>
-									<option value=''>Selecciona una sede...</option>
 									<option value='Centro'>Centro</option>
 									<option value='Yerba Buena'>Yerba Buena</option>
 									<option value='Tafi Viejo'>Tafi Viejo</option>

@@ -29,6 +29,10 @@ export const AdminPrincipal = () => {
 					<i className='iconavbar fa-solid fa-person-chalkboard'></i>
 					Administrar Clases
 				</Link>
+				<Link className='botonadm' to='/listadoclasesdia'>
+				<i className="iconavbar fa-solid fa-magnifying-glass"></i>
+					Consultar Clases del Dia
+				</Link>
 			</div>
 
 			<hr
