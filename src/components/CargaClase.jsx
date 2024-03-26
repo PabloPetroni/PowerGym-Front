@@ -43,6 +43,7 @@ export const CargaClase = () => {
 				hora: values.hora,
 				actividad: values.actividad,
 				disponibilidad: values.disponibilidad,
+				sede: values.sede
 			};
 
 			await createClase(claseData);
@@ -110,7 +111,6 @@ export const CargaClase = () => {
 									className='inputcarga'
 									aria-label='Default select'
 									{...register('actividad')}
-									//onChange={handleSelectChange}
 								>
 									<option value=''>Selecciona una actividad...</option>
 									<option value='Crossfit'>Crossfit</option>
@@ -123,7 +123,7 @@ export const CargaClase = () => {
 								</select>
 							</Form.Group>
 
-							<Form.Group className='' id='inputhora'>
+							<Form.Group className='' id='cupo'>
 								<Form.Label className='labeledit'>Cupos</Form.Label>
 								<Form.Control
 									className='inputedit'
@@ -131,8 +131,21 @@ export const CargaClase = () => {
 									{...register('disponibilidad')}
 								/>
 							</Form.Group>
+							<Form.Group className='mb-3' id='sede'>
+								<Form.Label className='labeledit'>Sede</Form.Label>
+								<select
+									className='inputcarga'
+									aria-label='Default select'
+									{...register('sede')}
+								>
+									<option value=''>Selecciona una sede...</option>
+									<option value='Centro'>Centro</option>
+									<option value='Yerba Buena'>Yerba Buena</option>
+									<option value='Tafi Viejo'>Tafi Viejo</option>
+								</select>
+							</Form.Group>
 
-							<Form.Group className='botonesedit'>
+							<Form.Group className='botonesedit mt-3'>
 								<button className='btncancmodal' type='submit'>
 									<i className='iconavbar bi bi-check2-square'></i>
 									Guardar

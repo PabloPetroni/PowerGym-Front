@@ -37,6 +37,7 @@ export const EditarClases = ({}) => {
 				setValue('hora', claseData.hora);
 				setValue('actividad', claseData.actividad);
 				setValue('disponibilidad', claseData.disponibilidad);
+				setValue('sede', claseData.sede)
 				handleOpenModal();
 			} catch (error) {
 				console.error('Error al cargar la Clase', error);
@@ -59,6 +60,7 @@ export const EditarClases = ({}) => {
 				hora: values.hora,
 				actividad: values.actividad,
 				disponibilidad: values.disponibilidad,
+				sede: values.sede
 			};
 
 			await updateClase(id, claseData);
@@ -144,6 +146,20 @@ export const EditarClases = ({}) => {
 									type='number'
 									{...register('disponibilidad')}
 								/>
+							</Form.Group>
+
+							<Form.Group className='mb-3' id='sede'>
+								<Form.Label className='labeledit'>Sede</Form.Label>
+								<select
+									className='inputcarga'
+									aria-label='Default select'
+									{...register('sede')}
+								>
+									<option value=''>Selecciona una sede...</option>
+									<option value='Centro'>Centro</option>
+									<option value='Yerba Buena'>Yerba Buena</option>
+									<option value='Tafi Viejo'>Tafi Viejo</option>
+								</select>
 							</Form.Group>
 
 							<Form.Group className='botonesedit'>
