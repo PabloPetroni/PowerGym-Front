@@ -6,7 +6,7 @@ const urlYB = `https://api.openweathermap.org/data/2.5/weather?q=yerbabuena&appi
 // const urlTV = `https://api.openweathermap.org/data/2.5/weather?q=tafiviejo&appid=${APIkey}&units=metric`;
 
 export const apiURL = axios.create({
-	baseURL: 'https://backendpowergym.onrender.com',
+	baseURL: 'http://localhost:4000',
 });
 
 export const clima = async () => {

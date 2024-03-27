@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
 				credentials: 'include',
 			});
 			if (res.status === 200) {
-				document.cookie = `token=${res.data.token}; Path=/; `;
+				// document.cookie = `token=${res.data.token}; Path=/; `;
 				localStorage.setItem('token', res.data.token);
 				setIsAuthenticated(true);
 				setCurrentUser(res.data);
