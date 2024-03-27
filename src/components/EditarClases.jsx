@@ -122,7 +122,7 @@ export const EditarClases = ({}) => {
 								/>
 							</Form.Group>
 
-							<Form.Group className='mb-3' id='inputconcepto'>
+							<Form.Group className='mb-3' id='actividad'>
 								<Form.Label className='labeledit'>Actividad</Form.Label>
 								<select
 									className='inputcarga'
@@ -138,7 +138,7 @@ export const EditarClases = ({}) => {
 								</select>
 							</Form.Group>
 
-							<Form.Group className='' id='inputhora'>
+							<Form.Group className='' id='cupo'>
 								<Form.Label className='labeledit'>Cupos</Form.Label>
 								<Form.Control
 									className='inputedit'
