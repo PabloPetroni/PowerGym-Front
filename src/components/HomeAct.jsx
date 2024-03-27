@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export const HomeAct = () => {
 	return (
@@ -9,13 +10,13 @@ export const HomeAct = () => {
 				<Carousel fade interval={2500} controls={false} indicators={false}>
 					<Carousel.Item className='itemcarousel'>
 						<div className='icocarousel'>
-							<a href='/actividades'>
+							<Link to='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/BOXEO.jpg'
 									alt='imagen boxeo'
 								/>
-							</a>
+							</Link>
 							<p className='text-center pimgcarousel'>Boxeo</p>
 							<i className='fa-solid fa-bolt mb-3 text-danger'>
 								<span className='intact'>Alta</span>{' '}
@@ -25,13 +26,13 @@ export const HomeAct = () => {
 							</i>
 						</div>
 						<div className='icocarousel'>
-							<a href='/actividades'>
+							<Link to='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/FUNCIONAL.jpg'
 									alt='imagen funcional'
 								/>
-							</a>
+							</Link>
 							<p className='text-center pimgcarousel'>Funcional</p>
 							<i className='fa-solid fa-bolt mb-3 text-danger'>
 								<span className='intact'> Media/Alta</span>
@@ -43,13 +44,13 @@ export const HomeAct = () => {
 					</Carousel.Item>
 					<Carousel.Item className='itemcarousel'>
 						<div className='icocarousel'>
-							<a href='/actividades'>
+							<Link to='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/YOGA.jpg'
 									alt='imagen yoga'
 								/>
-							</a>
+							</Link>
 							<p className='text-center pimgcarousel'>Yoga</p>
 							<i className='fa-solid fa-bolt mb-3 text-danger'>
 								<span className='intact'> Baja</span>
@@ -59,13 +60,13 @@ export const HomeAct = () => {
 							</i>
 						</div>
 						<div className='icocarousel'>
-							<a href='/actividades'>
+							<Link to='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/CROSSFIT.jpg'
 									alt='imagen crossfit'
 								/>
-							</a>
+							</Link>
 							<p className='text-center pimgcarousel'>Crossfit</p>
 							<i className='fa-solid fa-bolt mb-3 text-danger'>
 								<span className='intact'> Media/Alta</span>
@@ -77,13 +78,13 @@ export const HomeAct = () => {
 					</Carousel.Item>
 					<Carousel.Item className='itemcarousel'>
 						<div className='icocarousel'>
-							<a href='/actividades'>
+							<Link to='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/MUSCULACION.jpg'
 									alt='imagen musculacion'
 								/>
-							</a>
+							</Link>
 							<p className='text-center pimgcarousel'>Musculacion</p>
 							<i className='fa-solid fa-bolt mb-3 text-danger'>
 								<span className='intact'> Alta</span>
@@ -93,13 +94,13 @@ export const HomeAct = () => {
 							</i>
 						</div>
 						<div className='icocarousel'>
-							<a href='/actividades'>
+							<Link to='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/LOW-SPINNING.jpg'
 									alt='imagen lowspinning'
 								/>
-							</a>
+							</Link>
 							<p className='text-center pimgcarousel'>Spinning</p>
 							<i className='fa-solid fa-bolt mb-3 text-danger'>
 								<span className='intact'> Media</span>
@@ -111,13 +112,13 @@ export const HomeAct = () => {
 					</Carousel.Item>
 					<Carousel.Item className='itemcarousel'>
 						<div className='icocarousel'>
-							<a href='/actividades'>
+							<Link to='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/ZUMBA.jpg'
 									alt='imagen zumba'
 								/>
-							</a>
+							</Link>
 							<p className='text-center pimgcarousel'>Zumba</p>
 							<i className='fa-solid fa-bolt mb-3 text-danger'>
 								<span className='intact'> Media</span>
@@ -127,13 +128,13 @@ export const HomeAct = () => {
 							</i>
 						</div>
 						<div className='icocarousel'>
-							<a href='/actividades'>
+							<Link to='/actividades'>
 								<img
 									className='imgcarousel'
 									src='/YOGA.jpg'
 									alt='imagen yoga'
 								/>
-							</a>
+							</Link>
 							<p className='text-center pimgcarousel'>Yoga</p>
 							<i className='fa-solid fa-bolt mb-3 text-danger'>
 								{' '}

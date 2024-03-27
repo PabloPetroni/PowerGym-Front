@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/Servicios.css';
 import Card from 'react-bootstrap/Card';
 import { Whatsapp } from './Whatsapp';
+import { Link } from 'react-router-dom';
 
 export const Servicios = () => {
 	return (
@@ -80,12 +81,12 @@ export const Servicios = () => {
 				</Card.Body>
 			</div>
 			<div className='divbtnserv'>
-				<a href='/login'>
+				<Link to='/login'>
 					<button className='btnturnoserv'>
 						<i className='iconavbar fa-solid fa-id-card'></i>Reserva Turno
 						Ahora!
 					</button>
-				</a>
+				</Link>
 			</div>
 		</div>
 	);

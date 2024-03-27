@@ -232,12 +232,12 @@ export const Actividades = () => {
 					</div>
 				</div>
 				<div className='divbtnserv'>
-					<a href='/login'>
+					<Link to='/login'>
 						<button className='btnturnoserv'>
 							<i className='iconavbar fa-solid fa-id-card'></i>Reserva tu
 							Clase!
 						</button>
-					</a>
+					</Link>
 				</div>
 				<Profesores />
 			</div>

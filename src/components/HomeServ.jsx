@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const HomeServ = () => {
 	return (
@@ -19,11 +20,11 @@ export const HomeServ = () => {
 							src='/PERSONAL-TRAINING.jpg'
 							alt='imagen atencion personalizada'
 						/>
-						<a href='/servicios'>
+						<Link to='/servicios'>
 							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
 								VER MAS
 							</p>
-						</a>
+						</Link>
 					</div>
 				</div>
 				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-right'>
@@ -33,11 +34,11 @@ export const HomeServ = () => {
 							src='/ZONA-CARDIOVASCULAR.jpg'
 							alt='imagen cardio'
 						/>
-						<a href='/servicios' className='text-center'>
+						<Link to='/servicios' className='text-center'>
 							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
 								VER MAS
 							</p>
-						</a>
+						</Link>
 					</div>
 					<div className='div-secserv'>
 						<h4 className='subtitle-secsrev'>ZONA CARDIO</h4>
@@ -63,11 +64,11 @@ export const HomeServ = () => {
 							src='/SALA-DE-PES-LLIURE.jpg'
 							alt='imagen peso libre'
 						/>
-						<a href='/servicios'>
+						<Link to='/servicios'>
 							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
 								VER MAS
 							</p>
-						</a>
+						</Link>
 					</div>
 				</div>
 				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-right'>
@@ -77,11 +78,11 @@ export const HomeServ = () => {
 							src='/NUTRICION.jpeg'
 							alt='imagen nutricion'
 						/>
-						<a href='/servicios'>
+						<Link to='/servicios'>
 							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
 								VER MAS
 							</p>
-						</a>
+						</Link>
 					</div>
 					<div className='div-secserv'>
 						<h4 className='subtitle-secsrev'>NUTRICION Y FISIO</h4>
@@ -108,11 +109,11 @@ export const HomeServ = () => {
 							src='/ACTIVIDADES_DIRIGIDAS.jpg'
 							alt='imagen actividad'
 						/>
-						<a href='/servicios'>
+						<Link to='/servicios'>
 							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
 								VER MAS
 							</p>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

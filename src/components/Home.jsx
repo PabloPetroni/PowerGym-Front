@@ -8,6 +8,7 @@ import { HomeAct } from './HomeAct.jsx';
 import { HomeSedes } from './HomeSedes.jsx';
 import { HomePlan } from './HomePlan.jsx';
 import { HomeMarcas } from './HomeMarcas.jsx';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
 	useEffect(() => {
@@ -179,12 +180,12 @@ export const Home = () => {
 					abierto todos los días, asi puedas disfrutar de un buen
 					entrenamiento , de un espacio agradable y buena música!
 				</p>
-				<a href='/registro'>
+				<Link to='/registro'>
 					<button className='btninscripsecpromo'>
 						<i className='iconavbar fa-solid fa-id-card'></i>Inscribite
 						Ahora!
 					</button>
-				</a>
+				</Link>
 				<img
 					className='img-secpromo'
 					src='/risen-wang-20jX9b35r_M-unsplash.jpg'
