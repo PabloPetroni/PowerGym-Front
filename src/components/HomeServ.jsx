@@ -27,7 +27,7 @@ export const HomeServ = () => {
 						</Link>
 					</div>
 				</div>
-				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-right'>
+				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-left'>
 					<div className='w-50 d-flex justify-content-center align-items-center position-relative'>
 						<img
 							className='img-secserv '
@@ -71,7 +71,7 @@ export const HomeServ = () => {
 						</Link>
 					</div>
 				</div>
-				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-right'>
+				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-left'>
 					<div className='w-50 d-flex justify-content-center align-items-center position-relative'>
 						<img
 							className='img-secserv'

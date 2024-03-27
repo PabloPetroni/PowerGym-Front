@@ -80,15 +80,15 @@ export const Home = () => {
 			elements.forEach((element) => {
 				if (isInViewport(element)) {
 					// Si el elemento está en el viewport, agrega la clase de animación correspondiente
-					if (element.classList.contains('animate-from-left')) {
-						element.classList.add('animated-slide-from-left');
-					} else if (element.classList.contains('animate-from-right')) {
-						element.classList.add('animated-slide-from-right');
+					if (element.classList.contains('animate-from-bottom')) {
+						element.classList.add('animated-slide-from-bottom');
+					} else if (element.classList.contains('animate-from-bottom')) {
+						element.classList.add('animated-slide-from-bottom');
 					}
 				} else {
 					// Si el elemento no está en el viewport, elimina la clase de animación
-					element.classList.remove('animated-slide-from-left');
-					element.classList.remove('animated-slide-from-right');
+					element.classList.remove('animated-slide-from-bottom');
+					element.classList.remove('animated-slide-from-bottom');
 				}
 			});
 		}
