@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
 		try {
 			const res = await apiURL.post('/api/register', values);
 			if (res.status === 200) {
-				document.cookie = `token=${res.data.token}; Path=/; `;
+				// document.cookie = `token=${res.data.token}; Path=/; `;
 				localStorage.setItem('token', res.data.token);
 				setCurrentUser(res.data);
 				setIsAuthenticated(true);
@@ -43,9 +43,7 @@ export const AuthProvider = ({ children }) => {
 	// FUNCION LOGIN CON CORREO ELECTRONICO
 	const login = async (values) => {
 		try {
-			const res = await apiURL.post('/api/login', values, {
-				credentials: 'include',
-			});
+			const res = await apiURL.post('/api/login', values, );
 			if (res.status === 200) {
 				// document.cookie = `token=${res.data.token}; Path=/; `;
 				localStorage.setItem('token', res.data.token);
@@ -73,6 +71,7 @@ export const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		async function checkLogin() {
 			const cookies = Cookies.get();
+			console.log(cookies)
 			if (!cookies.token) {
 				setIsAuthenticated(false);
 				setIsLoading(false);
