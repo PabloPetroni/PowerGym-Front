@@ -42,12 +42,14 @@ function BarraNav() {
 				className='mb-4 container-fluid navbar'
 				expanded={expanded}>
 				<Container className='containernav'>
-					<Navbar.Brand href='/home'>
-						<img
-							src='https://i.postimg.cc/XY51w3dy/Logo-fondo-transparente-Photoroom-png-Photoroom.png'
-							alt='Logo2'
-							className='rounded-4 logo'
-						/>
+					<Navbar.Brand>
+						<NavLink to="/home">
+							<img
+								src='https://i.postimg.cc/XY51w3dy/Logo-fondo-transparente-Photoroom-png-Photoroom.png'
+								alt='Logo2'
+								className='rounded-4 logo'
+							/>
+						</NavLink>
 					</Navbar.Brand>
 					<Navbar.Toggle
 						aria-controls='responsive-navbar-nav'
