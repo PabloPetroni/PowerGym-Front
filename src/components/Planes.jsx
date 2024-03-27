@@ -3,6 +3,7 @@ import '../css/Planes.css';
 import { Whatsapp } from './Whatsapp';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 export const Planes = () => {
 	const form = useRef();
