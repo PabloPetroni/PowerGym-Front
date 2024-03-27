@@ -193,12 +193,12 @@ export const Planes = () => {
 				</div>
 
 				<div className='divbtnserv'>
-					<a href='/login'>
+					<Link to='/login'>
 						<button className='btnturnoserv mt-4'>
 							<i className='iconavbar fa-solid fa-id-card'></i>
 							Inscribite YA!
 						</button>
-					</a>
+					</Link>
 				</div>
 
 				<hr
