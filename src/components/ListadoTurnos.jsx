@@ -335,7 +335,7 @@ export const ListadoTurnos = () => {
 						</select>
 					</Form.Group>
 
-					<Form.Group className='botonescarga' id='input'>
+					<Form.Group className='botonescarga' id='buscar'>
 						<button className='botonbusqueda' type='submit'>
 							<i className='iconavbar fa-brands fa-searchengin'></i>
 							Buscar

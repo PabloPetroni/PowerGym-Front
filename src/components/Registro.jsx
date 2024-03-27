@@ -53,7 +53,7 @@ export const Registro = () => {
 
 				<div className='row'>
 					<div className='col-md-6'>
-						<Form.Group className='mb-3' id='inputname'>
+						<Form.Group className='mb-3' id='name'>
 							<Form.Label className='labelreg'>Nombre/s</Form.Label>
 							<Form.Control
 								className='inputreg'
@@ -74,12 +74,12 @@ export const Registro = () => {
 							)}
 						</Form.Group>
 
-						<Form.Group className='mb-3' id='inputsubname'>
+						<Form.Group className='mb-3' id='apellido'>
 							<Form.Label className='labelreg'>Apellido/s</Form.Label>
 							<Form.Control
 								className='inputreg'
 								type='text'
-								id='subname'
+								id='apellido'
 								name='apellido'
 								{...register('apellido', {
 									required: {
@@ -95,7 +95,7 @@ export const Registro = () => {
 							)}
 						</Form.Group>
 
-						<Form.Group className='mb-3' id='inputdni'>
+						<Form.Group className='mb-3' id='dni'>
 							<Form.Label className='labelreg'>DNI</Form.Label>
 							<Form.Control
 								className='inputreg'
@@ -124,7 +124,7 @@ export const Registro = () => {
 							)}
 						</Form.Group>
 
-						<Form.Group className='mb-3' id='inputdomic'>
+						<Form.Group className='mb-3' id='domic'>
 							<Form.Label className='labelreg'>Domicilio</Form.Label>
 							<Form.Control
 								className='inputreg'
@@ -146,7 +146,7 @@ export const Registro = () => {
 						</Form.Group>
 					</div>
 					<div className='col-md-6'>
-						<Form.Group className='mb-3' id='inputcel'>
+						<Form.Group className='mb-3' id='cel'>
 							<Form.Label className='labelreg'>Celular</Form.Label>
 							<Form.Control
 								className='inputreg'
@@ -175,7 +175,7 @@ export const Registro = () => {
 							)}
 						</Form.Group>
 
-						<Form.Group className='mb-3' id='inputemail'>
+						<Form.Group className='mb-3' id='emailreg'>
 							<Form.Label className='labelreg'>Email</Form.Label>
 							<Form.Control
 								className='inputreg'
@@ -227,7 +227,7 @@ export const Registro = () => {
 						</Form.Group>
 
 						<Form.Group className='mb-3 d-flex flex-column'>
-							<Form.Label className='labelreg' id='inputconfirm'>
+							<Form.Label className='labelreg' id='copassword'>
 								Confirmar Contraseña
 							</Form.Label>
 							<div className='d-flex flex-row'>

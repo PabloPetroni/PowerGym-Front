@@ -82,7 +82,7 @@ export const DatosUsuario = ({ userId, showModal, setShowModal }) => {
 								<Form.Control
 									className='inputreg'
 									type='text'
-									id='name'
+									id='nombre'
 									{...register('nombre', {
 										required: {
 											value: true,
@@ -102,7 +102,7 @@ export const DatosUsuario = ({ userId, showModal, setShowModal }) => {
 								<Form.Control
 									className='inputreg'
 									type='text'
-									id='subname'
+									id='apellido'
 									{...register('apellido', {
 										required: {
 											value: true,
@@ -117,7 +117,7 @@ export const DatosUsuario = ({ userId, showModal, setShowModal }) => {
 								)}
 							</Form.Group>
 
-							<Form.Group className='mb-3' id='dniEditarUsuario'>
+							<Form.Group className='mb-3' id='dni'>
 								<Form.Label className='labelmodal'>DNI</Form.Label>
 								<Form.Control
 									className='inputreg'
@@ -147,7 +147,7 @@ export const DatosUsuario = ({ userId, showModal, setShowModal }) => {
 								)}
 							</Form.Group>
 
-							<Form.Group className='mb-3' id='domicilioEditarUsuario'>
+							<Form.Group className='mb-3' id='domic'>
 								<Form.Label className='labelmodal'>
 									Domicilio
 								</Form.Label>
@@ -169,7 +169,7 @@ export const DatosUsuario = ({ userId, showModal, setShowModal }) => {
 								)}
 							</Form.Group>
 
-							<Form.Group className='mb-3' id='celularEditarUsuario'>
+							<Form.Group className='mb-3' id='cel'>
 								<Form.Label className='labelmodal'>Celular</Form.Label>
 								<Form.Control
 									className='inputreg'

@@ -75,7 +75,7 @@ export const CargaClase = () => {
 					</Modal.Header>
 					<Modal.Body>
 						<Form className='formedit' onSubmit={onSubmit}>
-							<Form.Group className='mb-3' id='inputname'>
+							<Form.Group className='mb-3' id='inputfecha'>
 								<Form.Label className='labeledit'>Fecha</Form.Label>
 
 								<LocalizationProvider
@@ -105,7 +105,7 @@ export const CargaClase = () => {
 								/>
 							</Form.Group>
 
-							<Form.Group className='mb-3' id='inputconcepto'>
+							<Form.Group className='mb-3' id='inputactividad'>
 								<Form.Label className='labeledit'>Actividad</Form.Label>
 								<select
 									className='inputcarga'
