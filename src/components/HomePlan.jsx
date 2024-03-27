@@ -34,7 +34,7 @@ export const HomePlan = () => {
 					</div>
 					<div className='cont-plan2'>
 						<div className='divplan'>
-							<a className='text-decoration-none' href='/planes'>
+							<Link className='text-decoration-none' to='/planes'>
 								<p className='listplan'>Plan Power</p>
 								<Card className='cardplan'>
 									<Card.Body className='checkplan'>
@@ -45,10 +45,10 @@ export const HomePlan = () => {
 										<i className='fa-regular fa-circle-check icoplan'></i>
 									</Card.Body>
 								</Card>
-							</a>
+							</Link>
 						</div>
 						<div className='divplan'>
-							<a className='text-decoration-none' href='/planes'>
+							<Link className='text-decoration-none' to='/planes'>
 								<p className='listplan'>Plan Classic</p>
 								<Card className='cardplan'>
 									<Card.Body className='checkplan'>
@@ -59,10 +59,10 @@ export const HomePlan = () => {
 										<i className='fa-regular fa-circle-xmark icoplan'></i>
 									</Card.Body>
 								</Card>
-							</a>
+							</Link>
 						</div>
 						<div className='divplan'>
-							<a className='text-decoration-none' href='/planes'>
+							<Link className='text-decoration-none' to='/planes'>
 								<p className='listplan'>Plan Muscle</p>
 								<Card className='cardplan'>
 									<Card.Body className='checkplan'>
@@ -73,7 +73,7 @@ export const HomePlan = () => {
 										<i className='fa-regular fa-circle-xmark icoplan'></i>
 									</Card.Body>
 								</Card>
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>

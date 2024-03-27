@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Whatsapp } from './Whatsapp';
 import '../css/Productos.css';
+import { Link } from 'react-router-dom';
 
 export const Productos = () => {
 	return (
@@ -22,12 +23,12 @@ export const Productos = () => {
 						Pasta de Mani
 					</Card.Title>
 					<div className='d-flex justify-content-around mt-3 mb-4'>
-						<a href='/modalproductos'>
+						<Link to='/modalproductos'>
 							<i className='icoprod fa-solid fa-circle-info'></i>
-						</a>
-						<a href='/error404'>
+						</Link>
+						<Link to='/error404'>
 							<i className='icoprod fa-solid fa-cart-shopping'></i>
-						</a>
+						</Link>
 					</div>
 				</Card.Body>
 
@@ -39,12 +40,12 @@ export const Productos = () => {
 					/>
 					<Card.Title className='cardtitleaboutprod'>Creatina </Card.Title>
 					<div className='d-flex justify-content-around mt-3 mb-4'>
-						<a href=''>
+						<Link to=''>
 							<i className='icoprod fa-solid fa-circle-info'></i>
-						</a>
-						<a href='/error404'>
+						</Link>
+						<Link to='/error404'>
 							<i className='icoprod fa-solid fa-cart-shopping'></i>
-						</a>
+						</Link>
 					</div>
 				</Card.Body>
 
@@ -58,12 +59,12 @@ export const Productos = () => {
 						Carnitina Liquida{' '}
 					</Card.Title>
 					<div className='d-flex justify-content-around mt-3 mb-4'>
-						<a href=''>
+						<Link to=''>
 							<i className='icoprod fa-solid fa-circle-info'></i>
-						</a>
-						<a href='/error404'>
+						</Link>
+						<Link to='/error404'>
 							<i className='icoprod fa-solid fa-cart-shopping'></i>
-						</a>
+						</Link>
 					</div>
 				</Card.Body>
 
@@ -77,12 +78,12 @@ export const Productos = () => {
 						F. Aminobol{' '}
 					</Card.Title>
 					<div className='d-flex justify-content-around mt-3 mb-4'>
-						<a href=''>
+						<Link to=''>
 							<i className='icoprod fa-solid fa-circle-info'></i>
-						</a>
-						<a href='/error404'>
+						</Link>
+						<Link to='/error404'>
 							<i className='icoprod fa-solid fa-cart-shopping'></i>
-						</a>
+						</Link>
 					</div>
 				</Card.Body>
 				<Card.Body className='cardaboutprod'>
@@ -95,12 +96,12 @@ export const Productos = () => {
 						L. Glutamina{' '}
 					</Card.Title>
 					<div className='d-flex justify-content-around mt-3 mb-4'>
-						<a href=''>
+						<Link tp=''>
 							<i className='icoprod fa-solid fa-circle-info'></i>
-						</a>
-						<a href='/error404'>
+						</Link>
+						<Link to='/error404'>
 							<i className='icoprod fa-solid fa-cart-shopping'></i>
-						</a>
+						</Link>
 					</div>
 				</Card.Body>
 				<Card.Body className='cardaboutprod'>
@@ -113,12 +114,12 @@ export const Productos = () => {
 						Amino Gainer
 					</Card.Title>
 					<div className='d-flex justify-content-around mt-3 mb-4'>
-						<a href=''>
+						<Link to=''>
 							<i className='icoprod fa-solid fa-circle-info'></i>
-						</a>
-						<a href='/error404'>
+						</Link>
+						<Link to='/error404'>
 							<i className='icoprod fa-solid fa-cart-shopping'></i>
-						</a>
+						</Link>
 					</div>
 				</Card.Body>
 			</div>
