@@ -1,0 +1,109 @@
+.register {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	background-image: linear-gradient(rgba(5, 7, 12, 0.5), rgba(5, 12, 7, 0.5)),
+		url(/risen-wang-20jX9b35r_M-unsplash.jpg);
+	background-size: cover;
+	object-fit: cover;
+	background-position: center;
+}
+.titlereg {
+	text-align: center;
+	width: 100%;
+	margin-top: 6vw;
+	margin-bottom: 6vw;
+	font-size: 5vw;
+	font-weight: 700;
+	color: #faf8f6;
+	text-shadow: 4px 4px 2px rgba(4, 4, 4, 0.6);
+}
+.Formreg {
+	display: flex !important;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	margin: 35px;
+	width: 75% !important;
+	background-color: #ffad12 !important;
+	border-radius: 5px;
+	border: 0.4vw outset #fbfaf7;
+	opacity: 0.85;
+	padding: 10px !important;
+}
+.labelreg {
+	font-weight: 700;
+	width: 100%;
+	margin: 10px;
+	background-color: #ffad12 !important;
+	color: #060606;
+	font-size: 100%;
+	text-shadow: 4px 4px 2px rgba(250, 249, 249, 0.6);
+}
+.botonesreg {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+.inputreg {
+	color: rgb(12, 12, 12);
+	width: 90% !important;
+	margin: 10px;
+	outline-color: rgb(143, 142, 139);
+	font-size: 100% !important;
+	padding: 0.5vw !important;
+	box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 10px 5px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 10px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.input-submitreg {
+	color: #f5f0f0;
+	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 25px!important;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 4px;
+	padding-left: 35px;
+	padding-right: 35px;
+	cursor: pointer;
+	text-decoration: none;
+}
+.input-submitreg:hover {
+	opacity: 0.8;
+	color: white;
+	background-color: transparent;
+}
+.input-submitreg:disabled {
+	background-color: rgb(10, 61, 4);
+	opacity: 0.3;
+	background-color: transparent;
+}
+.parraforeg {
+	font-size: 80%;
+	font-family: 'Poppins', sans-serif;
+	color: rgb(9, 9, 9);
+	margin-top: 15px;
+	font-weight: 600;
+}
+.parraforeg a {
+	text-decoration: underline;
+	color: #f5f0f0;
+	font-weight: bold;
+	font-size: 16px;
+}
+.parraforeg a:hover {
+	opacity: 0.8;
+	background-color: transparent;
+}
+.btncontrasena {
+	background-color: transparent;
+	border: none;
+	width: 10%;
+}

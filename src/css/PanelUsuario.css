@@ -1,0 +1,218 @@
+.bodyadmin {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-image: linear-gradient(
+			100deg,
+			rgba(255, 255, 240, 0.02),
+			rgba(0, 0, 0, 1) 85%
+		),
+		url(/risen-wang-20jX9b35r_M-unsplash.jpg);
+	background-size: cover;
+	background-position: center;
+	object-fit: cover;
+	padding-bottom: 70px;
+}
+.iconavbar {
+	font-size: 130% !important;
+	color: rgb(247, 245, 245);
+	padding-left: 15px;
+	padding-top: 0vw !important;
+	padding-bottom: 0vw !important;
+	padding-right: 10px;
+}
+.titlead {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-size: 130%;
+	font-weight: 800;
+	color: #ffad12;
+	text-align: center;
+	text-shadow: 4px 4px 2px rgba(246, 239, 239, 0.6);
+}
+.subtitleadusu {
+	font-size: 120%;
+	font-weight: 400;
+	padding-top: 20px;
+	color: #f0eeeb;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.botonesadm {
+	background-color: #ffad12!important;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	justify-content: space-around;
+	padding-top: 20px;
+	text-align: center;
+	padding-bottom: 20px;
+	border-radius: 20px;
+}
+.botonadm {
+	color: #f8f4f4!important;
+	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 25px!important;
+	font-size: 16px;
+	font-weight: 700!important;
+	padding: 5px!important;
+	text-align: center;
+	padding-left: 15px!important;
+	padding-right: 15px!important;
+	cursor: pointer;
+	margin-top: 10px!important;
+	text-decoration: none!important;
+}
+.compdatepicker {
+	color: #f8f4f4;
+}
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+	color: #f8f4f4 !important;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+	color: #f8f4f4 !important;
+}
+.botonadm:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
+}
+.linkadmin {
+	color: rgb(207, 207, 207) !important;
+	text-decoration: none !important;
+}
+.Formcarga {
+	display: flex !important;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around !important;
+	align-items: center;
+	align-content: center;
+	opacity: 0.85;
+}
+.compdatepicker {
+	background-color: rgb(93, 91, 91);
+	color: #f8f7f6 !important;
+}
+.inputcarga {
+	color: #f8f4f4;
+	background-color: rgb(93, 91, 91);
+	width: 100% !important;
+	border-radius: 6px;
+	outline-color: #f8f4f4;
+	font-size: 100% !important;
+	padding: 16px;
+}
+.botonbusqueda {
+	color: #f9f5f5 !important;
+	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 25px !important;
+	font-size: 20px !important;
+	font-weight: 700 !important;
+	padding: 5px;
+	margin-top: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	cursor: pointer;
+}
+.botonbusqueda:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
+}
+.modalbg {
+	background-color: rgb(93, 91, 91)!important;
+}
+.titlemodal {
+	margin-top: 20px !important;
+	color: #fffefc !important;
+	font-weight: 800 !important;
+	
+	text-shadow: 4px 4px 2px rgba(4, 4, 4, 0.6);
+
+}
+.labelmodal {
+	color: #050505;
+	font-weight: 600;
+	font-family: Roboto;
+	font-size: 18px;
+}
+.btn-close {
+	margin-top: 20px !important;
+	background-color: #f0eeeb !important;
+}
+.modaldatosbg {
+	background-color: rgb(5, 5, 5) !important;
+}
+
+.subtitlemodal {
+	text-align: center !important;
+	font-size: 24px;
+	font-weight: 700;
+	color: #ff3333;
+	text-decoration: underline;
+	text-shadow: 4px 4px 2px rgba(1, 1, 1, 0.6);
+	margin-bottom: 50px;
+}
+.modal-header .btn-close {
+	color: #f8f4f4 !important;
+}
+.botonesedit {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	justify-content: space-around;
+	width: 100%;
+}
+.btneditusu {
+	color: #f1efef;
+	background: linear-gradient(rgb(33, 83, 4), rgb(23, 59, 3));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 15px;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 7px;
+	padding-left: 45px;
+	padding-right: 45px;
+	cursor: pointer;
+}
+.btneditusu:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
+}
+.btncancmodal {
+	color: #f1efef;
+	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 15px;
+	font-size: 20px;
+	margin-top: 0!important;
+	font-weight: 700;
+	padding: 7px;
+	padding-left: 25px;
+	padding-right: 25px;
+	cursor: pointer;
+}
+.btncancmodal:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
+}
+.messerror{
+	text-align: center!important;
+	color: #ff3333!important;
+	font-size: 16px!important;
+	font-weight: 700;
+	text-shadow: 4px 4px 2px rgba(251, 249, 249, 0.6);
+
+}

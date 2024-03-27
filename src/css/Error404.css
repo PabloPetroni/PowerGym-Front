@@ -1,0 +1,58 @@
+.body404 {
+	background-image: linear-gradient(
+			100deg,
+			rgba(255, 255, 240, 0.02),
+			rgba(0, 0, 0, 1)
+		),
+		url(/risen-wang-20jX9b35r_M-unsplash.jpg);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-size: cover;
+	object-fit: cover;
+	background-position: center;
+	padding-bottom: 8vw;
+   height: 500px;
+   position:relative
+}
+.title404 {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-size: 230%;
+	font-weight: 800;
+	color: #f8f5f1;
+	text-align: center;
+	text-shadow: 4px 4px 2px rgba(246, 239, 239, 0.6);
+}
+.subtitle404 {
+	font-size: 120%;
+	font-weight: 600;
+	padding-top: 20px;
+	color: #f0eeeb;
+}
+.button-container {
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.boton404 {
+	color: #f8f4f4;
+	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 25px;
+	font-size: 15px;
+	font-weight: 700;
+	padding: 10px 10px; 
+	cursor: pointer;
+	text-decoration: none;
+	min-width: 150px; 
+}
+.boton404:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
+}

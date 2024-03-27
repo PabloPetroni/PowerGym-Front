@@ -1,0 +1,49 @@
+.titleagusu {
+	color: rgb(248, 246, 246);
+	text-align: center;
+	font-weight: 800;
+	text-shadow: 4px 4px 4px rgba(8, 8, 8, 0.6);
+}
+.btnreservar {
+	color: #f6f5f5;
+	background: linear-gradient(rgba(390, 5, 5, 1), rgba(83, 4, 4, 1));
+	border: 0.5vw outset rgb(143, 142, 139) !important;
+	border-radius: 15px;
+	font-size: 12px;
+	display: flex;
+	flex-direction: row;
+	font-weight: 700;
+	padding: 7px;
+	padding-right:5px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.iconavbarCl {
+	font-size: 130% !important;
+	color: rgb(247, 245, 245);
+	padding:5px;
+	padding-top: 0vw !important;
+	padding-bottom: 0vw !important;
+	padding-right: 10px;
+}
+
+.btnreservar:hover {
+	opacity: 0.6;
+	color: white;
+	background-color: transparent;
+}
+.acciconoagusu {
+	font-size: 100%;
+	color: rgb(207, 207, 207) !important;
+	padding: 0.5vw !important;
+}
+.tablaagusu {
+	font-size: 100% !important;
+	text-align: center;
+}
+.tabla {
+	width: 200px;
+	background-color: rgb(143, 142, 139) !important;
+}
+
