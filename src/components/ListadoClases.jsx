@@ -1,15 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { createTurno, getTurnos } from '../utils/TurnosUtils.js';
-import { getUser } from '../utils/UsersUtils.js';
-import {
-	updateDisponibilidad,
-	getClase,
-	getClases,
-	deleteClase,
-} from '../utils/ClasesUtils.js';
+import { getClases, deleteClase } from '../utils/ClasesUtils.js';
 import Swal from 'sweetalert2';
 import '../css/ListadoClases.css';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
 	MaterialReactTable,
 	useMaterialReactTable,
@@ -22,7 +15,6 @@ import { useAuth } from '../context/AuthContext.jsx';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es-mx';
 dayjs().format();
-import { Tabla } from './Tabla.jsx';
 
 export const ListadoClases = ({ fechaSeleccionada }) => {
 	const [data, setData] = useState([]);
@@ -178,16 +170,16 @@ export const ListadoClases = ({ fechaSeleccionada }) => {
 			</Box>
 		),
 	});
-	const lightTheme = createTheme({
+	const darkTheme = createTheme({
 		palette: {
-			mode: 'light',
+			mode: 'dark',
 		},
 	});
 
 	return (
 		<div>
 			<div className='table-responsive'>
-				<ThemeProvider theme={lightTheme}>
+				<ThemeProvider theme={darkTheme}>
 					<CssBaseline />
 					<MaterialReactTable table={table} />
 				</ThemeProvider>
