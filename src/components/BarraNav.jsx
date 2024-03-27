@@ -37,9 +37,12 @@ function BarraNav() {
 
 	return (
 		<>
-			<Navbar expand='lg' className='mb-4 container-fluid navbar' expanded={expanded}>
+			<Navbar
+				expand='lg'
+				className='mb-4 container-fluid navbar'
+				expanded={expanded}>
 				<Container className='containernav'>
-					<Navbar.Brand href='/'>
+					<Navbar.Brand href='/home'>
 						<img
 							src='https://i.postimg.cc/XY51w3dy/Logo-fondo-transparente-Photoroom-png-Photoroom.png'
 							alt='Logo2'
