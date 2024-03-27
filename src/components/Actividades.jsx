@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/Actividades.css';
 import { Whatsapp } from './Whatsapp';
 import { Profesores } from './Profesores';
+import { Link } from 'react-router-dom';
 
 export const Actividades = () => {
 	return (
