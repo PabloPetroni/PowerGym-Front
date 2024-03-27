@@ -6,7 +6,7 @@ export const HomeServ = () => {
 		<div>
 			<div className='secserv container'>
 				<h2 className='title-secsrev'>NUESTROS ESPACIOS Y SERVICIOS</h2>
-				<div className='subdivsecserv animate-on-scroll animate-from-left'>
+				<div className='subdivsecserv animate-on-scroll animate-from-bottom'>
 					<div className='div-secserv'>
 						<h4 className='subtitle-secsrev'>ATENCION PERSONALIZADA</h4>
 						<p className='text-secserv'>
@@ -27,7 +27,7 @@ export const HomeServ = () => {
 						</Link>
 					</div>
 				</div>
-				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-left'>
+				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-bottom'>
 					<div className='w-50 d-flex justify-content-center align-items-center position-relative'>
 						<img
 							className='img-secserv '
@@ -49,7 +49,7 @@ export const HomeServ = () => {
 						</p>
 					</div>
 				</div>
-				<div className='subdivsecserv animate-on-scroll animate-from-left'>
+				<div className='subdivsecserv animate-on-scroll animate-from-bottom'>
 					<div className='div-secserv'>
 						<h4 className='subtitle-secsrev'>SALAS DE PESO LIBRE</h4>
 						<p className='text-secserv'>
@@ -71,7 +71,7 @@ export const HomeServ = () => {
 						</Link>
 					</div>
 				</div>
-				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-left'>
+				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-bottom'>
 					<div className='w-50 d-flex justify-content-center align-items-center position-relative'>
 						<img
 							className='img-secserv'
