@@ -500,24 +500,8 @@ body {
 	}
 }
 
-@keyframes slideFromRight {
-	from {
-		transform: translateX(100%);
-		opacity: 0;
-	}
-	to {
-		transform: translateX(0);
-		opacity: 1;
-	}
-}
-
-/* Aplica las animaciones a los elementos */
-.animated-slide-from-left {
+.animated-slide-from-bottom {
 	animation: slideFromBottom 1s ease forwards;
-}
-
-.animated-slide-from-right {
-	animation: slideFromRight 1s ease forwards;
 }
 
 @media (min-width: 380px) {
