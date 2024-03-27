@@ -106,7 +106,6 @@ export const ReservasUsuario = () => {
 					timer: 2500,
 				});
 				setData((prevData) => prevData.filter((turno) => turno._id !== id));
-
 			} catch (error) {
 				console.error('Error al anular el turno:', error);
 			}
