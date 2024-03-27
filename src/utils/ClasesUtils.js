@@ -43,7 +43,6 @@ export const deleteClase = async (id) => {
 		const res = await apiURL.delete(`/api/clases/${id}`, {
 			headers:{"x-token":token}
 		});
-		console.log(res)
 		return res.data;
 	} catch (error) {
 		console.error(error);
