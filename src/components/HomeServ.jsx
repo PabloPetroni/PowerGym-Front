@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const HomeServ = () => {
 	return (
 		<div>
 			<div className='secserv container'>
 				<h2 className='title-secsrev'>NUESTROS ESPACIOS Y SERVICIOS</h2>
-				<div className='subdivsecserv animate-on-scroll animate-from-left'>
+				<div className='subdivsecserv animate-on-scroll animate-from-bottom'>
 					<div className='div-secserv'>
 						<h4 className='subtitle-secsrev'>ATENCION PERSONALIZADA</h4>
 						<p className='text-secserv'>
@@ -19,25 +20,25 @@ export const HomeServ = () => {
 							src='/PERSONAL-TRAINING.jpg'
 							alt='imagen atencion personalizada'
 						/>
-						<a href='/servicios'>
+						<Link to='/servicios'>
 							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
 								VER MAS
 							</p>
-						</a>
+						</Link>
 					</div>
 				</div>
-				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-right'>
+				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-bottom'>
 					<div className='w-50 d-flex justify-content-center align-items-center position-relative'>
 						<img
 							className='img-secserv '
 							src='/ZONA-CARDIOVASCULAR.jpg'
 							alt='imagen cardio'
 						/>
-						<a href='/servicios' className='text-center'>
+						<Link to='/servicios' className='text-center'>
 							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
 								VER MAS
 							</p>
-						</a>
+						</Link>
 					</div>
 					<div className='div-secserv'>
 						<h4 className='subtitle-secsrev'>ZONA CARDIO</h4>
@@ -48,7 +49,7 @@ export const HomeServ = () => {
 						</p>
 					</div>
 				</div>
-				<div className='subdivsecserv animate-on-scroll animate-from-left'>
+				<div className='subdivsecserv animate-on-scroll animate-from-bottom'>
 					<div className='div-secserv'>
 						<h4 className='subtitle-secsrev'>SALAS DE PESO LIBRE</h4>
 						<p className='text-secserv'>
@@ -63,25 +64,25 @@ export const HomeServ = () => {
 							src='/SALA-DE-PES-LLIURE.jpg'
 							alt='imagen peso libre'
 						/>
-						<a href='/servicios'>
+						<Link to='/servicios'>
 							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
 								VER MAS
 							</p>
-						</a>
+						</Link>
 					</div>
 				</div>
-				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-right'>
+				<div className='subdivsecserv ms-2 mt-5 animate-on-scroll animate-from-bottom'>
 					<div className='w-50 d-flex justify-content-center align-items-center position-relative'>
 						<img
 							className='img-secserv'
 							src='/NUTRICION.jpeg'
 							alt='imagen nutricion'
 						/>
-						<a href='/servicios'>
+						<Link to='/servicios'>
 							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
 								VER MAS
 							</p>
-						</a>
+						</Link>
 					</div>
 					<div className='div-secserv'>
 						<h4 className='subtitle-secsrev'>NUTRICION Y FISIO</h4>
@@ -108,11 +109,11 @@ export const HomeServ = () => {
 							src='/ACTIVIDADES_DIRIGIDAS.jpg'
 							alt='imagen actividad'
 						/>
-						<a href='/servicios'>
+						<Link to='/servicios'>
 							<p className='psecserv position-absolute bottom-0 start-50 translate-middle-x'>
 								VER MAS
 							</p>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

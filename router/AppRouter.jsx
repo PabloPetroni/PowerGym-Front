@@ -43,6 +43,7 @@ export const AppRouter = () => {
 				<BarraNav />
 				<Routes>
 					<Route path='*' element={<Error404 />}></Route>
+					<Route path='/error404' element={<Error404 />}></Route>
 					<Route path='/' element={<Home />}></Route>
 					<Route path='/home' element={<Home />}></Route>
 					<Route path='/whatsapp' element={<Whatsapp />}></Route>

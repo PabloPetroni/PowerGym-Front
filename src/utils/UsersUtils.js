@@ -15,11 +15,9 @@ export const getUser = async (id) => {
 export const getUsers = async () => {
 	try {
 		const token = localStorage.getItem('token');
-		console.log(token);
 		const res = await apiURL.get(`/api/users`, {
 			headers: { 'x-token': token },
 		});
-		console.log(res)
 		return res.data;
 	} catch (error) {
 		console.error(error);
@@ -44,7 +42,6 @@ export const deleteUser = async (id) => {
 		const res = await apiURL.delete(`/api/users/${id}`, {
 			headers: { 'x-token': token },
 		});
-		console.log(res);
 		return res.data;
 	} catch (error) {
 		console.error(error);

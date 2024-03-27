@@ -3,6 +3,7 @@ import '../css/Planes.css';
 import { Whatsapp } from './Whatsapp';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 export const Planes = () => {
 	const form = useRef();
@@ -193,12 +194,12 @@ export const Planes = () => {
 				</div>
 
 				<div className='divbtnserv'>
-					<a href='/login'>
+					<Link to='/login'>
 						<button className='btnturnoserv mt-4'>
 							<i className='iconavbar fa-solid fa-id-card'></i>
 							Inscribite YA!
 						</button>
-					</a>
+					</Link>
 				</div>
 
 				<hr

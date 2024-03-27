@@ -71,7 +71,6 @@ export const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		async function checkLogin() {
 			const cookies = Cookies.get();
-			console.log(cookies)
 			if (!cookies.token) {
 				setIsAuthenticated(false);
 				setIsLoading(false);
@@ -84,7 +83,6 @@ export const AuthProvider = ({ children }) => {
 						Authorization: `Bearer ${cookies.token}`, // Agrega el token como encabezado de autorización
 					},
 				});
-				console.log(res);
 				if (!res.data) {
 					setIsAuthenticated(false);
 					setIsLoading(false);

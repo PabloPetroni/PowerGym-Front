@@ -40,7 +40,7 @@ export const Footer = () => {
 						</Link>
 						<Link
 							className='social-icon'
-							href='https://www.instagram.com/'
+							to='https://www.instagram.com/'
 							target='_blank'>
 							<i className='fa-brands fa-square-instagram'></i>
 						</Link>

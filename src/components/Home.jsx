@@ -8,6 +8,7 @@ import { HomeAct } from './HomeAct.jsx';
 import { HomeSedes } from './HomeSedes.jsx';
 import { HomePlan } from './HomePlan.jsx';
 import { HomeMarcas } from './HomeMarcas.jsx';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
 	useEffect(() => {
@@ -79,15 +80,12 @@ export const Home = () => {
 			elements.forEach((element) => {
 				if (isInViewport(element)) {
 					// Si el elemento está en el viewport, agrega la clase de animación correspondiente
-					if (element.classList.contains('animate-from-left')) {
-						element.classList.add('animated-slide-from-left');
-					} else if (element.classList.contains('animate-from-right')) {
-						element.classList.add('animated-slide-from-right');
+					if (element.classList.contains('animate-from-bottom')) {
+						element.classList.add('animated-slide-from-bottom');
 					}
 				} else {
 					// Si el elemento no está en el viewport, elimina la clase de animación
-					element.classList.remove('animated-slide-from-left');
-					element.classList.remove('animated-slide-from-right');
+					element.classList.remove('animated-slide-from-bottom');
 				}
 			});
 		}
@@ -179,12 +177,12 @@ export const Home = () => {
 					abierto todos los días, asi puedas disfrutar de un buen
 					entrenamiento , de un espacio agradable y buena música!
 				</p>
-				<a href='/registro'>
+				<Link to='/registro'>
 					<button className='btninscripsecpromo'>
 						<i className='iconavbar fa-solid fa-id-card'></i>Inscribite
 						Ahora!
 					</button>
-				</a>
+				</Link>
 				<img
 					className='img-secpromo'
 					src='/risen-wang-20jX9b35r_M-unsplash.jpg'

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Profesores = () => {
 	return (
@@ -19,12 +20,12 @@ export const Profesores = () => {
 							<h3 className='titlenosotros'>Melisa Sanchez</h3>
 							<span className='post'>Crossfit - Funcional</span>
 							<div className='d-flex flex-row justify-content-around pt-2'>
-								<a href='/error404' target='_blank'>
+								<Link to='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-facebook'></i>
-								</a>
-								<a href='/error404' target='_blank'>
+								</Link>
+								<Link to='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -39,12 +40,12 @@ export const Profesores = () => {
 							<h3 className='titlenosotros'>Axel Gines</h3>
 							<span className='post'>Boxeo</span>
 							<div className='d-flex flex-row justify-content-around pt-2'>
-								<a href='/error404' target='_blank'>
+								<Link to='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-facebook'></i>
-								</a>
-								<a href='/error404' target='_blank'>
+								</Link>
+								<Link to='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -60,12 +61,12 @@ export const Profesores = () => {
 							<h3 className='titlenosotros'>Alejandra Morel</h3>
 							<span className='post'>Yoga - Pilates</span>
 							<div className='d-flex flex-row justify-content-around pt-2'>
-								<a href='/error404' target='_blank'>
+								<Link to='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-facebook'></i>
-								</a>
-								<a href='/error404' target='_blank'>
+								</Link>
+								<Link to='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -81,12 +82,12 @@ export const Profesores = () => {
 							<h3 className='titlenosotros'>Karina Navarro</h3>
 							<span className='post'>Zumba</span>
 							<div className='d-flex flex-row justify-content-around pt-2'>
-								<a href='/error404' target='_blank'>
+								<Link to='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-facebook'></i>
-								</a>
-								<a href='/error404' target='_blank'>
+								</Link>
+								<Link to='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -101,12 +102,12 @@ export const Profesores = () => {
 							<h3 className='titlenosotros'>Julieta Roldan</h3>
 							<span className='post'>Spinning</span>
 							<div className='d-flex flex-row justify-content-around pt-2'>
-								<a href='/error404' target='_blank'>
+								<Link to='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-facebook'></i>
-								</a>
-								<a href='/error404' target='_blank'>
+								</Link>
+								<Link to='/error404' target='_blank'>
 									<i className='iconavbarteam fa-brands fa-square-instagram'></i>
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>

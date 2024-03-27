@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export const HomeMarcas = () => {
 	return (
@@ -12,9 +13,9 @@ export const HomeMarcas = () => {
 				<Carousel fade indicators={false} controls={false}>
 					<Carousel.Item className='itemcarousel'>
 						<div className='d-flex flex-column align-items-center justify-content-center'>
-							<a
+							<Link
 								className='text-decoration-none d-flex flex-column align-items-center justify-content-center'
-								href='https://kanpai.com.ar/'
+								to='https://kanpai.com.ar/'
 								target='_blank'>
 								<img
 									src='/benficio(1).jpeg'
@@ -24,14 +25,14 @@ export const HomeMarcas = () => {
 								<p className='pbenefit'>
 									15% desc en Kanpai - Productos Alimenticios
 								</p>
-							</a>
+							</Link>
 						</div>
 					</Carousel.Item>
 					<Carousel.Item className='itemcarousel'>
 						<div className='d-flex flex-column align-item-center justify-content-center'>
-							<a
+							<Link
 								className='text-decoration-none d-flex flex-column align-items-center justify-content-center'
-								href='https://www.oxigenoropadeportiva.com/'
+								to='https://www.oxigenoropadeportiva.com/'
 								target='_blank'>
 								<img
 									src='/beneficio(2).jpeg'
@@ -41,14 +42,14 @@ export const HomeMarcas = () => {
 								<p className='pbenefit'>
 									25% desc en Oxigeno - Ropa Deportiva
 								</p>
-							</a>
+							</Link>
 						</div>
 					</Carousel.Item>
 					<Carousel.Item className='itemcarousel'>
 						<div className='d-flex flex-column align-item-center justify-content-center'>
-							<a
+							<Link
 								className='text-decoration-none d-flex flex-column align-items-center justify-content-center'
-								href='https://www.instagram.com/shark.suplementos/?hl=es'
+								to='https://www.instagram.com/shark.suplementos/?hl=es'
 								target='_blank'>
 								<img
 									src='/beneficio(3).jpeg'
@@ -58,14 +59,14 @@ export const HomeMarcas = () => {
 								<p className='pbenefit'>
 									15 % desc en Shark - Suplementos Deportivos
 								</p>
-							</a>
+							</Link>
 						</div>
 					</Carousel.Item>
 					<Carousel.Item className='itemcarousel'>
 						<div className='d-flex flex-column align-item-center justify-content-center'>
-							<a
+							<Link
 								className='text-decoration-none d-flex flex-column align-items-center justify-content-center'
-								href='/productos'>
+								to='/productos'>
 								<img
 									src='/tienda.jpeg'
 									alt='beneficio2'
@@ -74,7 +75,7 @@ export const HomeMarcas = () => {
 								<p className='pbenefit'>
 									Ingresa ACA y conoce Nuestra Tienda de Productos
 								</p>
-							</a>
+							</Link>
 						</div>
 					</Carousel.Item>
 				</Carousel>

@@ -180,7 +180,7 @@ export const Registro = () => {
 							<Form.Control
 								className='inputreg'
 								type='email'
-								id='email'
+								id='emailreg'
 								name='email'
 								{...register('email', {
 									required: {
@@ -206,7 +206,7 @@ export const Registro = () => {
 							<Form.Control
 								className='inputreg'
 								type={showPassword ? 'text' : 'password'}
-								id='password'
+								id='passwordreg'
 								{...register('password', {
 									required: {
 										value: true,
