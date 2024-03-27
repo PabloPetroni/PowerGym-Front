@@ -9,7 +9,7 @@ import { useAuth } from '../context/AuthContext';
 import '../css/PanelUsuario.css';
 import Swal from 'sweetalert2';
 import { DatosUsuario } from './DatosUsuario';
-import { deleteUser } from '../utils/UsersUtils';
+import { deleteUser, getUsers } from '../utils/UsersUtils';
 
 export const AdminUser = () => {
 	const [cargarUsuarios, setCargarUsuarios] = useState([]);
@@ -26,16 +26,18 @@ export const AdminUser = () => {
 		setShowModal(true);
 	};
 
-	const cargarUser = async () => {
-		try {
-			const res = await apiURL.get('/api/users', {
-				withCredentials: true,
-			});
-			setCargarUsuarios(res.data);
-		} catch (error) {
-			console.log(error);
-		}
-	};
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const users = await getUsers();
+				// setData(users);
+				setCargarUsuarios(users);
+			} catch (error) {
+				console.error('Error al obtener usuarios', error);
+			}
+		};
+		fetchData();
+	}, []);
 
 	const borrarUsuario = async (id) => {
 		try {
@@ -66,10 +68,6 @@ export const AdminUser = () => {
 			console.error('Error al eliminar el usuario:', error);
 		}
 	};
-
-	useEffect(() => {
-		cargarUser();
-	}, []);
 
 	return (
 		<div>

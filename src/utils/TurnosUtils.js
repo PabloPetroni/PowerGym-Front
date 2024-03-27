@@ -2,7 +2,10 @@ import { apiURL } from '/api/apiURL.js';
 
 export const getTurnos = async () => {
 	try {
-		const res = await apiURL.get('/api/turnos', { withCredentials: true });
+		const token =localStorage.getItem("token")
+		const res = await apiURL.get('/api/turnos', {
+			headers:{"x-token":token}
+		});
 		return res.data;
 	} catch (error) {
 		console.error(error);
@@ -15,8 +18,9 @@ export const createTurno = async (turnoSeleccionado, user) => {
 		user,
 	};
 	try {
+		const token =localStorage.getItem("token")
 		const res = await apiURL.post('/api/turnos', datosSolicitud, {
-			withCredentials: true,
+			headers:{"x-token":token}
 		});
 		return res.data;
 	} catch (error) {
@@ -26,8 +30,9 @@ export const createTurno = async (turnoSeleccionado, user) => {
 
 export const deleteTurno = async (id) => {
 	try {
+		const token =localStorage.getItem("token")
 		const res = await apiURL.delete(`/api/turnos/${id}`, {
-			withCredentials: true,
+			headers:{"x-token":token}
 		});
 		return res.data;
 	} catch (error) {

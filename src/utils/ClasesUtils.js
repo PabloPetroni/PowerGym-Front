@@ -2,8 +2,9 @@ import { apiURL } from '/api/apiURL.js';
 
 export const getClases = async () => {
 	try {
+		const token =localStorage.getItem("token")
 		const res = await apiURL.get('/api/clases', {
-			withCredentials: true,
+			headers:{"x-token":token}
 		});
 		return res.data;
 	} catch (error) {
@@ -13,8 +14,9 @@ export const getClases = async () => {
 
 export const getClase = async (id) => {
 	try {
+		const token =localStorage.getItem("token")
 		const res = await apiURL.get(`/api/clases/${id}`, {
-			withCredentials: true,
+			headers:{"x-token":token}
 		});
 		return res.data;
 	} catch (error) {
@@ -24,8 +26,9 @@ export const getClase = async (id) => {
 
 export const updateDisponibilidad = async (id, disponibilidad) => {
 	try {
+		const token =localStorage.getItem("token")
 		const res = await apiURL.put(`/api/clases/${id}`, disponibilidad, {
-			withCredentials: true,
+			headers:{"x-token":token}
 		});
 		return res.data;
 	} catch (error) {
@@ -36,8 +39,9 @@ export const updateDisponibilidad = async (id, disponibilidad) => {
 export const deleteClase = async (id) => {
 
 	try {
+		const token =localStorage.getItem("token")
 		const res = await apiURL.delete(`/api/clases/${id}`, {
-			withCredentials: true,
+			headers:{"x-token":token}
 		});
 		console.log(res)
 		return res.data;
@@ -49,8 +53,9 @@ export const deleteClase = async (id) => {
 //se altera la ruta para el update de la clase /update - falta prueba
 export const updateClase = async (id, values) => {
 	try {
+		const token =localStorage.getItem("token")
 		const res = await apiURL.put(`/api/clases/update/${id}`, values, {
-			withCredentials: true,
+			headers:{"x-token":token}
 		});
 		return res.data;
 	} catch (error) {
@@ -62,8 +67,9 @@ export const updateClase = async (id, values) => {
 
 export const createClase = async (values) => {
 	try {
-		const res = await apiURL.post('/api/clases', values, {
-			withCredentials: true,
+		const token =localStorage.getItem("token")
+		const res = await apiURL.post('/api/clases', values,{
+			headers:{"x-token":token}
 		});
 		return res.data;
 	} catch (error) {
