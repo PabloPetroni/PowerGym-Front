@@ -188,9 +188,9 @@ export const Actividades = () => {
 							<div className='back'>
 								<h4 className='tact'>Boxeo</h4>
 								<p className='pact'>
-									Lorem ipsum dolor sit amet consectetur adipisicing
-									elit. Culpa recusandae ipsam quibusdam beatae
-									laudantium aperiam minus quod, corrupti commodi
+									El boxeo es un deporte más exigente, como todos los
+									deportes de combate y artes marciales. Hacé trabajar
+									todo el cuerpo y requiere una gran resistencia
 								</p>
 								<p className='duract'>
 									<span className='durtact'>Duracion:</span> 60 Minutos
