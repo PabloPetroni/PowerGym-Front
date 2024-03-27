@@ -14,6 +14,7 @@ import { MRT_Localization_ES } from 'material-react-table/locales/es';
 import { useAuth } from '../context/AuthContext.jsx';
 import dayjs from 'dayjs';
 import 'dayjs/locale/es-mx';
+import '../css/Tabla.css'
 dayjs().format();
 
 export const ListadoClases = ({ fechaSeleccionada }) => {
@@ -170,7 +171,8 @@ export const ListadoClases = ({ fechaSeleccionada }) => {
 			</Box>
 		),
 	});
-	const darkTheme = createTheme({
+
+		const darkTheme = createTheme({
 		palette: {
 			mode: 'dark',
 		},
